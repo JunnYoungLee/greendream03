@@ -52,5 +52,6 @@
 
 	<context:component-scan
 		base-package="com.kim.service" />
-
+	<context:component-scan
+		base-package="com.kim.servicelmpl" />
 </beans>
