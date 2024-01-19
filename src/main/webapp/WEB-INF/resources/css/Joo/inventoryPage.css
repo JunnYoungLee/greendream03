@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.sidebars{
+	position: relative;
+	float: left;
+	
+}
+
+.main{
+	position: relative;
+	float: right;
+}
