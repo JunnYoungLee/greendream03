@@ -1,0 +1,11 @@
+@charset "UTF-8";
+*{
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+#K-Login {
+	padding-top: 35%;
+}
+
