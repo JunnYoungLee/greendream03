@@ -10,4 +10,8 @@ public class InvenController {
 	public String inventoryPage() {
 		return "Joo/inventoryPage";
 	}
+	@GetMapping("test")
+	public String test() {
+		return "Joo/inventoryPage";
+	}
 }
