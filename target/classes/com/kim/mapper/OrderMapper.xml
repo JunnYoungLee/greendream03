@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.kim.mapper.OrderMapper">
+	 
+	 <select id="list" resultType="com.kim.model.OrderDTO">
+	 	select * from stock;
+	 </select>
+	 
+	 <select id="miList" resultType="com.kim.model.OrderDTO">
+	 	select * from stock
+	 	where dept = '내과';
+	 </select>
+	 
+</mapper>
