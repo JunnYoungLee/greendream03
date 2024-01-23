@@ -1,6 +1,6 @@
 package com.kim.model;
 
-public class YangMemberVO {
+public class YangMemberDTO {
 	/* VO(혹은 DAO로 쓰인다.) DB를 가져오는 용 */
 	// 직원용 회원가입
 	private String name;
