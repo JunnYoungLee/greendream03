@@ -30,18 +30,6 @@
 	  				 <option value="">재무과</option>
 			</select>
 		</div>
-		
-		<div id="K-hospital" class="K-SectionContainer04">
-			<label for="Pst">직책 : </label>
-			<select id="Pst" name="pst">
-				 <option value="select" disabled selected>선택해주세요</option>
-	  				 <option value="">의사</option>
-	  				 <option value="">간호사</option>
-	  				 <option value="">사원</option>
-	  				 <option value="">대리</option>
-	  				 <option value="">총무</option>
-			</select>
-		</div>
 				
 		<div id="K-birth" class="K-SectionContainer05">
 			<label for="Brh">생년월일 :</label>
