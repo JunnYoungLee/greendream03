@@ -10,30 +10,8 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-<!-- inventoryPage.css -->
-<!-- <link href="../../resources/css/Joo/inventoryPage.css" rel="stylesheet"> -->
-	<style>
-	@charset "UTF-8";
-	
-	.sidebars{
-		position: relative;
-		float: left;
-
-	}
-	
-	.main{
-		position: relative;
-/* 		float: left; */
-		text-align: center;
-		
-	}
-	
-	.tableContainer{
-		margin: auto;
-		
-	}
-	
-	</style>
+	<!-- inventoryPage.css -->
+	<link href="../../resources/css/Joo/inventoryPage.css" rel="stylesheet">
 	
 </head>
 
