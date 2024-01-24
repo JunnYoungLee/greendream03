@@ -11,12 +11,12 @@
 	</insert>
 	
 <!-- Mapper에서 result으로 값을 되돌려줘야 한다. -->	
-	<select id="login" resultType="com.kim.model.YangLoginDTO">
+<!-- 	<select id="login" resultType="com.kim.model.YangLoginDTO">
 		select * from 
 		membership 
 		where 
 		name = {$name} and 
 		pw = {$password};
 	</select>
-	
+	 -->
 </mapper>
