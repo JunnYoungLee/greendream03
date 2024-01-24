@@ -37,7 +37,7 @@
 	
 	<div>
 	<button type="button" onclick="use()">사용기록추가</button>
-	<button type="button">구매요청</button>
+	<button type="button" onclick="request()">구매요청</button>
 	</div>
 
 
