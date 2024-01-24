@@ -1,12 +1,18 @@
 @charset "UTF-8";
 
-.sidebars{
-	position: relative;
-	float: left;
-	
-}
+	.sidebars{
+		position: relative;
+		float: left;
 
-.main{
-	position: relative;
-	float: right;
-}
+	}
+	
+	.main{
+		position: relative;
+		text-align: center;
+		
+	}
+	
+	.tableContainer{
+		margin: auto;
+		
+	}
