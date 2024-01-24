@@ -1,5 +1,4 @@
 
-
 //사용량 체크 버튼 클릭
 function use(){
     var url = "useInternal";
