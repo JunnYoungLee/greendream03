@@ -18,12 +18,12 @@ public class OrderController {
 	@Autowired
 	OrderService os;
 	
-	@GetMapping("request")
+	@GetMapping("requestInternal")
 	public String request(Model model, OrderDTO document) {
 		ArrayList<OrderDTO> document1 = os.list();
 		System.out.println(document1);
 		model.addAttribute("list", os.list());
-		return "Jun/request";
+		return "Jun/requestInternal";
 	}
 	
 	@GetMapping("managementInternal")
@@ -32,8 +32,8 @@ public class OrderController {
 		return "Jun/managementInternal";
 	}
 	@GetMapping("useInternal")
-	public String ui() {
-		
+	public String ui(Model model, OrderDTO document) {
+		model.addAttribute("miList", os.miList());
 		return "Jun/useInternal";
 	}
 }
