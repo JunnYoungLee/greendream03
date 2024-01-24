@@ -1,9 +1,12 @@
 package com.kim.servicelmpl;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.YangMapper;
+import com.kim.model.YangLoginDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.YangService;
 
@@ -18,5 +21,10 @@ import com.kim.service.YangService;
 		return("");
 	}
 	
+	@Override
+	public int idCheck(String name) {
+		int result = ym.idCheck(name);
+		return result;
+	};
 	
 }
