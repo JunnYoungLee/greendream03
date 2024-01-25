@@ -11,7 +11,7 @@
 	</insert>
 	
 <!-- Mapper에서 result으로 값을 되돌려줘야 한다. -->	
-	<select id="idCheck" resultType="int">
+	<select id="idCheck" resultType="com.kim.mapper.YangMapper" parameterType="com.kim.mapper.YangMapper">
 		select * from 
 		membership 
 		where 
