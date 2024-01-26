@@ -25,8 +25,8 @@
 			<label for="Dept">부서 : </label>
 			<select id="Dept" name="dept">
 				 <option value="select" disabled selected>선택해주세요</option>
-	  				 <option value="">의사</option>
-	  				 <option value="">간호사</option>
+	  				 <option value="">정형외과</option>
+	  				 <option value="">내과</option>
 	  				 <option value="">재무과</option>
 			</select>
 		</div>

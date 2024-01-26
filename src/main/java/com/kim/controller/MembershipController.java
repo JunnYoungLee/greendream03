@@ -17,7 +17,7 @@ public class MembershipController {
 	@PostMapping("K-member")
 	public String membership(YangMemberDTO member, Model model) {
 		ys.membership(member);
-		return("");
+		return "Yang/YangLogin";
 	}
 }
 

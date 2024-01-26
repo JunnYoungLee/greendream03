@@ -1,7 +1,5 @@
 package com.kim.servicelmpl;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +14,13 @@ import com.kim.service.YangService;
 	YangMapper ym;
 	
 	/* service 인터페이스에 추상된 메서드를 구현 메소드로 만듬. */
-	public String membership (YangMemberDTO member) {
+	public void membership (YangMemberDTO member) {
 		ym.membership(member);
-		return("");
 	}
 	
-	@Override
-	public int idCheck(String name) {
-		int result = ym.idCheck(name);
-		return result;
-	};
+	public int loginCheck(YangLoginDTO yldto) {
+		 
+		return ym.loginCheck(yldto);
+	}
 	
 }

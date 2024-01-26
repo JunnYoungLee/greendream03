@@ -11,5 +11,10 @@ public class YangController {
 	public String member() {
 		return "Yang/YangMember";
 	}
+	
+	@GetMapping("login")
+	public String login() {
+		return "Yang/YangLogin";
+	}
 
 }
