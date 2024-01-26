@@ -6,17 +6,13 @@
 <mapper namespace="com.kim.mapper.YangMapper">
 
 	<insert id="membership">
-		insert into membership(name, password, dept, pst, brh, email, pn)
-		values (#{name},#{password},#{dept},#{pst},#{brh},#{email},#{pn})
+		insert into membership(name, password, dept, brh, email, pn)
+		values (#{name},#{password},#{dept},#{brh},#{email},#{pn})
 	</insert>
 	
-<!-- Mapper에서 result으로 값을 되돌려줘야 한다. -->	
-	<select id="idCheck" resultType="int">
-		select * from 
-		membership 
-		where 
-		name = {$name} and 
-		pw = {$password};
+<!-- Mapper에서 result으로 값을 되돌려줘야 한다. 	-->
+	<select id="loginCheck" resultType="int">
+		select count(*) from membership where name = #{name} and password = #{password};
 	</select>
 	
 </mapper>
