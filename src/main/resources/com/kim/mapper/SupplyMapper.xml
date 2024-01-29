@@ -7,15 +7,15 @@
   
 <mapper namespace="com.kim.mapper.SupplyMapper">
 
-	<select id = "supplyList" resultType="com.kim.model.SupplydDTO">
+<!-- 	<select id = "supplyList" resultType="com.kim.model.SupplydDTO">
 		select * 
 		from (
 				select @rownum:=@rownum+1 rownum, s.*
 				from supplier s, (select @rownum:=0) as tmp
 			) as supplyList
-<!-- 		<![CDATA[
+		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
-		]]> -->
-	</select>
+		]]>
+	</select> -->
 	
 </mapper>

@@ -6,6 +6,6 @@ import com.kim.model.SupplyDTO;
 
 public interface SupplyMapper {
 
-	public ArrayList<SupplyDTO> supplyList();
+	//public ArrayList<SupplyDTO> supplyList();
 	
 }
