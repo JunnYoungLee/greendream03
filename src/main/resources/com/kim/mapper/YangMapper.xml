@@ -2,17 +2,29 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper = mysql
+	 servic = view
+	 model = vo, dto, dao 객체를 배열로 사용하는 것.
+	 controller = 위의 세가지를 버무리는 것. 
+ --> 
   
 <mapper namespace="com.kim.mapper.YangMapper">
 
 	<insert id="membership">
-		insert into membership(name, password, dept, brh, email, pn)
-		values (#{name},#{password},#{dept},#{brh},#{email},#{pn})
+		insert into membership(id, password, name, dept, brh, email, pn)
+		values (#{id},#{password},#{name},#{dept},#{brh},#{email},#{pn})
 	</insert>
 	
-<!-- Mapper에서 result으로 값을 되돌려줘야 한다. 	-->
+	<!-- id로 Mapper에 연결한다. -->
+	
 	<select id="loginCheck" resultType="int">
-		select count(*) from membership where name = #{name} and password = #{password};
+		select count(*) from membership where id = #{id} and password = #{password};
 	</select>
+	
+		
+	<select id="member" resultType="string">
+		select * from membership
+	</select>
+	
 	
 </mapper>
