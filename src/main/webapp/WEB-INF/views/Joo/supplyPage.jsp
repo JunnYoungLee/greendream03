@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<%-- <c:forEach items="${supplyList}" var="supplyList">
-		${supplyList.no}
-</c:forEach> --%>
+<c:forEach items="${supplyList}" var="supplyList">
+		${supplyList}
+</c:forEach>
 
 
 </body>
