@@ -11,7 +11,11 @@ public class OrderDTO {
 	private String current_quantity;
 	private String safety_inventory_quantuty;
 	private String warehousing_quantity;
-	
+	private String date;
+	private String person_in_charge;
+	private String supplier;
+	private String request_quantity;
+	private String special_note;
 	public String getDept() {
 		return dept;
 	}
@@ -72,12 +76,47 @@ public class OrderDTO {
 	public void setWarehousing_quantity(String warehousing_quantity) {
 		this.warehousing_quantity = warehousing_quantity;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getPerson_in_charge() {
+		return person_in_charge;
+	}
+	public void setPerson_in_charge(String person_in_charge) {
+		this.person_in_charge = person_in_charge;
+	}
+	public String getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+	public String getRequest_quantity() {
+		return request_quantity;
+	}
+	public void setRequest_quantity(String request_quantity) {
+		this.request_quantity = request_quantity;
+	}
+	public String getSpecial_note() {
+		return special_note;
+	}
+	public void setSpecial_note(String special_note) {
+		this.special_note = special_note;
+	}
 	@Override
 	public String toString() {
-		return "DocumentDTO [dept=" + dept + ", specialized_medical_supplies=" + specialized_medical_supplies
+		return "OrderDTO [dept=" + dept + ", specialized_medical_supplies=" + specialized_medical_supplies
 				+ ", medical_supply_code=" + medical_supply_code + ", medical_supplies_name=" + medical_supplies_name
 				+ ", standard=" + standard + ", unit=" + unit + ", used_quantity=" + used_quantity
 				+ ", current_quantity=" + current_quantity + ", safety_inventory_quantuty=" + safety_inventory_quantuty
-				+ ", warehousing_quantity=" + warehousing_quantity + "]";
+				+ ", warehousing_quantity=" + warehousing_quantity + ", date=" + date + ", person_in_charge="
+				+ person_in_charge + ", supplier=" + supplier + ", request_quantity=" + request_quantity
+				+ ", special_note=" + special_note + "]";
 	}
+	
+
+
 }
