@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.YangMapper;
-import com.kim.model.YangLoginDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.YangService;
 
@@ -18,9 +17,14 @@ import com.kim.service.YangService;
 		ym.membership(member);
 	}
 	
-	public int loginCheck(YangLoginDTO yldto) {
-		 
+	public String member(YangMemberDTO memberdata) {
+		return ym.member(memberdata);
+	}
+	
+	public int loginCheck (YangMemberDTO yldto) {
 		return ym.loginCheck(yldto);
 	}
+	
+	
 	
 }
