@@ -11,8 +11,8 @@ import com.kim.service.SupplyService;
 @Controller
 public class AccountController {
 	
-	@Autowired
-	SupplyService ss;
+/*	@Autowired
+	SupplyService ss;*/
 	
 	@GetMapping("A")
 	public String inventoryPage() {
@@ -24,9 +24,9 @@ public class AccountController {
 		return "Joo/transactionPage";
 	}
 	
-	@GetMapping("S")
+/*	@GetMapping("S")
 	public String supplyPage(SupplyDTO supply, Model model) {
 		model.addAttribute("supplylist", ss.supplyList());
 		return "Joo/supplyPage";
-	}
+	}*/
 }

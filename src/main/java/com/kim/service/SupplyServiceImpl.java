@@ -13,9 +13,9 @@ public class SupplyServiceImpl implements SupplyService {
 	@Autowired 
 	SupplyMapper sm;
 	
-	public ArrayList<SupplyDTO> supplyList(){
+/*	public ArrayList<SupplyDTO> supplyList(){
 		
 		return sm.supplyList();
-	}
+	}*/
 	
 }
