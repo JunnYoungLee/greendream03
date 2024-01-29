@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+	.main{
+		position: relative;
+		text-align: center;
+		right:7%;
+
+		
+	}
+	
+	#tableContainer{
+		margin: auto;
+		width: 65%;
+	}
+	
+	.buttonContainer{
+		display: inline-flex;
+	    position: relative;
+	    float: right;
+	    right: 11%;
+	    
+	}
+	
+	.button{
+		padding: 0 5px;
+	}
