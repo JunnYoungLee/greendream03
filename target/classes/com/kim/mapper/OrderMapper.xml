@@ -10,9 +10,29 @@
 	 	select * from stock;
 	 </select>
 	 
-	 <select id="miList" resultType="com.kim.model.OrderDTO">
+	 <select id="internal_list" resultType="com.kim.model.OrderDTO">
 	 	select * from stock
 	 	where dept = '내과';
 	 </select>
 	 
+	 <update id="current_quantity_update">
+	 	update stock
+	 	set current_quantity = #{current_quantity}
+	 	where dept = #{dept} and medical_supply_code = #{medical_supply_code}
+	 </update>
+	 
+	 <insert id="consumption_check">
+	 	insert into consumption_check 
+	 	values(#{dept}, #{medical_supply_code}, #{medical_supplies_name}, 
+	 	#{standard}, #{unit}, #{used_quantity}, #{current_quantity}, 
+	 	#{date}, #{person_in_charge});
+	 </insert>
+	 
+	 <insert id="request_check">
+	 	insert into request_check 
+	 	values(#{dept}, #{medical_supply_code}, #{medical_supplies_name}, 
+	 	#{standard}, #{unit}, #{supplier}, #{current_quantity}, 
+	 	#{safety_inventory_quantuty}, #{request_quantity}, #{special_note}, 
+	 	#{person_in_charge}, #{date});
+	 </insert>
 </mapper>
