@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -152,6 +152,7 @@
 
 	<div>
 	<table border="1" class="table table-bordered table-sm" id="tableContainer">
+	
 		<tr>
 			<td>
 				<p>No</p>
@@ -178,188 +179,35 @@
 				<p>기타</p>
 			</td>
 		</tr>
+		<c:forEach items="${msiList}" var="msiList" varStatus="abc">
 		<tr>
 			<td>
-				<p>1</p>
+				<p>${abc.count}</p>
 			</td>
 			<td>
-				<input type="hidden">
+				${msiList.medical_supply_code}
 			</td>
 			<td>
-				<input type="hidden">
+				${msiList.medical_supplies_name}
 			</td>
 			<td>
-				<input type="hidden">
+				${msiList.standard}
 			</td>
 			<td>
-				<input type="hidden">
+				${msiList.unit}
 			</td>
 			<td>
-				<input type="hidden">
+				<input>
 			</td>
 			<td>
-				<input type="hidden">
+				${msiList.unit_price}
 			</td>
 			<td>
-				<input type="hidden">
-			</td>	
+				${msiList.detail}
+			</td>
+
 		</tr>
-				<tr>
-			<td>
-				<p>1</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
-				<tr>
-			<td>
-				<p>1</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
-				<tr>
-			<td>
-				<p>1</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
-				<tr>
-			<td>
-				<p>1</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
-				<tr>
-			<td>
-				<p>1</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
-				<tr>
-			<td>
-				<p>1</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
+		</c:forEach>
 				<tr>
 			<td>
 				<p>합계</p>
@@ -392,6 +240,7 @@
 		<tr>
 			<td colspan="10" height=100px><input type="hidden"></td>
 		</tr>
+
 	</table>
 	</div>
 
