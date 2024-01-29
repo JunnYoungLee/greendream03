@@ -7,15 +7,30 @@
   
 <mapper namespace="com.kim.mapper.SupplyMapper">
 
-<!-- 	<select id = "supplyList" resultType="com.kim.model.SupplydDTO">
+	<select id = "supplyList" resultType="com.kim.model.SupplyDTO">
 		select * 
 		from (
 				select @rownum:=@rownum+1 rownum, s.*
 				from supplier s, (select @rownum:=0) as tmp
 			) as supplyList
-		<![CDATA[
+<!-- 		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
-		]]>
-	</select> -->
+		]]> -->
+		
+<!-- 		select * from supplier order by no asc -->
+	</select>
+	
+	<select id = "msiList" resultType="com.kim.model.MsiDTO">
+		select * 
+		from (
+				select @rownum:=@rownum+1 rownum, MSI.*
+				from medical_supplies_information MSI, (select @rownum:=0) as tmp
+			) as msiList		
+	</select>
+	
+		<select id = "memberList" resultType="com.kim.model.YangMemberDTO">
+		select * 
+		from membership	
+	</select>
 	
 </mapper>

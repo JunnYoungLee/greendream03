@@ -51,5 +51,5 @@ public class SupplyDTO {
 				+ ", supplier_person=" + supplier_person + ", contact_infomation=" + contact_infomation + ", email="
 				+ email + "]";
 	}
-	
+
 }
