@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
@@ -15,6 +17,8 @@ main {
 	max-height: 100vh;
 	overflow-x: auto;
 	overflow-y: hidden;
+	position: relative;
+	z-index: 1;
 }
 
 .b-example-divider {
@@ -50,7 +54,8 @@ main {
 	background-color: transparent;
 	border: 0;
 }
-.btn-toggle:hover, .btn-toggle:focus {
+.btn-toggle:hover, 
+.btn-toggle:focus {
 	color: rgba(0, 0, 0, .85);
 	background-color: #d2f4ea;
 }
@@ -91,4 +96,18 @@ main {
 
 .lh-tight {
 	line-height: 1.25;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
