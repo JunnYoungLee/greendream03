@@ -9,9 +9,11 @@
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display= swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 
 	<!-- inventoryPage.css -->
-	<link href="../../resources/css/Joo/accountPage.css" rel="stylesheet">
+	<link href="/../../resources/css/Joo/accountPage.css" rel="stylesheet">
 	
 </head>
 
@@ -247,17 +249,17 @@
 	<br>
 	
 	<div class="buttonContainer">
-	<div class="button">
-		<button type="button" class="btn btn-outline-dark">확인</button>
-	</div>
-	<div class="button">
-		<button type="button" class="btn btn-outline-dark">인쇄</button>
-	</div>
+		<div class="button">
+			<button type="button" class="btn btn-outline-dark">신청하기</button>
+		</div>
 	</div>
 	
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<!-- sidebars.js -->
+<script src="/../../resources/js/Joo/sidebars.js"></script>
+
 
 </body>
 
