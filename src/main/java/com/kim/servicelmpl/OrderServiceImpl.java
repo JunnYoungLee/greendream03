@@ -20,8 +20,8 @@ public class OrderServiceImpl implements OrderService {
 		return om.list();
 	}
 	// 내과 창고 리스트
-	public ArrayList<OrderDTO> internal_list(){
-		return om.internal_list();
+	public ArrayList<OrderDTO> medical_department_list(){
+		return om.medical_department_list();
 	}
 	
 	// 현재고 업데이트
@@ -35,5 +35,9 @@ public class OrderServiceImpl implements OrderService {
 	// 공급요청	
 	public void request_check(OrderDTO order) {
 		om.request_check(order);
+	}
+	// 요청 리스트
+	public ArrayList<OrderDTO>request_list(){
+		return om.request_list();	
 	}
 }
