@@ -23,7 +23,7 @@ $(document).ready(function(){
 		        type:'Post', 
 		        url:"sessionInternal", // 컨트롤러로 가는 mapping 입력
 		        data:{"date":date, "name":name},// 원하는 값을 중복확인하기위해서  JSON 형태로 DATA 전송
-		        dataType: 'text',
+		        dataType: 'json',
 		        success: function(data){ 
 		        	console.log("success");
 		        },
@@ -50,7 +50,7 @@ $(document).ready(function(){
 		        type:'Post', 
 		        url:"sessionInternal2", // 컨트롤러로 가는 mapping 입력
 		        data:{"date":date, "name":name},// 원하는 값을 중복확인하기위해서  JSON 형태로 DATA 전송
-		        dataType: 'text',
+		        dataType: 'json',
 		        success: function(data){ 
 		        	console.log("success");
 		        },

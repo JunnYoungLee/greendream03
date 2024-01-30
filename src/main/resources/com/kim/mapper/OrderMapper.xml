@@ -10,7 +10,7 @@
 	 	select * from stock;
 	 </select>
 	 
-	 <select id="internal_list" resultType="com.kim.model.OrderDTO">
+	 <select id="medical_department_list" resultType="com.kim.model.OrderDTO">
 	 	select * from stock
 	 	where dept = '내과';
 	 </select>
@@ -31,8 +31,14 @@
 	 <insert id="request_check">
 	 	insert into request_check 
 	 	values(#{dept}, #{medical_supply_code}, #{medical_supplies_name}, 
-	 	#{standard}, #{unit}, #{supplier}, #{current_quantity}, 
-	 	#{safety_inventory_quantuty}, #{request_quantity}, #{special_note}, 
-	 	#{person_in_charge}, #{date});
+	 	#{standard}, #{unit}, #{supplier}, #{unit_price}, #{current_quantity}, 
+	 	#{safety_inventory_quantuty}, #{request_quantity}, #{person_in_charge}, 
+	 	#{date}, #{special_note}, #{progress_status});
 	 </insert>
+	 
+	 <select id="request_list" resultType="com.kim.model.OrderDTO">
+	 	select * from request_check
+	 	where dept = '내과' 
+	 	and request_quantity != 0;
+	 </select>
 </mapper>

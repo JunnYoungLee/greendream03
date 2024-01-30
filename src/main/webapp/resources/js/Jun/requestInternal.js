@@ -24,9 +24,11 @@ $("#submit").click(function() {
 		let safety_inventory_quantuty = row.cells[6].innerHTML
 		let request_quantity = row.cells[7].lastChild.value
 		let special_note = row.cells[8].lastChild.value
+		let unit_price = row.cells[9].lastChild.value
 		
 		
 		let dept = $('#dept').val();
+		let progress_status = "발주 전";
 		let date = $('#date').val();
 		let name = $('#name').val();
 		
@@ -36,13 +38,15 @@ $("#submit").click(function() {
 				"medical_supplies_name":medical_supplies_name,
 				"standard":standard, 
 				"unit":unit,
-				"supplier":supplier, 
+				"supplier":supplier,
+				"unit_price":unit_price,
 				"current_quantity":current_quantity,
 				"safety_inventory_quantuty":safety_inventory_quantuty,
 				"request_quantity":request_quantity,
-				"special_note":special_note,
 				"person_in_charge":name,
-				"date":date
+				"date":date,
+				"special_note":special_note,
+				"progress_status":progress_status
 		}	
 		
  
@@ -64,9 +68,12 @@ $("#submit").click(function() {
         console.log(current_quantity);
         console.log(request_quantity);
       }
-/*    window.opener.document.location.href = window.opener.document.URL;
-    self.close(); 
-  */
+    window.opener.document.location.href = window.opener.document.URL;
+     
+     setTimeout(function() {  
+    	 window.close();  
+        	}, 100);  
+    
 
-		
 });
+
