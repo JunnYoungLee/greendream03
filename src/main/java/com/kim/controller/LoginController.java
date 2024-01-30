@@ -19,6 +19,7 @@ import com.kim.service.YangService;
 
 @Controller
 public class LoginController {
+	
 	@Autowired
 	YangService ys;
 	@Autowired
@@ -39,10 +40,11 @@ public class LoginController {
 		session.setAttribute("loginCheck", ys.loginCheck(yldto));
 		
 		if(result == 1) {
-			session.getAttribute(id); //수정중
+			session.setAttribute("yldto",yldto); 
+			session.setMaxInactiveInterval(30/2);
 		}
 		
 		return new ResponseEntity<>(result, HttpStatus.OK);
+		
 	}
-	
 }

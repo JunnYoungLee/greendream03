@@ -19,12 +19,19 @@ public class AccountController {
 	SupplyService ss;
 	
 	@GetMapping("A")
-	public String inventoryPage(Model model) {
+	public String accountPage(Model model) {
 		
 		List<MsiDTO> msiList = ss.msiList();
 		model.addAttribute("msiList", msiList);
 		
 		return "Joo/accountPage";
+	}
+	
+	@GetMapping("B")
+	public String inventoryPages(Model model) {
+		
+		return "Joo/headers";
+		
 	}
 	
 	@GetMapping("T")
@@ -50,4 +57,5 @@ public class AccountController {
 
 		return "Joo/supplyPage";
 	}
+	
 }

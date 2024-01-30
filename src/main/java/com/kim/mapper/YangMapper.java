@@ -11,5 +11,4 @@ public interface YangMapper {
 	
 	public int loginCheck(YangMemberDTO yldto);
 	
-
 }
