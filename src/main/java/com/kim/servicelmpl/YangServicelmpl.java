@@ -25,6 +25,4 @@ import com.kim.service.YangService;
 		return ym.loginCheck(yldto);
 	}
 	
-	
-	
 }

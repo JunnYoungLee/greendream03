@@ -30,9 +30,8 @@ $('#Login').on("click", function(){
 			if(data == 0)
 				alert('잘못입력하였습니다. 다시 확인해주세요.');
 			else
-				location.href="/";
+				history.back(-1);
 		}
 	})
 });
-
 })

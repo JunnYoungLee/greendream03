@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 </head>
+
 <body>
 	<div id="K-Login">
 		<span>아이디 : <input type="text" id="Id" name="id" ></span>
@@ -19,5 +20,7 @@
 		</div>
 	</div>
 </body>
+
 <script type="text/javascript" src="/../../resources/js/Yang/Yang.js"></script>
+
 </html>
