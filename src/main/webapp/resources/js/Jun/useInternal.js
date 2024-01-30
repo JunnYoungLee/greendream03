@@ -1,5 +1,6 @@
 
 //적용 버튼을 누르고 소모량 계산 후 재고 db 적용 및 소모량 db 적용
+
 $("#submit").click(function() {
 	let table = document.getElementById('consume');
 	// tr 개수 새는 함수
@@ -8,7 +9,7 @@ $("#submit").click(function() {
     for (i=1; i<rowList.length; i++) {
     	let row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작
        
-    	alert(rowList.length)
+
         //let code = row.cells[0].innerHTML;
        
         // 부서번호 
@@ -20,10 +21,9 @@ $("#submit").click(function() {
 		let medical_supplies_name=row.cells[1].innerHTML
 		let standard=row.cells[2].innerHTML
 		let unit=row.cells[3].innerHTML
-		 let cq = row.cells[4].innerHTML;
+		let cq = row.cells[4].innerHTML;
         let somo = row.cells[6].lastChild.value;
 		let current_quantity = parseInt(cq)-parseInt(somo)
-		alert(current_quantity)
 		let dept = $('#dept').val();
 		let date = $('#date').val();
 		let name = $('#name').val();
@@ -59,9 +59,12 @@ $("#submit").click(function() {
         console.log(medical_supply_code);
         console.log(current_quantity);
       }
-/*    window.opener.document.location.href = window.opener.document.URL;
-    self.close(); 
-  */
+    
+    window.opener.document.location.href = window.opener.document.URL;
+    setTimeout(function() {  
+        window.close();  
+            }, 100); 
+
 
 		
 });

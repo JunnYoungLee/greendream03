@@ -1,32 +1,28 @@
 package com.kim.model;
 
 public class OrderDTO {
-	private String dept;
-	private String specialized_medical_supplies;
-	private String medical_supply_code;
-	private String medical_supplies_name;
-	private String standard;
-	private String unit;
-	private String used_quantity;
-	private String current_quantity;
-	private String safety_inventory_quantuty;
-	private String warehousing_quantity;
-	private String date;
-	private String person_in_charge;
-	private String supplier;
-	private String request_quantity;
-	private String special_note;
+	
+	private String dept; // 부서
+	private String medical_supply_code; // 의료용품 코드
+	private String medical_supplies_name; // 의료용품 이름
+	private String standard; // 규격
+	private String unit; // 단위
+	private int unit_price; // 단가
+	private int used_quantity; // 사용량
+	private int current_quantity; // 현재고
+	private int safety_inventory_quantuty; // 안전재고량
+	private int request_quantity; // 요청 수량
+	private int warehousing_quantity; // 입고예정량
+	private String date; // 날짜
+	private String person_in_charge; // 담당자 
+	private String supplier; // 공급회사
+	private String special_note; // 특이사항
+	private String progress_status; // 진행상황
 	public String getDept() {
 		return dept;
 	}
 	public void setDept(String dept) {
 		this.dept = dept;
-	}
-	public String getSpecialized_medical_supplies() {
-		return specialized_medical_supplies;
-	}
-	public void setSpecialized_medical_supplies(String specialized_medical_supplies) {
-		this.specialized_medical_supplies = specialized_medical_supplies;
 	}
 	public String getMedical_supply_code() {
 		return medical_supply_code;
@@ -52,28 +48,40 @@ public class OrderDTO {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
-	public String getUsed_quantity() {
+	public int getUnit_price() {
+		return unit_price;
+	}
+	public void setUnit_price(int unit_price) {
+		this.unit_price = unit_price;
+	}
+	public int getUsed_quantity() {
 		return used_quantity;
 	}
-	public void setUsed_quantity(String used_quantity) {
+	public void setUsed_quantity(int used_quantity) {
 		this.used_quantity = used_quantity;
 	}
-	public String getCurrent_quantity() {
+	public int getCurrent_quantity() {
 		return current_quantity;
 	}
-	public void setCurrent_quantity(String current_quantity) {
+	public void setCurrent_quantity(int current_quantity) {
 		this.current_quantity = current_quantity;
 	}
-	public String getSafety_inventory_quantuty() {
+	public int getSafety_inventory_quantuty() {
 		return safety_inventory_quantuty;
 	}
-	public void setSafety_inventory_quantuty(String safety_inventory_quantuty) {
+	public void setSafety_inventory_quantuty(int safety_inventory_quantuty) {
 		this.safety_inventory_quantuty = safety_inventory_quantuty;
 	}
-	public String getWarehousing_quantity() {
+	public int getRequest_quantity() {
+		return request_quantity;
+	}
+	public void setRequest_quantity(int request_quantity) {
+		this.request_quantity = request_quantity;
+	}
+	public int getWarehousing_quantity() {
 		return warehousing_quantity;
 	}
-	public void setWarehousing_quantity(String warehousing_quantity) {
+	public void setWarehousing_quantity(int warehousing_quantity) {
 		this.warehousing_quantity = warehousing_quantity;
 	}
 	public String getDate() {
@@ -94,28 +102,30 @@ public class OrderDTO {
 	public void setSupplier(String supplier) {
 		this.supplier = supplier;
 	}
-	public String getRequest_quantity() {
-		return request_quantity;
-	}
-	public void setRequest_quantity(String request_quantity) {
-		this.request_quantity = request_quantity;
-	}
 	public String getSpecial_note() {
 		return special_note;
 	}
 	public void setSpecial_note(String special_note) {
 		this.special_note = special_note;
 	}
+	public String getProgress_status() {
+		return progress_status;
+	}
+	public void setProgress_status(String progress_status) {
+		this.progress_status = progress_status;
+	}
 	@Override
 	public String toString() {
-		return "OrderDTO [dept=" + dept + ", specialized_medical_supplies=" + specialized_medical_supplies
-				+ ", medical_supply_code=" + medical_supply_code + ", medical_supplies_name=" + medical_supplies_name
-				+ ", standard=" + standard + ", unit=" + unit + ", used_quantity=" + used_quantity
-				+ ", current_quantity=" + current_quantity + ", safety_inventory_quantuty=" + safety_inventory_quantuty
+		return "OrderDTO [dept=" + dept + ", medical_supply_code=" + medical_supply_code + ", medical_supplies_name="
+				+ medical_supplies_name + ", standard=" + standard + ", unit=" + unit + ", unit_price=" + unit_price
+				+ ", used_quantity=" + used_quantity + ", current_quantity=" + current_quantity
+				+ ", safety_inventory_quantuty=" + safety_inventory_quantuty + ", request_quantity=" + request_quantity
 				+ ", warehousing_quantity=" + warehousing_quantity + ", date=" + date + ", person_in_charge="
-				+ person_in_charge + ", supplier=" + supplier + ", request_quantity=" + request_quantity
-				+ ", special_note=" + special_note + "]";
+				+ person_in_charge + ", supplier=" + supplier + ", special_note=" + special_note + ", progress_status="
+				+ progress_status + "]";
 	}
+
+
 	
 
 

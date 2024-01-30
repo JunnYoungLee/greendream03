@@ -15,8 +15,8 @@
 	<table border="1" id="consume">
 		<thead>
 			<tr>
-				<td><p>품번</p></td>
-				<td><p>품명</p></td>
+				<td><p>의료용품 코드</p></td>
+				<td><p>의료용품 명</p></td>
 				<td><p>규격</p></td>
 				<td><p>단위</p></td>
 				<td><p>공급회사</p></td>
@@ -38,6 +38,7 @@
 				<td>${list.safety_inventory_quantuty}</td>
 				<td><input type="text" id="request" value="0"></td>
 				<td><input type="text" id="special_note" value="없음"></td>
+				<td style="display: none;"><input type="hidden" id="unit_price" value="${list.unit_price}"></td>
 			</tr>
 		</c:forEach>
 	</table>

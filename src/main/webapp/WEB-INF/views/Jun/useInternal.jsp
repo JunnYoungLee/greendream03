@@ -16,8 +16,8 @@
 	<table border="1" id="consume">
 		<thead>
 			<tr>
-				<td><p>품번</p></td>
-				<td><p>품명</p></td>
+				<td><p>의료용품 코드</p></td>
+				<td><p>의료용품 명</p></td>
 				<td><p>규격</p></td>
 				<td><p>단위</p></td>
 				<td><p>재고량</p></td>
@@ -35,7 +35,6 @@
 				<td>${list.current_quantity}</td>
 				<td>${list.safety_inventory_quantuty}</td>
 				<td><input type="text" id="con[${a.index}]" value="0"></td>
-				<td><input type="hidden" value="${list.dept}"></td>
 			</tr>
 		</c:forEach>
 	</table>
