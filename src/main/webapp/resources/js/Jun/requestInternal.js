@@ -32,47 +32,51 @@ $("#submit").click(function() {
 		let date = $('#date').val();
 		let name = $('#name').val();
 		
-		order={
-				"dept":dept, 
-				"medical_supply_code":medical_supply_code,
-				"medical_supplies_name":medical_supplies_name,
-				"standard":standard, 
-				"unit":unit,
-				"supplier":supplier,
-				"unit_price":unit_price,
-				"current_quantity":current_quantity,
-				"safety_inventory_quantuty":safety_inventory_quantuty,
-				"request_quantity":request_quantity,
-				"person_in_charge":name,
-				"date":date,
-				"special_note":special_note,
-				"progress_status":progress_status
-		}	
-		
- 
-        $.ajax({
-	        type:'put', 
-	        url:"requestInternal", // 컨트롤러로 가는 mapping 입력
-	        data:JSON.stringify(order),// 원하는 값을 중복확인하기위해서  JSON 형태로 DATA 전송
-	        dataType: 'json',
-	        contentType:'application/json;charset=UTF-8',
-	        success: function(result){ 
-	        	console.log("success");
-	        },
-		     error : function() {
-		 		console.log("error");
-		 	}
-	    });
+		if(request_quantity!=0){
+			order={
+					"dept":dept, 
+					"medical_supply_code":medical_supply_code,
+					"medical_supplies_name":medical_supplies_name,
+					"standard":standard, 
+					"unit":unit,
+					"supplier":supplier,
+					"unit_price":unit_price,
+					"current_quantity":current_quantity,
+					"safety_inventory_quantuty":safety_inventory_quantuty,
+					"request_quantity":request_quantity,
+					"person_in_charge":name,
+					"date":date,
+					"special_note":special_note,
+					"progress_status":progress_status
+			}	
+			
+			
+			$.ajax({
+		        type:'put', 
+		        url:"requestInternal", // 컨트롤러로 가는 mapping 입력
+		        data:JSON.stringify(order),// 원하는 값을 중복확인하기위해서  JSON 형태로 DATA 전송
+		        dataType: 'json',
+		        contentType:'application/json;charset=UTF-8',
+		        success: function(result){ 
+		        	console.log("success");
+		        },
+			     error : function() {
+			 		console.log("error");
+			 	}
+		    });
+		}
+        
         console.log(dept);
         console.log(medical_supply_code);
         console.log(current_quantity);
         console.log(request_quantity);
       }
-    window.opener.document.location.href = window.opener.document.URL;
-     
-     setTimeout(function() {  
-    	 window.close();  
-        	}, 100);  
+    
+	window.opener.document.location.href = window.opener.document.URL;
+ 
+	setTimeout(function() {  
+		window.close();  
+    }, 100);  
     
 
 });

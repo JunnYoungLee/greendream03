@@ -8,7 +8,6 @@
 <title>구매 요청</title>
 </head>
 <body>
-구매 요청 ${sessionScope}
 <input type="hidden" id="date" value="${sessionScope.date}">
 <input type="hidden" id="name" value="${sessionScope.name}">
 <input type="hidden" id="dept" value="${inList[0].dept}">
@@ -37,7 +36,7 @@
 				<td>${list.current_quantity}</td>
 				<td>${list.safety_inventory_quantuty}</td>
 				<td><input type="text" id="request" value="0"></td>
-				<td><input type="text" id="special_note" value="없음"></td>
+				<td><input type="text" id="special_note" ></td>
 				<td style="display: none;"><input type="hidden" id="unit_price" value="${list.unit_price}"></td>
 			</tr>
 		</c:forEach>

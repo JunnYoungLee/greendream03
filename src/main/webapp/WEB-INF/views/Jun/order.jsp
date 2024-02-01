@@ -5,12 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내과 의료용품 발주 페이지</title>
+<title>의료용품 발주 페이지</title>
 
 </head>
 <body>
-<h1>내과 의료용품 발주 페이지</h1>
+<h1>의료용품 발주 페이지</h1>
 <div class="main">
+	<select id="tmpSelect">
+	   <option value="A">전체보기</option>
+	   <option value="B">내과</option>
+	   <option value="C">외과</option>
+	</select>
+	<select id="tmpSelect">
+	   <option value="A">전체보기</option>
+	   <option value="B">그린제약</option>
+	   <option value="C">드림제약</option>
+	</select>
 	<div>
 		<input type="date" id="date" name="date">
 		<input type="hidden" id="name" value="LeeJooHoon">
@@ -38,7 +48,7 @@
 				</thead>
 				<c:forEach items="${inList}" var="list">
 					<tr>
-						<td><input type="checkbox"></td>
+						<td><input type="checkbox" name="ckb"></td>
 						<td>${list.medical_supply_code}</td>
 						<td>${list.medical_supplies_name}</td>
 						<td>${list.standard}</td>
@@ -46,9 +56,9 @@
 						<td>${list.supplier}</td>
 						<td>${list.unit_price}</td>
 						<td>${list.request_quantity}</td>
-						<td>supply_price</td>
-						<td>surtax</td>
-						<td>total_price</td>
+						<td>${list.supply_price}</td>
+						<td>${list.surtax}</td>
+						<td>${list.total_price}</td>
 						<td>담당자</td>
 						<td>입고날짜</td>
 						<td>${list.special_note}</td>
@@ -58,10 +68,11 @@
 			</tbody>
 		</table>
 	</div>
-	
+	<div id="aaa"></div>
+
 	<div>
-	<button type="button" id="consume" >사용기록추가</button>
-	<button type="button" id="request">구매요청</button>
+	<button type="button" id="order" >발주</button>
+	<button type="button" id="delete" >삭제</button>
 	</div>
 
 
@@ -70,7 +81,7 @@
 
 </div>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="../../resources/js/Jun/managementInternal.js"></script>
+<script type="text/javascript" src="../../resources/js/Jun/oder.js"></script>
 </body>
 
 </html>
