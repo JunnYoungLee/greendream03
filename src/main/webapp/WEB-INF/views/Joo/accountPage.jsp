@@ -189,6 +189,9 @@
 				<p>${abc.count}</p>
 			</td>
 			<td>
+				${purchaseList.rno}
+			</td>
+			<td>
 				${purchaseList.medical_supply_code}
 			</td>
 			<td>

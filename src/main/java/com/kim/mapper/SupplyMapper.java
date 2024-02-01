@@ -1,5 +1,6 @@
 package com.kim.mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.kim.model.OrderDTO;
@@ -10,7 +11,7 @@ public interface SupplyMapper {
 
 	public List<SupplyDTO> supplyList();
 	
-	public List<OrderDTO> purchaseList(String[] chk_arr);
+	public ArrayList<OrderDTO> purchaseList(String chk_arr);
 	
 	public List<OrderDTO> purchaseList_1();
 	

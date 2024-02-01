@@ -60,27 +60,6 @@
 	<div id="result"></div>
 	
 <script>
-/* $(document).ready(function(){
-	
-	location href="aa?bno="+bno+?
-	let chk_arr = [];
-	
-	$(document).on("click", "button[name='add']",function(){
-	
- 	$('input:checkbox[name=checkList]').each(function() {
-		if($(this).is(":checked")==true){
-			
-			chk_arr.push($(this).val());
-			//console.log($(this).val());
-			
-			for(var i=0; i<chk_arr.length; i++){
-				console.log(chk_arr[i]);
-			}
-			document.getElementById('result').innerText = chk_arr[i];
-	    }
-	}); 
-	});
-}); */
 
 $(document).ready(function(){
 	
@@ -100,38 +79,14 @@ $(document).ready(function(){
 		});
 		
 		console.log(chk_arr);
-		
-/* 		for(var i=0; i<chk_arr.length; i++){
-			console.log(chk_arr[i]); */
-			
-			//document.getElementById('result').innerText = chk_arr[i];
-			
-			//chk_arr[i]
-			$.ajax({
-				url:'A',
-				type:'GET',
-				data: {'chk_arr' : chk_arr},
-				dataType: 'json',
-				traditional: true,
-			  	success : function(data){
-					// 성공했을 때 처리
-				  },
-			  	error: function(xhr, status, error){
-					// 실패했을 때 처리
-					alert(chk_arr);
-				  },
-
-			})
-/* 		} */
-
 
 		
 	
-	// 출력
-	//console.log(chk_arr);
-	//document.getElementById('result').innerText = chk_arr;
-	//window.location = "http://localhost:8080/A?chk_arr="+chk_arr[0]+"";
-	//alert("발주신청페이지");
+	 //출력
+	console.log(chk_arr);
+	document.getElementById('result').innerText = chk_arr;
+	window.location = "http://localhost:8080/A?chk_arr="+chk_arr+"";
+	alert("발주신청페이지");
 	
 	});
 });
