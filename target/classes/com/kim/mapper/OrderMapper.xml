@@ -37,8 +37,11 @@
 	 </insert>
 	 
 	 <select id="request_list" resultType="com.kim.model.OrderDTO">
-	 	select * from request_check
-	 	where dept = '내과' 
-	 	and request_quantity != 0;
+	 	select *, 
+	 	unit_price*request_quantity as supply_price,
+	 	unit_price*request_quantity*0.1 as surtax,
+	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price
+	 	from request_check
+	 	where dept = '내과' ;
 	 </select>
 </mapper>

@@ -2,6 +2,8 @@ package com.kim.model;
 
 public class OrderDTO {
 	
+	
+	private int rno; // 순서
 	private String dept; // 부서
 	private String medical_supply_code; // 의료용품 코드
 	private String medical_supplies_name; // 의료용품 이름
@@ -12,12 +14,22 @@ public class OrderDTO {
 	private int current_quantity; // 현재고
 	private int safety_inventory_quantuty; // 안전재고량
 	private int request_quantity; // 요청 수량
+	private int order_quantity; // 발주 수량
+	private int supply_price; // 공급가액
+	private int surtax; // 부가세
+	private int total_price; // 총액
 	private int warehousing_quantity; // 입고예정량
 	private String date; // 날짜
 	private String person_in_charge; // 담당자 
 	private String supplier; // 공급회사
 	private String special_note; // 특이사항
 	private String progress_status; // 진행상황
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 	public String getDept() {
 		return dept;
 	}
@@ -75,6 +87,30 @@ public class OrderDTO {
 	public int getRequest_quantity() {
 		return request_quantity;
 	}
+	public int getSupply_price() {
+		return supply_price;
+	}
+	public void setSupply_price(int supply_price) {
+		this.supply_price = supply_price;
+	}
+	public int getSurtax() {
+		return surtax;
+	}
+	public void setSurtax(int surtax) {
+		this.surtax = surtax;
+	}
+	public int getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(int total_price) {
+		this.total_price = total_price;
+	}
+	public int getOrder_quantity() {
+		return order_quantity;
+	}
+	public void setOrder_quantity(int order_quantity) {
+		this.order_quantity = order_quantity;
+	}
 	public void setRequest_quantity(int request_quantity) {
 		this.request_quantity = request_quantity;
 	}
@@ -116,14 +152,16 @@ public class OrderDTO {
 	}
 	@Override
 	public String toString() {
-		return "OrderDTO [dept=" + dept + ", medical_supply_code=" + medical_supply_code + ", medical_supplies_name="
-				+ medical_supplies_name + ", standard=" + standard + ", unit=" + unit + ", unit_price=" + unit_price
-				+ ", used_quantity=" + used_quantity + ", current_quantity=" + current_quantity
-				+ ", safety_inventory_quantuty=" + safety_inventory_quantuty + ", request_quantity=" + request_quantity
-				+ ", warehousing_quantity=" + warehousing_quantity + ", date=" + date + ", person_in_charge="
-				+ person_in_charge + ", supplier=" + supplier + ", special_note=" + special_note + ", progress_status="
-				+ progress_status + "]";
+		return "OrderDTO [rno=" + rno + ", dept=" + dept + ", medical_supply_code=" + medical_supply_code
+				+ ", medical_supplies_name=" + medical_supplies_name + ", standard=" + standard + ", unit=" + unit
+				+ ", unit_price=" + unit_price + ", used_quantity=" + used_quantity + ", current_quantity="
+				+ current_quantity + ", safety_inventory_quantuty=" + safety_inventory_quantuty + ", request_quantity="
+				+ request_quantity + ", order_quantity=" + order_quantity + ", supply_price=" + supply_price
+				+ ", surtax=" + surtax + ", total_price=" + total_price + ", warehousing_quantity="
+				+ warehousing_quantity + ", date=" + date + ", person_in_charge=" + person_in_charge + ", supplier="
+				+ supplier + ", special_note=" + special_note + ", progress_status=" + progress_status + "]";
 	}
+
 
 
 	
