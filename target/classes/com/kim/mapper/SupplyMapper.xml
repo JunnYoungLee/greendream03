@@ -38,4 +38,9 @@
 			) as supplyOrderList		
 	</select>
 	
+	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">
+	select * from  request_check;
+	</select>
+
+	
 </mapper>
