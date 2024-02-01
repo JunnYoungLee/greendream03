@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,13 +33,10 @@
 <div class="main">
 
 	<div>
-	<h1>직원 전용</h1>
+	<h1>직원 전용 페이지입니다.</h1>
+	<h2>로그인 후 이용해주세요</h2>
 	</div>
 	
-	<div class="menu">
-		<button><a href="#">재고관리</a></button>
-		<button><a href="#">공급사관리</a></button>
-	</div>
 	
 </div>
 

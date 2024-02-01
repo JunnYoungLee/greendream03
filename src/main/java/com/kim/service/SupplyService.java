@@ -2,15 +2,17 @@ package com.kim.service;
 
 import java.util.List;
 
-import com.kim.model.MsiDTO;
+import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
-import com.kim.model.YangMemberDTO;
+import com.kim.model.SupplyOrderDTO;
 
 public interface SupplyService {
 
 	public List<SupplyDTO> supplyList();
 	
-	public List<MsiDTO> msiList();
+	public List<OrderDTO> purchaseList(String[] chk_arr);
 	
-	public YangMemberDTO memberList(YangMemberDTO member);
+	public List<OrderDTO> purchaseList();
+
+	public List<SupplyOrderDTO> supplyOrderList();
 }
