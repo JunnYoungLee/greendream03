@@ -1,5 +1,6 @@
 package com.kim.servicelmpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class SupplyServiceImpl implements SupplyService {
 		return sm.supplyList();
 	}
 
-	public List<OrderDTO> purchaseList(String[] chk_arr){
+	public ArrayList<OrderDTO> purchaseList(String chk_arr){
 
 		return sm.purchaseList(chk_arr);
 	}
