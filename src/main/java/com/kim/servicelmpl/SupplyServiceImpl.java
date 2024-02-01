@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.SupplyMapper;
-import com.kim.model.MsiDTO;
+import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
-import com.kim.model.YangMemberDTO;
+import com.kim.model.SupplyOrderDTO;
 import com.kim.service.SupplyService;
 
 @Service
@@ -16,19 +16,26 @@ public class SupplyServiceImpl implements SupplyService {
 
 	@Autowired 
 	SupplyMapper sm;
-	
+
 	public List<SupplyDTO> supplyList(){
-		
+
 		return sm.supplyList();
 	}
-	
-	public List<MsiDTO> msiList(){
-		
-		return sm.msiList();
+
+	public List<OrderDTO> purchaseList(String[] chk_arr){
+
+		return sm.purchaseList(chk_arr);
 	}
-	
-	public YangMemberDTO memberList(YangMemberDTO member) {
-		
-		return sm.memberList(member);
+
+	public List<OrderDTO> purchaseList(){
+
+		return sm.purchaseList_1();
 	}
+
+	public List<SupplyOrderDTO> supplyOrderList(){
+
+		return sm.supplyOrderList();
+	}
+
+
 }

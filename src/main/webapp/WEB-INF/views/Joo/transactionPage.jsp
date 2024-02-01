@@ -48,7 +48,7 @@
 		</tr>
 		<tr>
 			<td>발주담당자</td>
-			<td>${supplyList.supplier_person}</td>
+			<td><input></td>
 			<td>주소</td>
 			<td colspan="3">${supplyList.location}</td>
 		</tr>
@@ -89,7 +89,7 @@
 			<td>공급가액</td>
 			<td>세액(공급가액*10%)</td>
 		</tr>
-		<c:forEach items="${msiList}" var="msiList" varStatus="abc">
+		<c:forEach items="${supplyOrderList}" var="supplyOrderList" varStatus="abc">
 		<tr>
 			<td>${abc.count}</td>
 			<td></td>

@@ -2,15 +2,18 @@ package com.kim.mapper;
 
 import java.util.List;
 
-import com.kim.model.MsiDTO;
+import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
-import com.kim.model.YangMemberDTO;
+import com.kim.model.SupplyOrderDTO;
 
 public interface SupplyMapper {
 
 	public List<SupplyDTO> supplyList();
 	
-	public List<MsiDTO> msiList();
+	public List<OrderDTO> purchaseList(String[] chk_arr);
 	
-	public YangMemberDTO memberList(YangMemberDTO member);
+	public List<OrderDTO> purchaseList_1();
+	
+	public List<SupplyOrderDTO> supplyOrderList();
+	
 }

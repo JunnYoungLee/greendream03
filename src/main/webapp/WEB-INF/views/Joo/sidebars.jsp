@@ -53,19 +53,19 @@
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-dark rounded">재고조회</a></li>
-            <li><a href="#" class="link-dark rounded">발주확인</a></li>
+            <li><a href="#" class="link-dark rounded">구매요청</a></li>
           </ul>
         </div>
       </li>
 
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          	공급사관리
+          	발주관리
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">입고확인</a></li>
-            <li><a href="#" class="link-dark rounded">입고확인</a></li>
+            <li><a href="#" class="link-dark rounded">발주확인</a></li>
+            <li><a href="#" class="link-dark rounded">공급사</a></li>
             <li><a href="#" class="link-dark rounded">입고확인</a></li>
           </ul>
         </div>
