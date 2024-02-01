@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,7 +100,8 @@
 				<p>발주일자</p>
 			</td>
 			<td>
-				<input type="hidden" id="order_date" name="order_date">				
+				<c:set var="ymd" value="<%=new java.util.Date()%>" />
+				<fmt:formatDate value="${ymd}" pattern="yyyy-MM-dd" />
 			</td>
 		</tr>
 		<tr>
@@ -152,7 +154,7 @@
 	</table>
 	</div>
 
-	<div>
+	<div id="result">
 	<table border="1" class="table table-bordered table-sm" id="tableContainer">
 	
 		<tr>
@@ -181,31 +183,31 @@
 				<p>기타</p>
 			</td>
 		</tr>
-		<c:forEach items="${msiList}" var="msiList" varStatus="abc">
+		<c:forEach items="${purchaseList}" var="purchaseList" varStatus="abc">
 		<tr>
 			<td>
 				<p>${abc.count}</p>
 			</td>
 			<td>
-				${msiList.medical_supply_code}
+				${purchaseList.medical_supply_code}
 			</td>
 			<td>
-				${msiList.medical_supplies_name}
+				${purchaseList.medical_supplies_name}
 			</td>
 			<td>
-				${msiList.standard}
+				${purchaseList.standard}
 			</td>
 			<td>
-				${msiList.unit}
+				${purchaseList.unit}
 			</td>
 			<td>
-				<input>
+				${purchaseList.request_quantity}
 			</td>
 			<td>
-				${msiList.unit_price}
+				${purchaseList.unit_price}
 			</td>
 			<td>
-				${msiList.detail}
+				${purchaseList.special_note}
 			</td>
 
 		</tr>
