@@ -61,7 +61,7 @@ $(document).ready(function(){
 	//구매 요청 페이지 실행
 	var url = "requestInternal";
 	var name2 = "popup test";
-	var option = "width = 700, height = 500, top = 100, left = 200, location = no"
+	var option = "width = 1000, height = 500, top = 100, left = 200, location = no"
 		window.open(url, name2, option);
 		
 	});

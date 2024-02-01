@@ -48,11 +48,11 @@ public class OrderController {
 		return "Jun/requestInternal";
 	}
 	// 내과 의료용품 발주관리 페이지
-	@GetMapping("orderInternal")
-	public String orderInternal(Model model, OrderDTO order) {
+	@GetMapping("order")
+	public String order(Model model, OrderDTO order) {
 		
 		model.addAttribute("inList", os.request_list());
-		return "Jun/orderInternal";
+		return "Jun/order";
 	}
 	
 	// 날짜 세션 저장

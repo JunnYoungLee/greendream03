@@ -9,7 +9,6 @@
 
 </head>
 <body>
-사용량 ${sessionScope}
 <input type="hidden" id="date" value="${sessionScope.date}">
 <input type="hidden" id="name" value="${sessionScope.name}">
 <input type="hidden" id="dept" value="${inList[0].dept}">
