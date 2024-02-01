@@ -29,6 +29,7 @@ public class AccountController {
 
 		ArrayList<OrderDTO> aa = new ArrayList<OrderDTO>(); // aa라는 배열 선언
 		
+		//chk_arr [0 1 2 3 4]
 		System.out.println();
 		
 		for(int i = 0; i < chk_arr.size(); i++) {// 배열의 길이만큼 반복

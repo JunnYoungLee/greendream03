@@ -30,7 +30,7 @@
 <!-- 메뉴 사이드 바 -->
 <jsp:include page = "sidebars.jsp" ></jsp:include>
 </div>
-
+ <input type="date" id="date" name="date" style="display:none;"> 
 <div class="main">
 	
 	<div>
@@ -174,20 +174,28 @@
 				<p>단위</p>
 			</td>
 			<td>
-				<p>수량</p>
-			</td>
-			<td>
 				<p>단가</p>
 			</td>
 			<td>
-				<p>기타</p>
+				<p>수량</p>
+			</td>
+			<td>
+				<p>공급가액</p>
+			</td>
+			
+			<td>
+				<p>부가세</p>
+			</td>
+			
+			<td>
+				<p>총액</p>
+			</td>
+			<td>
+				<p>특이사항</p>
 			</td>
 		</tr>
 		<c:forEach items="${purchaseList}" var="purchaseList" varStatus="abc">
 		<tr>
-			<td>
-				<p>${abc.count}</p>
-			</td>
 			<td>
 				${purchaseList.rno}
 			</td>
@@ -210,39 +218,25 @@
 				${purchaseList.unit_price}
 			</td>
 			<td>
-				${purchaseList.special_note}
+				${purchaseList.supply_price}
 			</td>
+			<td>
+				${purchaseList.surtax}
+			</td>
+			<td>
+				${purchaseList.total_price}
+			</td>
+			<td>
+				<input type="text" id="bigo" style="width: 50px;border:none;" >
+			</td>
+			
 
 		</tr>
 		</c:forEach>
-				<tr>
-			<td>
-				<p>합계</p>
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>
-			<td>
-				<input type="hidden">
-			</td>	
-		</tr>
+
 		<tr>
 			<td colspan="10"><p>비고</p></td>
+			<td colspan="10"><p>합계</p></td>
 		</tr>
 		<tr>
 			<td colspan="10" height=100px><input type="hidden"></td>
@@ -264,7 +258,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <!-- sidebars.js -->
 <script src="/../../resources/js/Joo/sidebars.js"></script>
-
+<script src="/../../resources/js/Jun/accountPage.js"></script>
 
 </body>
 
