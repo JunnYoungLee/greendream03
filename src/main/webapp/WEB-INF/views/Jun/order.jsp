@@ -29,6 +29,7 @@
 				<thead>
 					<tr>
 						<td><p><input type="checkbox"></p></td>
+						<td><p>No</p></td>
 						<td><p>의료용품 코드</p></td>
 						<td><p>의료용품 명</p></td>
 						<td><p>규격</p></td>
@@ -48,7 +49,8 @@
 				</thead>
 				<c:forEach items="${inList}" var="list">
 					<tr>
-						<td><input type="checkbox" name="ckb"></td>
+						<td><input type="checkbox" name="checkList" value="${list.rno}"></td>
+						<td>${list.rno}</td>
 						<td>${list.medical_supply_code}</td>
 						<td>${list.medical_supplies_name}</td>
 						<td>${list.standard}</td>
@@ -71,10 +73,10 @@
 	<div id="aaa"></div>
 
 	<div>
-	<button type="button" id="order" >발주</button>
+	<button type="button" id="order" name="order" >발주</button>
 	<button type="button" id="delete" >삭제</button>
 	</div>
-
+	<div id="result"></div>
 
 
 
