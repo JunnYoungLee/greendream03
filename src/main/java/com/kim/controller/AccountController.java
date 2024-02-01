@@ -1,15 +1,15 @@
 package com.kim.controller;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
@@ -24,13 +24,19 @@ public class AccountController {
 	SupplyService ss;
 	
 	// 재무과에서 발주 신청하는 페이지
-	@GetMapping("A")
-	@ResponseBody
-	public String accountPage(Model model, @RequestParam(value= "chk_arr[]", required=false)String[] chk_arr) {
+	@RequestMapping(value="A", method={RequestMethod.GET})
+	public String accountPage(Model model, @RequestParam(value= "chk_arr", required=false) List<String> chk_arr) {
+
+		ArrayList<OrderDTO> aa = new ArrayList<OrderDTO>(); // aa라는 배열 선언
 		
+		System.out.println();
 		
-		model.addAttribute("purchaseList", ss.purchaseList(chk_arr));
-		System.out.println(ss.purchaseList(chk_arr));
+		for(int i = 0; i < chk_arr.size(); i++) {// 배열의 길이만큼 반복
+			
+			aa.addAll(ss.purchaseList(chk_arr.get(i))); // 배열의 인덱스값을 이용해서  rno값을 찾음 
+			
+		}
+		model.addAttribute("purchaseList", aa);
 		
 		return "Joo/accountPage";
 		
