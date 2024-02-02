@@ -30,7 +30,7 @@
 <!-- 메뉴 사이드 바 -->
 <jsp:include page = "sidebars.jsp" ></jsp:include>
 </div>
- <input type="date" id="date" name="date" style="display:none;"> 
+ <input type="date" id="date" name="date" class="aa da"style="display:none;"> 
 <div class="main">
 	
 	<div>
@@ -155,7 +155,7 @@
 	</div>
 
 	<div id="result">
-	<table border="1" class="table table-bordered table-sm" id="tableContainer">
+	<table border="1" class="table table-bordered table-sm data_table" id="tableContainer" >
 	
 		<tr>
 			<td>
@@ -239,7 +239,8 @@
 			<td colspan="10"><p>합계</p></td>
 		</tr>
 		<tr>
-			<td colspan="10" height=100px><input type="hidden"></td>
+			<td colspan="10" height=100px>aaa</td>
+			<td colspan="10" height=100px>${sum}</td>
 		</tr>
 
 	</table>
@@ -254,11 +255,11 @@
 	</div>
 	
 </div>
-
+<script src="/../../resources/js/Jun/accountPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <!-- sidebars.js -->
 <script src="/../../resources/js/Joo/sidebars.js"></script>
-<script src="/../../resources/js/Jun/accountPage.js"></script>
+
 
 </body>
 

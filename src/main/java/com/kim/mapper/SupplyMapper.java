@@ -17,4 +17,6 @@ public interface SupplyMapper {
 	
 	public List<SupplyOrderDTO> supplyOrderList();
 	
+	public int purchaseSum(OrderDTO order);
+	
 }
