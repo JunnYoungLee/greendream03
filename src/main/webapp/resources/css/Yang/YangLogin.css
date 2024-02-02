@@ -1,11 +1,57 @@
 @charset "UTF-8";
-*{
+
+#K-Login {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
+	padding: 4%;
+    background-color: #47B3B3;
+    opacity : 0.9;
+    position: relative;
+    left: 7%;
+    width: 700px;
+    margin-top: 2%;
+    border-radius: 5px;
+    color: beige;
 }
 
-#K-Login {
-	padding-top: 35%;
+table{
+	width: 500px;
+	margin-top: 5%;
+    margin-left: 5%;
 }
+
+input[type="text"], input[type="password"]{
+	width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+	width: 300px;
+	background-color: beige;
+}
+
+.log{
+	position: relative;
+    float: left;
+}
+
+#loginFont{
+    font-size: 40px;
+}
+
+input[type="button"]{
+    width: 90px;
+    height: 80px;
+    border-radius: 10px;
+    border: none;
+    background-color: beige;
+}
+
+a{
+	text-decoration: none;
+	color: beige;
+}
+
 
