@@ -66,7 +66,8 @@ create table supplier(
     location varchar(100),
     person_in_charge varchar(20),
     contact_information varchar(30),
-    email varchar(100)
+    email varchar(100),
+    rno int primary key auto_increment
 );
 
 create table request_check(
