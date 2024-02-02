@@ -77,7 +77,7 @@ $(document).ready(function(){
 		
 			//출력
 			console.log(chk_arr);
-			document.getElementById('result').innerText = chk_arr;
+			//document.getElementById('result').innerText = chk_arr;
 			window.location = "http://localhost:8080/A?chk_arr="+chk_arr+"";
 			alert("발주신청페이지"); 
 			
