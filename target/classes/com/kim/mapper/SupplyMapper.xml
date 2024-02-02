@@ -22,7 +22,10 @@
 	
 	<!-- 구매 요청 페이지  -->
 	<select id = "purchaseList" resultType="com.kim.model.OrderDTO">
-		select * 
+		select *,
+		unit_price*request_quantity as supply_price,
+	 	unit_price*request_quantity*0.1 as surtax,
+	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price 
 		from (
 				select @rownum:=@rownum+1 rownum, rk.*
 				from request_check rk, (select @rownum:=0) as tmp
