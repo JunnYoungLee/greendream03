@@ -1,5 +1,6 @@
 package com.kim.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ public class MembershipController {
 	public String membership(YangMemberDTO member, Model model) {
 		ys.membership(member);
 		return "Yang/YangLogin";
-	}
+	};
+	
 }
 

@@ -1,5 +1,7 @@
 package com.kim.servicelmpl;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +19,15 @@ import com.kim.service.YangService;
 		ym.membership(member);
 	}
 	
-	public String member(YangMemberDTO memberdata) {
-		return ym.member(memberdata);
-	}
-	
 	public int loginCheck (YangMemberDTO yldto) {
 		return ym.loginCheck(yldto);
 	}
 	
+	public YangMemberDTO loginCheck_value(YangMemberDTO yldto) {
+		return ym.loginCheck_value(yldto);
+	}
+	
+	public ArrayList<YangMemberDTO> informtion () {
+		return ym.informtion();
+	}
 }

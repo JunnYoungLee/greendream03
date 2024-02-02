@@ -1,6 +1,34 @@
 @charset "UTF-8";
-	
-	.headerTitle{
+
+	#K_informtion {
+    	display: none;
+    }
+        
+    #K_informtion.on  {
+    	width: 300px;
+    	height: 35px;
+   		border: 1.5px solid rgba(0,153,153,0.5);
+    	border-radius: 8px;
+    	padding-top: 5px;                                
+    	color:#009999;
+    	display: inline;
+    	font-weight: 700;
+    }
+    
+    #K_logout.on {
+    	position: relative;
+    	top: 35%;
+    }
+    
+    #K_login.on {
+    	display: none;
+    }
+    
+    #K_dept, #K_name {
+    	display: inline-block;
+    }
+    
+	.headerTitle {
 		font-weight: bold;
 		font-family: 'Sunflower', sans-serif;
 	    color: #009999;
@@ -18,6 +46,15 @@
 		
 	}
 	
+	#K-login {
+		display: inline;
+	}
+	
+	#K_informtion div {
+    	margin-left: 15px;
+    }
+		
+
 	#loginBtn{
 		color: #009999;
 		border-color: #009999;
@@ -56,3 +93,4 @@
 		--bs-btn-disabled-border-color: #009999;
 		
 	}
+	
