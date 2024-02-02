@@ -52,7 +52,7 @@
 
 </div>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="../../resources/js/Jun/managementInternal.js"></script>
+<script type="text/javascript" src="../../resources/js/Jun/management.js"></script>
 </body>
 
 </html>

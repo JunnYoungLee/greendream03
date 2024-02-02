@@ -27,25 +27,25 @@ public class OrderController {
 	OrderService os;
 	
 	// 내과 물품 관리 페이지
-	@GetMapping("managementInternal")
+	@GetMapping("management")
 	public String mi(Model model, OrderDTO order) {
 		model.addAttribute("inList", os.medical_department_list());
-		return "Jun/managementInternal";
+		return "Jun/management";
 	}
 	// 내과 의료용품 사용관리 페이지
 	// 페이지 이동시 세션값을 통해 부서(dept를 통해 mapper에서 '내과'를 {dept}로 수정할 것
-		@GetMapping("useInternal")
+		@GetMapping("consume")
 		public String ui(Model model, OrderDTO order) {
 			model.addAttribute("inList", os.medical_department_list());
-			return "Jun/useInternal";
+			return "Jun/consume";
 		}
 		
 	// 내과 의료용품 구매요청 페이지
-	@GetMapping("requestInternal")
+	@GetMapping("request")
 	public String request(Model model, OrderDTO order) {
 
 		model.addAttribute("inList", os.medical_department_list());
-		return "Jun/requestInternal";
+		return "Jun/request";
 	}
 	// 내과 의료용품 발주관리 페이지
 	@GetMapping("order")
