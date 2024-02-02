@@ -16,4 +16,6 @@ public interface SupplyService {
 	public List<OrderDTO> purchaseList();
 
 	public List<SupplyOrderDTO> supplyOrderList();
+	
+	public int purchaseSum(OrderDTO order);
 }

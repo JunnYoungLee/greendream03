@@ -25,12 +25,21 @@
 		select *,
 		unit_price*request_quantity as supply_price,
 	 	unit_price*request_quantity*0.1 as surtax,
-	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price 
+	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price
 		from (
 				select @rownum:=@rownum+1 rownum, rk.*
 				from request_check rk, (select @rownum:=0) as tmp
 			) as purchaseList where rno = #{chk_arr};
 	</select>
+	
+	<select id = "purchaseSum" resultType="int">
+		select SUM(unit_price*request_quantity + unit_price*request_quantity*0.1) as sum
+		from (
+				select @rownum:=@rownum+1 rownum, rk.*
+				from request_check rk, (select @rownum:=0) as tmp
+			) as purchaseList where rno = #{chk_arr};
+	</select>
+
 	
 	<!-- 거래명세서  -->
 	<select id = "supplyOrderList" resultType="com.kim.model.SupplyOrderDTO">
