@@ -2,6 +2,7 @@ $(function(){
 	
 $('#Login').on("click", function(){
 	
+	
 	var userId = $('#Id').val();
 	var userPw = $('#Pw').val();
 	

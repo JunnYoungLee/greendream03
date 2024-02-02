@@ -25,7 +25,6 @@ public class LoginController {
 	@Autowired
 	YangMapper ym;
 	
-	
 	@RequestMapping(value="K_login", method=RequestMethod.POST)
 	public ResponseEntity<?> loginCheck (@RequestParam("userId") String id,
 							  @RequestParam("userPw") String password, 
@@ -36,15 +35,17 @@ public class LoginController {
 		yldto.setId(id);
 		yldto.setPassword(password);
 		
-		int result = ys.loginCheck(yldto);
-		session.setAttribute("loginCheck", ys.loginCheck(yldto));
+		int result = ys.loginCheck(yldto); // 결과값이 1 or 0  
 		
 		if(result == 1) {
-			session.setAttribute("yldto",yldto); 
+		
+			session.setAttribute("yldto",ys.loginCheck_value(yldto)); 
+			
 			session.setMaxInactiveInterval(30/2);
+		
 		}
-		
 		return new ResponseEntity<>(result, HttpStatus.OK);
-		
 	}
+	
+	
 }

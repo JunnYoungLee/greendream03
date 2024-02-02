@@ -14,15 +14,34 @@
 	
 	<!-- adminPage.css -->
 	<link href="/../../resources/css/Joo/adminPage.css" rel="stylesheet">
-	
-</head>
-
+	<link href="/../../resources/css/Joo/headers.css" rel="stylesheet">
 </head>
 <body>
 
 <div class="headers">
 <!-- 공통 헤더 -->
-<jsp:include page = "headers.jsp" ></jsp:include>
+<main>
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" style="pointer-events:none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap" /></svg>
+      </a>
+
+	<div class="title">
+		<label class="mainPage">
+			<a href="/" class="mainPage" style="text-decoration:none; margin:0 auto;">
+				<h1 class="headerTitle">꿈을그린병원</h1>
+				<h4 class="headerTitle">Dream Green Hospital</h4>
+			</a>
+		</label>
+	</div>
+	
+	  <a href="#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" style="pointer-events:none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap" /></svg>
+      </a>
+     </header>
+  </div>
+</main>
 </div>
 <div class="sidebars">
 <!-- 메뉴 사이드 바 -->

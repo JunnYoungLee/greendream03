@@ -7,7 +7,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link rel="stylesheet" href="/../../resources/css/Yang/YangLogin.css">
-
+<script type="text/javascript" src="/../../resources/js/Yang/Yang.js"></script>
 <meta charset="UTF-8">
 <title>로그인</title>
 </head>
@@ -32,6 +32,5 @@
 	</div>
 </body>
 
-<script type="text/javascript" src="/../../resources/js/Yang/Yang.js"></script>
 
 </html>
