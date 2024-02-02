@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+*{
+	font-Family: 'Noto Sans KR';
+	
+}
+
 body {
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
@@ -111,3 +116,4 @@ main {
     font-size: 3.5rem;
   }
 }
+

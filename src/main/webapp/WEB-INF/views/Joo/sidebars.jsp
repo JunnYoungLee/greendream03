@@ -32,19 +32,6 @@
     </a>
     
     <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          	병원소식
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">공지사항</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
     
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
@@ -52,8 +39,8 @@
         </button>
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">재고조회</a></li>
-            <li><a href="#" class="link-dark rounded">구매요청</a></li>
+            <li><a href="management" class="link-dark rounded">&emsp;&emsp;재고 조회</a></li>
+            <li><a href="order" class="link-dark rounded">&emsp;&emsp;구매 목록</a></li>
           </ul>
         </div>
       </li>
@@ -64,13 +51,26 @@
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">발주확인</a></li>
-            <li><a href="#" class="link-dark rounded">공급사</a></li>
-            <li><a href="#" class="link-dark rounded">입고확인</a></li>
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;발주 목록</a></li>
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;발주 확인</a></li>
           </ul>
         </div>
       </li>
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          	입고관리
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 일정</a></li>
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 확인</a></li>
+          </ul>
+        </div>
+      </li>
+      
      <li class="border-top my-3"></li>
+     
      </ul>
   </div>
   

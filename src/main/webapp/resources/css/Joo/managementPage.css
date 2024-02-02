@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+	h3{
+		position: relative;
+	    left: 3%;
+	    padding-top: 1%;
+	    padding-bottom: 2%;
+	}
+	
+	.sidebars{
+		position: relative;
+		float: left;
+		height: 80vh; /* 이게 슬라이더 위치 높이를 넓이에 맞게 가변형 높이를 줘서 메뉴 엄~청 많이 안넘기면 스크롤은 안생길 겁니다. */
+	}
+	
+	.main{
+		position: relative;
+		text-align: center;
+		right:7%;
+
+	}
+	
+	#tableContainer{
+		margin: auto;
+		width: 65%;
+	}
+	
+	.buttonContainer{
+	    position: relative;
+		text-align: center;
+		margin-top: 2%;
+	}
+	
+	.rightContainer{
+	    margin-bottom: 1%;
+	    font-size: 20px;
+	    position: absolute;
+	    float: right;
+	    right: 11%;
+	    top: -16%;
+	}
+	
+	#inline div{
+		display:inline;
+	}
+	

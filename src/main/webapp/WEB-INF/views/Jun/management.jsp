@@ -7,14 +7,33 @@
 <meta charset="UTF-8">
 <title>내과 의료용품 관리 페이지</title>
 
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display= swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
+	<!-- inventoryPage.css -->
+	<link href="/../../resources/css/Joo/managementPage.css" rel="stylesheet">
+	
 </head>
 <body>
-<h1>내과 의료용품 관리 페이지</h1>
+
+<div class="headers">
+<!-- 공통 헤더 -->
+<jsp:include page = "../Joo/headers.jsp" ></jsp:include>
+</div>
+
+<div class="sidebars">
+<!-- 메뉴 사이드 바 -->
+<jsp:include page = "../Joo/sidebars.jsp" ></jsp:include>
+</div>
+
+<h3> 재고 조회 </h3>
 <div class="main">
 	<div>
-		관리 일자 <input type="date" id="date" name="date">
+		<div class="rightContainer"> 관리 일자 <input type="date" id="date" name="date"></div>
 		<input type="hidden" id="name" value="LeeJooHoon">
-		<table border="1" >
+		<table border="1" class="table table-bordered table-sm" id="tableContainer">
 			<tbody id="test_tbody">
 				<thead>
 					<tr>
@@ -41,9 +60,9 @@
 		</table>
 	</div>
 	
-	<div>
-	<button type="button" id="consume" >사용기록추가</button>
-	<button type="button" id="request">구매요청</button>
+	<div class="buttonContainer">
+	<button type="button" id="consume"  class="btn btn-outline-dark">사용기록추가</button>
+	<button type="button" id="request" class="btn btn-outline-dark">구매요청</button>
 	</div>
 
 
@@ -51,8 +70,11 @@
 
 
 </div>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
 <script type="text/javascript" src="../../resources/js/Jun/management.js"></script>
+
 </body>
 
 </html>
