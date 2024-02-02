@@ -60,9 +60,6 @@
 	        console.log(current_quantity);
 	      }
 	    
-	    window.opener.document.location.href = window.opener.document.URL;
-	    setTimeout(function() {  
-	        window.close();  
-	            }, 100); 
+	    window.location = "http://localhost:8080/management";
 			
 	});

@@ -72,12 +72,9 @@ $("#submit").click(function() {
         console.log(request_quantity);
       }
     
-	window.opener.document.location.href = window.opener.document.URL;
+    window.location = "http://localhost:8080/management";
  
-	setTimeout(function() {  
-		window.close();  
-    }, 100);  
-    
+
 
 });
 

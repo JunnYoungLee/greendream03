@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>구매 요청</title>
+<title>시용량</title>
+
 </head>
 <body>
 <input type="hidden" id="date" value="${sessionScope.date}">
@@ -18,11 +19,9 @@
 				<td><p>의료용품 명</p></td>
 				<td><p>규격</p></td>
 				<td><p>단위</p></td>
-				<td><p>공급회사</p></td>
 				<td><p>재고량</p></td>
 				<td><p>안전재고량</p></td>
-				<td><p>요청수량</p></td>
-				<td><p>특이사항</p></td>
+				<td><p>사용량</p></td>
 				
 			</tr>
 		</thead>
@@ -32,12 +31,9 @@
 				<td>${list.medical_supplies_name}</td>
 				<td>${list.standard}</td>
 				<td>${list.unit}</td>
-				<td>${list.supplier}</td>
 				<td>${list.current_quantity}</td>
 				<td>${list.safety_inventory_quantuty}</td>
-				<td><input type="text" id="request" value="0"></td>
-				<td><input type="text" id="special_note" ></td>
-				<td style="display: none;"><input type="hidden" id="unit_price" value="${list.unit_price}"></td>
+				<td><input type="text" id="con[${a.index}]" value="0"></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -46,6 +42,7 @@
 		
 </body>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="../../resources/js/Jun/requestInternal.js"></script>
+<script type="text/javascript" src="../../resources/js/Jun/consume.js"></script>
 
 </html>
+
