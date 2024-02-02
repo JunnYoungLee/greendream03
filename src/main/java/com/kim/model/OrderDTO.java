@@ -18,17 +18,25 @@ public class OrderDTO {
 	private int supply_price; // 공급가액
 	private int surtax; // 부가세
 	private int total_price; // 총액
+	private int sum; // 총액
 	private int warehousing_quantity; // 입고예정량
 	private String date; // 날짜
 	private String person_in_charge; // 담당자 
 	private String supplier; // 공급회사
 	private String special_note; // 특이사항
 	private String progress_status; // 진행상황
+	private String chk_arr; // 진행상황
 	public int getRno() {
 		return rno;
 	}
 	public void setRno(int rno) {
 		this.rno = rno;
+	}
+	public String getChk_arr() {
+		return chk_arr;
+	}
+	public void setChk_arr(String chk_arr) {
+		this.chk_arr = chk_arr;
 	}
 	public String getDept() {
 		return dept;
@@ -108,6 +116,12 @@ public class OrderDTO {
 	public int getOrder_quantity() {
 		return order_quantity;
 	}
+	public int getSum() {
+		return sum;
+	}
+	public void setSum(int sum) {
+		this.sum = sum;
+	}
 	public void setOrder_quantity(int order_quantity) {
 		this.order_quantity = order_quantity;
 	}
@@ -157,7 +171,7 @@ public class OrderDTO {
 				+ ", unit_price=" + unit_price + ", used_quantity=" + used_quantity + ", current_quantity="
 				+ current_quantity + ", safety_inventory_quantuty=" + safety_inventory_quantuty + ", request_quantity="
 				+ request_quantity + ", order_quantity=" + order_quantity + ", supply_price=" + supply_price
-				+ ", surtax=" + surtax + ", total_price=" + total_price + ", warehousing_quantity="
+				+ ", surtax=" + surtax + ", total_price=" + total_price + ", sum=" + sum + ", warehousing_quantity="
 				+ warehousing_quantity + ", date=" + date + ", person_in_charge=" + person_in_charge + ", supplier="
 				+ supplier + ", special_note=" + special_note + ", progress_status=" + progress_status + "]";
 	}

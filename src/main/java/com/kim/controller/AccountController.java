@@ -38,7 +38,9 @@ public class AccountController {
 			
 		}
 		model.addAttribute("purchaseList", aa);
-		
+		/*int aa2 = ss.purchaseSum(order);
+		System.out.println(aa2);
+		model.addAttribute("sum", ss.purchaseSum(order));*/
 		return "Joo/accountPage";
 		
 	}

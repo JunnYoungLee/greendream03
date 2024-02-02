@@ -37,6 +37,8 @@ public class SupplyServiceImpl implements SupplyService {
 
 		return sm.supplyOrderList();
 	}
-
+	public int purchaseSum(OrderDTO order){
+		return sm.purchaseSum(order);
+	}
 
 }

@@ -33,7 +33,7 @@
 	 	values(#{dept}, #{medical_supply_code}, #{medical_supplies_name}, 
 	 	#{standard}, #{unit}, #{supplier}, #{unit_price}, #{current_quantity}, 
 	 	#{safety_inventory_quantuty}, #{request_quantity}, #{person_in_charge}, 
-	 	#{date}, #{special_note}, #{progress_status});
+	 	#{date}, #{special_note}, #{progress_status}, 'null');
 	 </insert>
 	 
 	 <select id="request_list" resultType="com.kim.model.OrderDTO">
