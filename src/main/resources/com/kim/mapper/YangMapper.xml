@@ -2,7 +2,9 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- mapper = mysql
+
+<!-- 
+	 mapper = mysql
 	 servic = view
 	 model = vo, dto, dao 객체를 배열로 사용하는 것.
 	 controller = 위의 세가지를 버무리는 것. 
@@ -21,10 +23,8 @@
 		select count(*) from membership where id = #{id} and password = #{password};
 	</select>
 	
-		
-	<select id="member" resultType="string">
-		select * from membership
+	<select id="loginCheck_value" resultType="com.kim.model.YangMemberDTO">
+		select * from membership where id = #{id} and password = #{password};
 	</select>
-	
 	
 </mapper>
