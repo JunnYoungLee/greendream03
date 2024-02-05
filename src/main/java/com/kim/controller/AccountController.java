@@ -1,6 +1,7 @@
 package com.kim.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,15 +30,16 @@ public class AccountController {
 
 		ArrayList<OrderDTO> aa = new ArrayList<OrderDTO>(); // aa라는 배열 선언
 		
-		//chk_arr [0 1 2 3 4]
-		System.out.println();
-		
 		for(int i = 0; i < chk_arr.size(); i++) {// 배열의 길이만큼 반복
 			
 			aa.addAll(ss.purchaseList(chk_arr.get(i))); // 배열의 인덱스값을 이용해서  rno값을 찾음 
-			
+					
 		}
+		model.addAttribute("select_supplier", ss.select_supplier(aa.get(0).getSupplier())); // 첫번째 나온 값의 회사 정보 출력
 		model.addAttribute("purchaseList", aa);
+		
+		ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
+		model.addAttribute("join_supplier", join_supplier);
 		/*int aa2 = ss.purchaseSum(order);
 		System.out.println(aa2);
 		model.addAttribute("sum", ss.purchaseSum(order));*/
@@ -50,6 +52,14 @@ public class AccountController {
 		
 		return "Joo/headers";
 		
+	}
+	
+	// 발주
+	@GetMapping("supplyOrder")
+	public String supplyOrder(SupplyOrderDTO supplyOrder) {
+		ss.medical_order(supplyOrder);
+		
+		return "T";
 	}
 	
 	// 거래명세서 페이지
@@ -83,5 +93,14 @@ public class AccountController {
 		
 		return "Joo/listPage";
 	}
+	
+	// 회원가입 페이지 
+	@GetMapping("M")
+	public String memberPage(Model model) {
+		
+		
+		return "Joo/memberPage";
+	}
+
 	
 }

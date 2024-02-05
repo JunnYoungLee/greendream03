@@ -46,7 +46,7 @@
 		<tr>
 		
 			<td rowspan="2">
-				<p>발주서</p>
+				<p>발&nbsp&nbsp주&nbsp&nbsp서</p>
 			</td>
 			<td rowspan="2">
 				<p>결재란</p>
@@ -109,18 +109,19 @@
 				<input type="hidden">
 			</td>
 		</tr>
+		<c:forEach items="${select_supplier}" var="join_supplier">
 		<tr>
 			<td>
 				<p>상호</p>
 			</td>
 			<td colspan="4">
-				<input type="hidden" id="supplier" name="supplier">
+				${join_supplier.supplier}
 			</td>
 			<td>
 				<p>담당자명</p>
 			</td>
 			<td colspan="4">
-				<input type="hidden" id="supplier_person" name="supplier_person">
+				${join_supplier.supplier_person}
 			</td>
 		</tr>
 		<tr>
@@ -128,13 +129,13 @@
 				<p>소재지</p>
 			</td>
 			<td colspan="4">
-				<input type="hidden" id="location" name="location">
+				${join_supplier.location}
 			</td>
 			<td>
 				<p>납기일자</p>
 			</td>
 			<td colspan="4">
-				<input type="hidden">
+				location
 			</td>
 		</tr>
 		<tr>
@@ -142,15 +143,16 @@
 				<p>연락처</p>
 			</td>
 			<td colspan="4">
-				<input type="hidden" id="contact_information" name="contact_information">
+				${join_supplier.contact_infomation}
 			</td>
 			<td>
 				<p>이메일</p>
 			</td>
 			<td colspan="4">
-				<input type="hidden" id="email" name="email">
+				${join_supplier.email}
 			</td>
 		</tr>
+		</c:forEach>
 	</table>
 	</div>
 
@@ -197,7 +199,7 @@
 		<c:forEach items="${purchaseList}" var="purchaseList" varStatus="abc">
 		<tr>
 			<td>
-				${purchaseList.rno}
+				${abc.count}
 			</td>
 			<td>
 				${purchaseList.medical_supply_code}
@@ -250,15 +252,13 @@
 	
 	<div class="buttonContainer">
 		<div class="button">
-			<button type="button" class="btn btn-outline-dark">신청하기</button>
+			<button type="button" id="supplyOrder" class="btn btn-outline-dark" >신청하기</button>
 		</div>
 	</div>
 	
 </div>
 <script src="/../../resources/js/Jun/accountPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<!-- sidebars.js -->
-<script src="/../../resources/js/Joo/sidebars.js"></script>
 
 
 </body>

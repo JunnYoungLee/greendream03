@@ -1,12 +1,12 @@
 package com.kim.model;
 
 public class SupplyDTO {
-	private String supplier;
-	private String business_number;
-	private String location;
-	private String supplier_person;
-	private String contact_infomation;
-	private String email;
+	private String supplier;			//공급회사명
+	private String business_number;		//사업자번호
+	private String location;			//소재지
+	private String supplier_person;		//담당자
+	private String contact_infomation;	//연락처
+	private String email;				//이메일
 	
 	public String getSupplier() {
 		return supplier;
