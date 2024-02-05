@@ -15,20 +15,11 @@
 
 	<!-- headers.css -->
 </head>
-<script>
-$(document).ready(function(){
-	$('#loginBtn').on('click', function(){
-		$('#K_informtion').addClass('on');
-		$('#K_login').addClass('on');
-		$('#K_logout').addClass('on');
-	});
-});
-</script>
 <body>
 <main>
   <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a href="#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" style="pointer-events:none">
+      <a href="#" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none" style="pointer-events:none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap" /></svg>
       </a>
 
@@ -40,21 +31,25 @@ $(document).ready(function(){
 			</a>
 		</label>
 	</div>
-
-     <div id="K_login" class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2" id="loginBtn" onclick="location.href='login'">Login</button>
-        <button type="button" class="btn btn-primary" id="signupBtn">Sign-up</button>
-     </div>
      
-     <div id="K_informtion">
-      	<div id="K_dept">부서 : ${informtion.dept} </div>
-      	<div id="K_name">이름 : ${informtion.name} </div>
-      	<div id="K_logout">로그아웃</div>
-     </div>
+       	<div id="K_information">
+       		<div id="K_dept"> 부서 : ${yldto.dept} </div>
+       		<div id="K_name"> 이름 : ${yldto.name} </div>
+       		<a id="K_logout"> 로그아웃 </a>
+       	</div>
+     
      </header>
   </div>
 </main>
 </body>
+<script type="text/javascript">
 
+$('#K_logout').on("click", function(){
+	localStorage.clear();
+	console.log('로그아웃 성공');
+	location.href = 'http://localhost:8080';
+});
+
+</script>
 </html>
  

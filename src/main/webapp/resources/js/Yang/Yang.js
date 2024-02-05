@@ -31,7 +31,7 @@ $('#Login').on("click", function(){
 			if(data == 0)
 				alert('잘못입력하였습니다. 다시 확인해주세요.');
 			else
-				history.back(-1);
+				location.href = 'http://localhost:8080/management/';
 		}
 	})
 });

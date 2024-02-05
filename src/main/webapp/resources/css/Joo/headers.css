@@ -1,32 +1,4 @@
 @charset "UTF-8";
-
-	#K_informtion {
-    	display: none;
-    }
-        
-    #K_informtion.on  {
-    	width: 300px;
-    	height: 35px;
-   		border: 1.5px solid rgba(0,153,153,0.5);
-    	border-radius: 8px;
-    	padding-top: 5px;                                
-    	color:#009999;
-    	display: inline;
-    	font-weight: 700;
-    }
-    
-    #K_logout.on {
-    	position: relative;
-    	top: 35%;
-    }
-    
-    #K_login.on {
-    	display: none;
-    }
-    
-    #K_dept, #K_name {
-    	display: inline-block;
-    }
     
 	.headerTitle {
 		font-weight: bold;
@@ -45,17 +17,35 @@
 		text-align: center;
 		
 	}
-	
-	#K-login {
-		display: inline;
+
+	#K_information {
+    	width: 250px;
+    	border: 2px solid rgba(0,153,153,0.5);
+    	border-radius: 10px;
+    }
+    
+	#K_information div {
+    	width: 150px;
+		height: 40px;
+		text-align: left;
+		padding-left: 10px;
 	}
 	
-	#K_informtion div {
-    	margin-left: 15px;
-    }
-		
-
-	#loginBtn{
+	#K_dept {
+		padding-top: 10px;
+	}
+	
+	#K_logout {
+    	display: inline-block;
+    	position: absolute;
+    	top: 21%;
+    	right: 17.5%;
+    	background-color: #fff;
+    	border-radius: 10px;
+    	cursor: pointer;
+	}
+	
+	#K_dept, #K_name, #K_logout{
 		color: #009999;
 		border-color: #009999;
 		--bs-btn-color: #009999;
@@ -74,7 +64,7 @@
 		--bs-gradient: none;
 	}
 	
-	#signupBtn{
+	/* {
 		color: #fff;
 		border-color: #009999;
 		--bs-btn-color: #fff;
@@ -92,5 +82,5 @@
 		--bs-btn-disabled-bg: #009999;
 		--bs-btn-disabled-border-color: #009999;
 		
-	}
-	
+	} */
+
