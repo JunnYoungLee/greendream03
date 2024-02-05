@@ -79,7 +79,7 @@ $(document).ready(function(){
 			console.log(chk_arr);
 			//document.getElementById('result').innerText = chk_arr;
 			window.location = "http://localhost:8080/A?chk_arr="+chk_arr+"";
-			alert("발주신청페이지"); 
+			//alert("발주신청페이지"); 
 			
 		}else{
 			alert("같은 공급회사를 선택해 주세요")

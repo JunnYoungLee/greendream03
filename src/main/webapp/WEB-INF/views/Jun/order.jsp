@@ -107,7 +107,7 @@
 
 </div>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="../../resources/js/Jun/oder.js"></script>
+<script type="text/javascript" src="/../../resources/js/Jun/oder.js"></script>
 </body>
 
 </html>
