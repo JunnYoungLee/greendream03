@@ -1,21 +1,21 @@
 package com.kim.model;
 
 public class SupplyOrderDTO {
-	private String dept;
-	private String medical_supply_code;
-	private String medical_supplies_name;
-	private String standard;
-	private String unit;
-	private String supplier;
-	private int unit_price;
-	private int order_quantity;
-	private int supply_price;
-	private int surtax;
-	private int total_price;
-	private String person_in_charge;
-	private String date;
-	private String special_note;
-	private String progress_status;
+	private String dept;					//부서
+	private String medical_supply_code;		//의료용품 코드
+	private String medical_supplies_name;	//의료용품명
+	private String standard;				//규격
+	private String unit;					//단위
+	private String supplier;				//공급회사
+	private int unit_price;					//단가
+	private int order_quantity;				//발주수량
+	private int supply_price;				//공급가액
+	private int surtax;						//부가세
+	private int total_price;				//총액
+	private String person_in_charge;		//담당자
+	private String date;					//발주날짜
+	private String special_note;			//특이사항
+	private String progress_status;			//진행상태
 	
 	public String getDept() {
 		return dept;

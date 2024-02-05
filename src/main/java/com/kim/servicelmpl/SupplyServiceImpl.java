@@ -1,6 +1,7 @@
 package com.kim.servicelmpl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,18 @@ public class SupplyServiceImpl implements SupplyService {
 	}
 	public int purchaseSum(OrderDTO order){
 		return sm.purchaseSum(order);
+	}
+	
+	public void medical_order(SupplyOrderDTO supplyOrder){
+		sm.medical_order(supplyOrder);
+	}
+	
+	public ArrayList<HashMap<String, Object>> join_supplier(){
+		return sm.join_supplier();
+	}
+	
+	public ArrayList<HashMap<String, Object>> select_supplier(String supplier){
+		return sm.select_supplier(supplier);
 	}
 
 }

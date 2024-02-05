@@ -16,7 +16,7 @@ $(document).ready(function(){
 	// tr 개수 새는 함수
 	let rowList = table.rows;
 
-    for (i=1; i<rowList.length; i++) {
+/*    for (i=1; i<rowList.length; i++) {
     	let row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작
        
 
@@ -30,5 +30,5 @@ $(document).ready(function(){
 		let total_price = row.cells[10].innerHTML
 	
 		alert(total_price)
-    }
+    }*/
 });

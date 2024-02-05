@@ -1,6 +1,7 @@
 package com.kim.mapper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.kim.model.OrderDTO;
@@ -19,4 +20,9 @@ public interface SupplyMapper {
 	
 	public int purchaseSum(OrderDTO order);
 	
+	public void medical_order(SupplyOrderDTO supplyOrder);
+	
+	public ArrayList<HashMap<String, Object>> join_supplier();
+	
+	public ArrayList<HashMap<String, Object>> select_supplier(String join_supplier);
 }

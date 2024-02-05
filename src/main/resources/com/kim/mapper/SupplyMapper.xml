@@ -6,10 +6,54 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.kim.mapper.SupplyMapper">
+
+	<!--  해시맵을 이용해서 join값을 알맞게 넘기기 -->
+	<resultMap type="java.util.HashMap" id="join_supplier"> 
+			<result column="supplier" property="supplier" />
+			<result column="business_number" property="business_number" />
+			<result column="location" property="location" />
+			<result column="supplier_person" property="supplier_person" />
+			<result column="contact_infomation" property="contact_infomation" />
+			<result column="email" property="email" />
+			<result column="medical_supply_code" property="medical_supply_code" />
+			<result column="medical_supplies_name" property="medical_supplies_name" />
+			<result column="standard" property="standard" />
+			<result column="unit" property="unit" />
+			<result column="unit_price" property="unit_price" />
+			<result column="used_quantity" property="used_quantity" />
+			<result column="current_quantity" property="current_quantity" />
+			<result column="safety_inventory_quantuty" property="safety_inventory_quantuty" />
+			<result column="request_quantity" property="request_quantity" />
+			<result column="order_quantity" property="order_quantity" />
+			<result column="supply_price" property="supply_price" />
+			<result column="surtax" property="surtax" />
+			<result column="total_price" property="total_price" />
+			<result column="sum" property="sum" />
+			<result column="warehousing_quantity" property="warehousing_quantity" />
+			<result column="date" property="date" />
+			<result column="person_in_charge" property="person_in_charge" />
+			<result column="special_note" property="special_note" />
+			<result column="progress_status" property="progress_status" />
+			<result column="chk_arr" property="chk_arr" />
+			<result column="rno" property="rno" />
+	</resultMap>
+
+	<!-- resultMap ='join_supplier' 같은 resultMap을 찾아서 실행  -->
+	<select id = "join_supplier" resultMap="join_supplier">
+		select s.supplier , supplier_person, location, contact_infomation, email, rno
+		from supplier s join request_check r on s.supplier = r.supplier;
+	</select>
+	
+	<!-- 구매 요청 목록에서 발주 신청할 때 여러개의 목록 중 회사는 하나만 가져오기 -->
+	<select id="select_supplier" resultMap="join_supplier">
+			select s.supplier , supplier_person, location, contact_infomation, email, rno
+		from supplier s join request_check r on s.supplier = r.supplier where s.supplier = #{supplier} limit 1;
+	</select> 
+	
 	<!-- 공급회사 목록  -->
 	<select id = "supplyList" resultType="com.kim.model.SupplyDTO">
-		select * 
-		from (
+		select * from 
+			(
 				select @rownum:=@rownum+1 rownum, s.*
 				from supplier s, (select @rownum:=0) as tmp
 			) as supplyList
@@ -40,6 +84,14 @@
 			) as purchaseList where rno = #{chk_arr};
 	</select>
 
+	<insert id="medical_order">
+		insert into medical_order 
+	 	values(#{dept}, #{medical_supply_code}, #{medical_supplies_name}, 
+	 			#{standard}, #{unit}, #{supplier}, #{unit_price}, 
+	 			#{order_quantity}, #{supply_price}, #{surtax}, #{total_price}, 
+	 			#{person_in_charge}, #{order_date}, #{special_note}, #{Progress_status});
+		from consumption_check;
+	</insert>
 	
 	<!-- 거래명세서  -->
 	<select id = "supplyOrderList" resultType="com.kim.model.SupplyOrderDTO">
@@ -53,6 +105,8 @@
 	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">
 	select * from  request_check;
 	</select>
+
+
 
 	
 </mapper>
