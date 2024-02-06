@@ -2,7 +2,6 @@ $(function(){
 	
 $('#Login').on("click", function(){
 	
-	
 	var userId = $('#Id').val();
 	var userPw = $('#Pw').val();
 	
@@ -22,7 +21,7 @@ $('#Login').on("click", function(){
 		url : "K_login",
 		type : "POST",
 		data : {
-			'userId' : userId,
+			'userId' : userId, // data에 어떤 값을 controller에 보내서 DB와 비교하는지 
 			'userPw' : userPw
 		},
 		dataType : 'json',
@@ -35,4 +34,21 @@ $('#Login').on("click", function(){
 		}
 	})
 });
-})
+
+$("#User_reference").on("click", function(){
+	var user = $('#User_reference').val()
+	var time = $('#User_datetime').val()
+	
+	$.ajax({
+		url : "Wh",
+		type : GET,
+		data : {
+			'user' : user,
+			'time' : dtim
+			}
+		dateType: 'JSON'
+			
+		
+	})
+
+});
