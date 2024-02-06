@@ -20,7 +20,7 @@ public interface SupplyMapper {
 	
 	public int purchaseSum(OrderDTO order);
 	
-	public void medical_order(SupplyOrderDTO supplyOrder);
+	public void supplyOrder(SupplyOrderDTO supplyOrder);
 	
 	public ArrayList<HashMap<String, Object>> join_supplier();
 	

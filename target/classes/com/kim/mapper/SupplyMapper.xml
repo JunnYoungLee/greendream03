@@ -44,9 +44,19 @@
 		from supplier s join request_check r on s.supplier = r.supplier;
 	</select>
 	
+	<insert id="supplyOrder">
+	insert 
+		into medical_order(dept, medical_supply_code, medical_supplies_name, standard, unit, supplier,
+		 					unit_price, person_in_charge, special_note, progress_status) 
+		(select dept, medical_supply_code, medical_supplies_name, standard, unit, s.supplier, 
+				unit_price, person_in_charge, special_note, progress_status  
+		 from supplier s join request_check r on s.supplier = r.supplier where r.rno=#{rno})
+		;
+	</insert>
+	
 	<!-- 구매 요청 목록에서 발주 신청할 때 여러개의 목록 중 회사는 하나만 가져오기 -->
 	<select id="select_supplier" resultMap="join_supplier">
-			select s.supplier , supplier_person, location, contact_infomation, email, rno
+		select s.supplier , supplier_person, location, contact_infomation, email, rno
 		from supplier s join request_check r on s.supplier = r.supplier where s.supplier = #{supplier} limit 1;
 	</select> 
 	
@@ -84,14 +94,6 @@
 			) as purchaseList where rno = #{chk_arr};
 	</select>
 
-	<insert id="medical_order">
-		insert into medical_order 
-	 	values(#{dept}, #{medical_supply_code}, #{medical_supplies_name}, 
-	 			#{standard}, #{unit}, #{supplier}, #{unit_price}, 
-	 			#{order_quantity}, #{supply_price}, #{surtax}, #{total_price}, 
-	 			#{person_in_charge}, #{order_date}, #{special_note}, #{Progress_status});
-		from consumption_check;
-	</insert>
 	
 	<!-- 거래명세서  -->
 	<select id = "supplyOrderList" resultType="com.kim.model.SupplyOrderDTO">

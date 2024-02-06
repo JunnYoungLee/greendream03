@@ -21,7 +21,6 @@
 	<div>
 	<table class="table table-bordered table-sm" id="tableContainer">
 	<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
-
 		<tr>
 			<td colspan="8"><h1>거래명세서</h1></td>
 		</tr>
@@ -69,7 +68,6 @@
 	
 	<div>
 	<table class="table table-bordered table-sm" id="tableContainer">
-	
 		<colgroup>
 			<col width=5%>
 			<col width=25%>
@@ -79,7 +77,6 @@
 			<col width=10%>
 			<col width=10%>
 		</colgroup>
-		
 		<tr>
 			<td>No</td>
 			<td>품명</td>

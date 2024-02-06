@@ -42,8 +42,8 @@ public class SupplyServiceImpl implements SupplyService {
 		return sm.purchaseSum(order);
 	}
 	
-	public void medical_order(SupplyOrderDTO supplyOrder){
-		sm.medical_order(supplyOrder);
+	public void supplyOrder(SupplyOrderDTO supplyOrder){
+		sm.supplyOrder(supplyOrder);
 	}
 	
 	public ArrayList<HashMap<String, Object>> join_supplier(){
