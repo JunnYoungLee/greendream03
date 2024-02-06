@@ -11,8 +11,7 @@ $(document).ready(function(){
 		
 		bir.value = today;
 	let table = $('.data_table').val();
-	alert(table);
-	console.log(table);
+
 	// tr 개수 새는 함수
 	let rowList = table.rows;
 

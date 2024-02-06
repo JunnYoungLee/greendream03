@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kim.model.OrderDTO;
-
+import com.kim.model.YangMemberDTO;
 import com.kim.service.OrderService;
 
 
@@ -26,32 +26,57 @@ public class OrderController {
 	@Autowired
 	OrderService os;
 	
-	// 내과 물품 관리 페이지
+	// 물품 관리 페이지
 	@GetMapping("management")
-	public String mi(Model model, OrderDTO order) {
-		model.addAttribute("inList", os.medical_department_list());
+	public String mi(Model model, OrderDTO order, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		YangMemberDTO login = (YangMemberDTO)session.getAttribute("yldto");
+		String dept = login.getDept();
+		if(dept.equals("재무과")) {
+			model.addAttribute("inList", os.list());
+		}
+		else {
+			model.addAttribute("inList", os.medical_department_list(login));
+		}
+
 		return "Jun/management";
 	}
-	// 내과 의료용품 사용관리 페이지
+	// 의료용품 사용관리 페이지
 	// 페이지 이동시 세션값을 통해 부서(dept를 통해 mapper에서 '내과'를 {dept}로 수정할 것
 		@GetMapping("consume")
-		public String ui(Model model, OrderDTO order) {
-			model.addAttribute("inList", os.medical_department_list());
+		public String ui(Model model, OrderDTO order, HttpServletRequest request) {
+			HttpSession session = request.getSession();
+			YangMemberDTO login = (YangMemberDTO)session.getAttribute("yldto");
+			String dept = login.getDept();
+			if(dept.equals("재무과")) {
+				model.addAttribute("inList", os.list());
+			}
+			else {
+				model.addAttribute("inList", os.medical_department_list(login));
+			}
 			return "Jun/consume";
 		}
 		
-	// 내과 의료용품 구매요청 페이지
+	// 의료용품 구매요청 페이지
 	@GetMapping("request")
-	public String request(Model model, OrderDTO order) {
-
-		model.addAttribute("inList", os.medical_department_list());
+	public String request(Model model, OrderDTO order, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		YangMemberDTO login = (YangMemberDTO)session.getAttribute("yldto");
+		String dept = login.getDept();
+		if(dept.equals("재무과")) {
+			model.addAttribute("inList", os.list());
+		}
+		else {
+			model.addAttribute("inList", os.medical_department_list(login));
+		}
 		return "Jun/request";
 	}
-	// 내과 의료용품 발주관리 페이지
+	// 의료용품 발주관리 페이지
 	@GetMapping("order")
-	public String order(Model model, OrderDTO order) {
-		
-		model.addAttribute("inList", os.request_list());
+	public String order(Model model, OrderDTO order, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		YangMemberDTO login = (YangMemberDTO)session.getAttribute("yldto");
+		model.addAttribute("inList", os.request_list(login));
 		return "Jun/order";
 	}
 	
@@ -96,6 +121,12 @@ public class OrderController {
 		
 	}
 	
-	
+	// 카카오맵 테스트
+	@GetMapping("kakaoT")
+	public String kakaoT() {
+		
+		
+		return "Jun/kakomap";
+	}
 
 }
