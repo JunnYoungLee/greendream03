@@ -27,4 +27,8 @@
 		select * from membership where id = #{id} and password = #{password};
 	</select>
 	
+	<update id="userReference">
+		update dht set #{user}='' where #{dtim}='';
+	</update>
+	
 </mapper>
