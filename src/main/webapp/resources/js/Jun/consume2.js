@@ -2,6 +2,15 @@
 //적용 버튼을 누르고 소모량 계산 후 재고 db 적용 및 소모량 db 적용
 
 	$("#submit").click(function() {
+		today = new Date();
+		
+		console.log("today.toISOString() >>>" + today.toISOString());
+		today = today.toISOString().slice(0, 10);
+		
+		console.log("today >>>> " + today);
+		bir = document.getElementById("date");
+		
+		bir.value = today
 		let table = document.getElementById('consume');
 		// tr 개수 새는 함수
 		let rowList = table.rows;
@@ -59,7 +68,7 @@
 	        console.log(medical_supply_code);
 	        console.log(current_quantity);
 	      }
-	    
+	    location.reload();
 	    window.location = "http://localhost:8080/management";
 			
 	});

@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-	today = new Date();
+/*	today = new Date();
 	
 	console.log("today.toISOString() >>>" + today.toISOString());
 	today = today.toISOString().slice(0, 10);
@@ -9,14 +9,14 @@ $(document).ready(function(){
 	console.log("today >>>> " + today);
 	bir = document.getElementById("date");
 	
-	bir.value = today;
+	bir.value = today;*/
 	//사용량  버튼 클릭
-	$('#consume').on("click", function(){
+$('#consume').on("click", function(){
 	
-		// 날짜 세션 저장
+/*		// 날짜 세션 저장
 		let date = $('#date').val();
 		let name = $('#name').val();
-		console.log(date);
+		console.log(date);z
 		console.log(name);
 			
 		 $.ajax({
@@ -30,14 +30,14 @@ $(document).ready(function(){
 			     error : function() {
 			 		console.log("error");
 			 	}
-		    });	
+		    });	*/
 		//사용량 입력 페이지 실행 
 		 window.location = "http://localhost:8080/consume";
 	});
 	
 		//구매요청  버튼 클릭
 		$('#request').on("click", function(){
-			// 날짜 세션 저장
+/*			// 날짜 세션 저장
 			let date = $('#date').val();
 			let name = $('#name').val();
 			console.log(date);
@@ -54,7 +54,7 @@ $(document).ready(function(){
 				     error : function() {
 				 		console.log("error");
 				 	}
-			    });	
+			    });	*/
 		//구매 요청 페이지 실행
 		window.location = "http://localhost:8080/request";
 			

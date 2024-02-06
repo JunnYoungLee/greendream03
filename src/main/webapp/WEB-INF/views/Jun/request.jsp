@@ -31,8 +31,8 @@
 <h3> 구매 요청 </h3>
 <div class="main">
 	<div>
-	<input type="hidden" id="date" value="${sessionScope.date}">
-	<input type="hidden" id="name" value="${sessionScope.name}">
+	<input type="hidden" id="date" >
+	<input type="hidden" id="name" value="${sessionScope.yldto.name}">
 	<input type="hidden" id="dept" value="${inList[0].dept}">
 		<table border="1" id="consume" class="table table-bordered table-sm">
 			<thead>
@@ -74,6 +74,6 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../resources/js/Jun/request.js"></script>
+<script type="text/javascript" src="/../../resources/js/Jun/request2.js"></script>
 
 </html>

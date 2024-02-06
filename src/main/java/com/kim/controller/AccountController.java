@@ -28,13 +28,18 @@ public class AccountController {
 	@RequestMapping(value="A", method={RequestMethod.GET})
 	public String accountPage(Model model, @RequestParam(value= "chk_arr", required=false) List<String> chk_arr) {
 
+		int total = 0;
+		
 		ArrayList<OrderDTO> aa = new ArrayList<OrderDTO>(); // aa라는 배열 선언
 		
 		for(int i = 0; i < chk_arr.size(); i++) {// 배열의 길이만큼 반복
 			
 			aa.addAll(ss.purchaseList(chk_arr.get(i))); // 배열의 인덱스값을 이용해서  rno값을 찾음 
 					
+			total += (aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() + aa.get(i).getUnit_price() * 0.1 ); 
 		}
+
+		model.addAttribute("total", total);
 		model.addAttribute("select_supplier", ss.select_supplier(aa.get(0).getSupplier())); // 첫번째 나온 값의 회사 정보 출력
 		model.addAttribute("purchaseList", aa);
 		

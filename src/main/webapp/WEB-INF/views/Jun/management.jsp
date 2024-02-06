@@ -31,12 +31,13 @@
 <h3> 재고 조회 </h3>
 <div class="main">
 	<div>
-		<div class="rightContainer"> 관리 일자 <input type="date" id="date" name="date"></div>
-		<input type="hidden" id="name" value="LeeJooHoon">
+		<!-- <div class="rightContainer"> 관리 일자 <input type="date" id="date" name="date"></div>
+		<input type="hidden" id="name" value="LeeJooHoon"> -->
 		<table border="1" class="table table-bordered table-sm" id="tableContainer">
 			<tbody id="test_tbody">
 				<thead>
 					<tr>
+						<td><p>부서</p></td>
 						<td><p>의료용품 코드</p></td>
 						<td><p>의료용품 명</p></td>
 						<td><p>규격</p></td>
@@ -48,6 +49,7 @@
 				</thead>
 				<c:forEach items="${inList}" var="list">
 					<tr>
+						<td>${list.dept}</td>
 						<td>${list.medical_supply_code}</td>
 						<td>${list.medical_supplies_name}</td>
 						<td>${list.standard}</td>
@@ -59,10 +61,14 @@
 			</tbody>
 		</table>
 	</div>
-	
+
 	<div class="buttonContainer">
-	<button type="button" id="consume"  class="btn btn-outline-dark">사용기록추가</button>
-	<button type="button" id="request" class="btn btn-outline-dark">구매요청</button>
+<c:if test="${sessionScope.yldto.dept ne '재무과'}">
+
+<button type="button" id="consume"  class="btn btn-outline-dark">사용기록추가</button>
+<button type="button" id="request" class="btn btn-outline-dark">구매요청</button>
+
+</c:if>
 	</div>
 
 
@@ -73,7 +79,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="../../resources/js/Jun/management.js"></script>
+<script type="text/javascript" src="/../../resources/js/Jun/management2.js"></script>
 
 </body>
 
