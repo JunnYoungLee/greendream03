@@ -15,7 +15,8 @@ public class SupplyOrderDTO {
 	private String person_in_charge;		//담당자
 	private String date;					//발주날짜
 	private String special_note;			//특이사항
-	private String progress_status;			//진행상태
+	private String Progress_status;			//진행상태
+	private int rno;
 	
 	public String getDept() {
 		return dept;
@@ -102,10 +103,16 @@ public class SupplyOrderDTO {
 		this.special_note = special_note;
 	}
 	public String getProgress_status() {
-		return progress_status;
+		return Progress_status;
 	}
 	public void setProgress_status(String progress_status) {
-		this.progress_status = progress_status;
+		Progress_status = progress_status;
+	}
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
 	}
 	
 	@Override
@@ -115,7 +122,7 @@ public class SupplyOrderDTO {
 				+ ", supplier=" + supplier + ", unit_price=" + unit_price + ", order_quantity=" + order_quantity
 				+ ", supply_price=" + supply_price + ", surtax=" + surtax + ", total_price=" + total_price
 				+ ", person_in_charge=" + person_in_charge + ", date=" + date + ", special_note=" + special_note
-				+ ", progress_status=" + progress_status + "]";
+				+ ", Progress_status=" + Progress_status + ", rno=" + rno + "]";
 	}
-	
+
 }

@@ -40,7 +40,8 @@
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="management" class="link-dark rounded">&emsp;&emsp;재고 조회</a></li>
-            <li><a href="order" class="link-dark rounded">&emsp;&emsp;구매 목록</a></li>
+            <li><a href="consume" class="link-dark rounded">&emsp;&emsp;사용 기록</a></li>
+            <li><a href="request" class="link-dark rounded">&emsp;&emsp;구매 요청</a></li>
           </ul>
         </div>
       </li>
@@ -51,8 +52,8 @@
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;발주 목록</a></li>
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;발주 확인</a></li>
+            <li><a href="order" class="link-dark rounded">&emsp;&emsp;구매 요청 목록</a></li>
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;발주 요청 목록</a></li>
           </ul>
         </div>
       </li>
