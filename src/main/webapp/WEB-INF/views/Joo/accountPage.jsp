@@ -82,19 +82,19 @@
 				<p>부서</p>
 			</td>
 			<td>
-				<input type="hidden" id="dept" name="dept">
+				${sessionScope.yldto.dept}
 			</td>
 			<td>
 				<p>담당자</p>
 			</td>
 			<td>
-				<input type="hidden" id="person_in_charge" name="person_in_charge">
+				${sessionScope.yldto.name}
 			</td>
 			<td>
 				<p>연락처</p>
 			</td>
 			<td>
-				<input type="hidden" id="pn" name="pn">
+				${sessionScope.yldto.pn}
 			</td>	
 			<td>	
 				<p>발주일자</p>
@@ -214,10 +214,10 @@
 				${purchaseList.unit}
 			</td>
 			<td>
-				${purchaseList.request_quantity}
+				${purchaseList.unit_price}
 			</td>
 			<td>
-				${purchaseList.unit_price}
+				${purchaseList.request_quantity}	
 			</td>
 			<td>
 				${purchaseList.supply_price}
@@ -229,7 +229,7 @@
 				${purchaseList.total_price}
 			</td>
 			<td>
-				<input type="text" id="bigo" style="width: 50px;border:none;" >
+				<input type="text" id="bigo" style="width: 50px;border:none;" value="${purchaseList.special_note}" >
 			</td>
 			
 
@@ -238,11 +238,11 @@
 
 		<tr>
 			<td colspan="10"><p>비고</p></td>
-			<td colspan="10"><p>합계</p></td>
+			<td colspan="10"><p>합계</p> </td>
 		</tr>
 		<tr>
-			<td colspan="10" height=100px>aaa</td>
-			<td colspan="10" height=100px>${sum}</td>
+			<td colspan="10" height=100px><input type="text" id="bigo" style="width: 1000px; height:100px; border:none;" ></td>
+			<td colspan="10" height=100px>${total}</td>
 		</tr>
 
 	</table>

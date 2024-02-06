@@ -1,10 +1,20 @@
 
 //적용 버튼을 누르면 구매요청 하기
 $("#submit").click(function() {
+	today = new Date();
+	
+	console.log("today.toISOString() >>>" + today.toISOString());
+	today = today.toISOString().slice(0, 10);
+	
+	console.log("today >>>> " + today);
+	bir = document.getElementById("date");
+	
+	bir.value = today
+
 	let table = document.getElementById('consume');
 	// tr 개수 새는 함수
 	let rowList = table.rows;
-
+	
     for (i=1; i<rowList.length; i++) {
     	let row = rowList[i];     //thead 부분을 제외하기 위해 i가 1부터 시작
        

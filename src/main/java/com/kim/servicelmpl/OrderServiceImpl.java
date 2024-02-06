@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kim.mapper.OrderMapper;
 import com.kim.model.OrderDTO;
+import com.kim.model.YangMemberDTO;
 import com.kim.service.OrderService;
 
 @Service
@@ -20,8 +21,8 @@ public class OrderServiceImpl implements OrderService {
 		return om.list();
 	}
 	// 내과 창고 리스트
-	public ArrayList<OrderDTO> medical_department_list(){
-		return om.medical_department_list();
+	public ArrayList<OrderDTO> medical_department_list(YangMemberDTO login){
+		return om.medical_department_list(login);
 	}
 	
 	// 현재고 업데이트
@@ -37,7 +38,7 @@ public class OrderServiceImpl implements OrderService {
 		om.request_check(order);
 	}
 	// 요청 리스트
-	public ArrayList<OrderDTO>request_list(){
-		return om.request_list();	
+	public ArrayList<OrderDTO>request_list(YangMemberDTO login){
+		return om.request_list(login);	
 	}
 }
