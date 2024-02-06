@@ -32,7 +32,7 @@
 </div>
  <input type="date" id="date" name="date" class="aa da"style="display:none;"> 
 <div class="main">
-	
+	<form action="/T" method="POST">
 	<div>
 	<table class="table table-bordered table-sm" id="tableContainer">
 		<colgroup>
@@ -110,6 +110,7 @@
 			</td>
 		</tr>
 		<c:forEach items="${select_supplier}" var="join_supplier">
+		<input type="hidden" name="hidden" value="${join_supplier.rno}">
 		<tr>
 			<td>
 				<p>상호</p>
@@ -252,10 +253,10 @@
 	
 	<div class="buttonContainer">
 		<div class="button">
-			<button type="button" id="supplyOrder" class="btn btn-outline-dark" >신청하기</button>
+			<button type="submit" id="supplyOrder" class="btn btn-outline-dark" >신청하기</button>
 		</div>
 	</div>
-	
+	</form>
 </div>
 <script src="/../../resources/js/Jun/accountPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

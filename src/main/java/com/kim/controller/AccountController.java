@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -60,52 +63,65 @@ public class AccountController {
 	}
 	
 	// 발주
-	@GetMapping("supplyOrder")
-	public String supplyOrder(SupplyOrderDTO supplyOrder) {
-		ss.medical_order(supplyOrder);
+	/*	@PostMapping("supplyOrder")
+		public String supplyOrder(SupplyOrderDTO supplyOrder, Model model, HttpServletRequest request) {
+			
+			ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
+			model.addAttribute("join_supplier", join_supplier);
+			
+			String hidden = request.getParameter("hidden");
+			System.out.println(hidden);
+			
+			ss.supplyOrder(supplyOrder);
+			
+			return "redirect:/T";
+		}*/
 		
-		return "T";
-	}
-	
-	// 거래명세서 페이지
-	@GetMapping("T")
-	public String transctionPage(Model model,YangMemberDTO member) {
+		// 거래명세서 페이지
+		@PostMapping("T")
+		public String transctionPage(Model model,SupplyOrderDTO supplyOrder, HttpServletRequest request) {
+			
+			String[] hidden = request.getParameterValues("hidden");
+			for (int i = 0; i < hidden.length; i++) {
+				System.out.println(hidden[i]);
+			}
+			ss.supplyOrder(supplyOrder);
+			
+			List<SupplyDTO> supplyList = ss.supplyList();
+			model.addAttribute("supplyList", supplyList);
+			
+			List<SupplyOrderDTO> supplyOrderList = ss.supplyOrderList();
+			model.addAttribute("supplyOrderList", supplyOrderList);
+			
+			return "Joo/transactionPage";
+		}
 		
-		List<SupplyDTO> supplyList = ss.supplyList();
-		model.addAttribute("supplyList", supplyList);
-		
-		List<SupplyOrderDTO> supplyOrderList = ss.supplyOrderList();
-		model.addAttribute("supplyOrderList", supplyOrderList);
-		
-		return "Joo/transactionPage";
-	}
-	
-	// 공급회사 관리 페이지 
-	@GetMapping("S")
-	public String supplyPage(Model model) {
-		
-		List<SupplyDTO> supplyList = ss.supplyList();
-		model.addAttribute("supplyList", supplyList);
+		// 공급회사 관리 페이지 
+		@GetMapping("S")
+		public String supplyPage(Model model) {
+			
+			List<SupplyDTO> supplyList = ss.supplyList();
+			model.addAttribute("supplyList", supplyList);
 
-		return "Joo/supplyPage";
-	}
-	
-	// 구매요청 확인 페이지 
-	@GetMapping("L")
-	public String listPage(Model model) {
+			return "Joo/supplyPage";
+		}
 		
-		model.addAttribute("purchaseList", ss.purchaseList());
+		// 구매요청 확인 페이지 
+		@GetMapping("L")
+		public String listPage(Model model) {
+			
+			model.addAttribute("purchaseList", ss.purchaseList());
+			
+			return "Joo/listPage";
+		}
 		
-		return "Joo/listPage";
-	}
-	
-	// 회원가입 페이지 
-	@GetMapping("M")
-	public String memberPage(Model model) {
-		
-		
-		return "Joo/memberPage";
-	}
+		// 회원가입 페이지 
+		@GetMapping("M")
+		public String memberPage(Model model) {
+			
+			
+			return "Joo/memberPage";
+		}
 
-	
-}
+		
+	}
