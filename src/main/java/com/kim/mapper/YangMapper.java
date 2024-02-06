@@ -2,6 +2,7 @@ package com.kim.mapper;
 
 import java.util.ArrayList;
 
+import com.kim.model.ReferenceDTO;
 import com.kim.model.YangMemberDTO;
 
 public interface YangMapper {
@@ -13,9 +14,8 @@ public interface YangMapper {
 	
 	public YangMemberDTO loginCheck_value(YangMemberDTO yldto);
 	
-	
-	
 	public ArrayList<YangMemberDTO> informtion();
 
+	public int userReference(ReferenceDTO userdto);
 }
 

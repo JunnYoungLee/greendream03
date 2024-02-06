@@ -51,6 +51,7 @@ public class LoginController {
 				
 				session.setAttribute("yldto",ys.loginCheck_value(yldto)); 
 				result = 1;
+				
 			} 
 			
 		return new ResponseEntity<>(result, HttpStatus.OK);
