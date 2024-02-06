@@ -34,17 +34,26 @@ public class LoginController {
 		
 		yldto.setId(id);
 		yldto.setPassword(password);
+		int result = 0;
 		
-		int result = ys.loginCheck(yldto); // 결과값이 1 or 0  
+		/*int result = ys.loginCheck(yldto); // 결과값이 1 or 0  
+		if(result == 1) {    0 과 1 의 값으로 비교해서 로그인만 사용하는 기능.
+		session.setMaxInactiveInterval(30/2);
+		}*/
 		
-		if(result == 1) {
+		YangMemberDTO yd = new YangMemberDTO();
 		
+			yd = ys.loginCheck_value(yldto);
+			
 			session.setAttribute("yldto",ys.loginCheck_value(yldto)); 
 			
-			session.setMaxInactiveInterval(30/2);
-		
-		}
+			if (yd.getId() != null) {
+				
+				session.setAttribute("yldto",ys.loginCheck_value(yldto)); 
+				result = 1;
+			} 
+			
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
-	
+
 }
