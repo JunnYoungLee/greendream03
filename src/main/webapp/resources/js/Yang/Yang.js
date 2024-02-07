@@ -39,16 +39,22 @@ $("#User_reference").on("click", function(){
 	var user = $('#User_reference').val()
 	var time = $('#User_datetime').val()
 	
-	$.ajax({
+/*	$.ajax({
 		url : "Wh",
 		type : GET,
 		data : {
 			'user' : user,
 			'time' : dtim
-			}
-		dateType: 'JSON'
-			
+		},
+		dateType : 'JSON',
+		success : function(data){
+			console.log(data)
+			if()
+				alert('기준온도 설정변경 하였습니다.');
+			else
+				alert('숫자만 기입해주세요.');
+		}
 		
-	})
+	})*/
 
 });
