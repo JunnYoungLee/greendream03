@@ -35,11 +35,11 @@ $('#Login').on("click", function(){
 	})
 });
 
-$("#User_reference").on("click", function(){
+/*$("#User_reference").on("click", function(){
 	var user = $('#User_reference').val()
 	var time = $('#User_datetime').val()
 	
-/*	$.ajax({
+	$.ajax({
 		url : "Wh",
 		type : GET,
 		data : {
