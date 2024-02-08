@@ -20,8 +20,11 @@
 <div class="main">
 	<div>
 	<table class="table table-bordered table-sm" id="tableContainer">
+	<c:forEach items="${select_supplier}" var="join_supplier">
+		<input type="hidden" name="hidden" value="${join_supplier.rno}">
+	</c:forEach>
 	<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
-		<tr>
+		<tr>	
 			<td colspan="8"><h1>거래명세서</h1></td>
 		</tr>
 		<tr>
@@ -35,7 +38,7 @@
 		</tr>
 		<tr>
 			<td rowspan="2">부서명</td>
-			<td rowspan="2"><input></td>
+			<td rowspan="2"></td>
 			<td>사업자번호</td>
 			<td colspan="4">${supplyList.business_number}</td>
 		</tr>
@@ -47,13 +50,13 @@
 		</tr>
 		<tr>
 			<td>발주담당자</td>
-			<td><input></td>
+			<td></td>
 			<td>주소</td>
 			<td colspan="3">${supplyList.location}</td>
 		</tr>
 		<tr>
 			<td>총 합계</td>
-			<td ><input></td>
+			<td >${total}</td>
 			<td>전화</td>
 			<td>${supplyList.contact_infomation}</td>
 			<td>메일</td>
@@ -89,11 +92,11 @@
 		<c:forEach items="${supplyOrderList}" var="supplyOrderList" varStatus="abc">
 		<tr>
 			<td>${abc.count}</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td>${supplyOrderList.medical_supplies_name}</td>
+			<td>${supplyOrderList.standard}</td>
+			<td>${supplyOrderList.order_quantity}</td>
+			<td>${supplyOrderList.unit_price}</td>
+			<td>${supplyOrderList.supply_price}</td>
 			<td></td>
 		</tr>
 		</c:forEach>
@@ -122,14 +125,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script>
-	$(document).ready(function(){
-	
-	    $('#app').on('click', function() {
-	        window.print();
-	    });
-	});
-</script>
+<script src="/../../resources/js/Joo/transactionPage.js"></script>
 
 </body>
 </html>

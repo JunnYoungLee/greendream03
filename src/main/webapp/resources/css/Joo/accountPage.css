@@ -10,11 +10,11 @@
 		position: relative;
 		text-align: center;
 		right:7%;
-
-		
 	}
-	
-	#tableContainer{
+	.table {
+		width: 65%;
+	}
+	.tableContainer{
 		margin: auto;
 		width: 65%;
 	}
