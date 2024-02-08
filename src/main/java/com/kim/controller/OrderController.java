@@ -73,10 +73,16 @@ public class OrderController {
 	}
 	// 의료용품 발주관리 페이지
 	@GetMapping("order")
-	public String order(Model model, OrderDTO order, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		YangMemberDTO login = (YangMemberDTO)session.getAttribute("yldto");
-		model.addAttribute("inList", os.request_list(login));
+	public String order(Model model,OrderDTO order, HttpServletRequest request) {
+		
+		model.addAttribute("inList", os.request_list(order));
+		return "Jun/order";
+	}
+	@PostMapping("orderSlected")
+	public String orders(Model model,@RequestBody OrderDTO order, HttpServletRequest request) {
+		System.out.println("aaa");
+		model.addAttribute("inList", os.request_selected_list(order));
+		System.out.println("inList");
 		return "Jun/order";
 	}
 	
