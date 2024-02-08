@@ -16,6 +16,7 @@ public interface YangMapper {
 	
 	public ArrayList<YangMemberDTO> informtion();
 
-	public int userReference(ReferenceDTO userdto);
+	public void userReference(ReferenceDTO userdto);
+	
 }
 

@@ -30,31 +30,9 @@ $('#Login').on("click", function(){
 			if(data == 0)
 				alert('잘못입력하였습니다. 다시 확인해주세요.');
 			else
-				location.href = 'http://localhost:8080/management/';
+				location.href = 'http://localhost:8080/';
 		}
 	})
 });
-
-/*$("#User_reference").on("click", function(){
-	var user = $('#User_reference').val()
-	var time = $('#User_datetime').val()
-	
-	$.ajax({
-		url : "Wh",
-		type : GET,
-		data : {
-			'user' : user,
-			'time' : dtim
-		},
-		dateType : 'JSON',
-		success : function(data){
-			console.log(data)
-			if()
-				alert('기준온도 설정변경 하였습니다.');
-			else
-				alert('숫자만 기입해주세요.');
-		}
-		
-	})*/
 
 });

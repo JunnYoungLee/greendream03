@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.YangMapper;
+import com.kim.model.ReferenceDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.YangService;
 
@@ -29,5 +30,9 @@ import com.kim.service.YangService;
 	
 	public ArrayList<YangMemberDTO> informtion () {
 		return ym.informtion();
+	}
+	
+	public void userReference(ReferenceDTO userdto) {
+		ym.userReference(userdto);
 	}
 }
