@@ -17,7 +17,6 @@
 	<link href="/../../resources/css/Joo/accountPage.css" rel="stylesheet">
 	
 </head>
-
 <body>
 
 
@@ -32,9 +31,9 @@
 </div>
  <input type="date" id="date" name="date" class="aa da"style="display:none;"> 
 <div class="main">
-	<form action="/T" method="POST">
+	
 	<div>
-	<table class="table table-bordered table-sm" id="tableContainer">
+	<table style="width:65%" class="table table-bordered table-sm tableContainer">
 		<colgroup>
 			<col width=59%>
 			<col width=1%>
@@ -66,7 +65,7 @@
 	</div>
 
 	<div>
-	<table  border="1" class="table table-bordered table-sm" id="tableContainer">
+	<table  border="1" style="width:65%" class="table table-bordered table-sm tableContainer">
 		<colgroup>
 			<col width=10%>
 			<col width=15%>
@@ -81,13 +80,13 @@
 			<td>
 				<p>부서</p>
 			</td>
-			<td>
+			<td id="dept">
 				${sessionScope.yldto.dept}
 			</td>
 			<td>
 				<p>담당자</p>
 			</td>
-			<td>
+			<td id="person_in_charge">
 				${sessionScope.yldto.name}
 			</td>
 			<td>
@@ -102,6 +101,7 @@
 			<td>
 				<c:set var="ymd" value="<%=new java.util.Date()%>" />
 				<fmt:formatDate value="${ymd}" pattern="yyyy-MM-dd" />
+				<input type="hidden" id="date" value="${ymd}" />
 			</td>
 		</tr>
 		<tr>
@@ -136,7 +136,7 @@
 				<p>납기일자</p>
 			</td>
 			<td colspan="4">
-				location
+				
 			</td>
 		</tr>
 		<tr>
@@ -158,7 +158,7 @@
 	</div>
 
 	<div id="result">
-	<table border="1" class="table table-bordered table-sm data_table" id="tableContainer" >
+	<table border="1" style="width:65%" class="table table-bordered table-sm data_table tableContainer" id="tableContainer" >
 	
 		<tr>
 			<td>
@@ -243,7 +243,7 @@
 		</tr>
 		<tr>
 			<td colspan="10" height=100px><input type="text" id="bigo" style="width: 1000px; height:100px; border:none;" ></td>
-			<td colspan="10" height=100px>${total}</td>
+			<td colspan="10" height=100px><input type="hidden" name="total" id="total" value="${total}">${total}</td>
 		</tr>
 
 	</table>
@@ -253,12 +253,13 @@
 	
 	<div class="buttonContainer">
 		<div class="button">
-			<button type="submit" id="supplyOrder" class="btn btn-outline-dark" >신청하기</button>
+			<button type="button" id="supplyOrder" class="btn btn-outline-dark" >신청하기</button>
 		</div>
 	</div>
-	</form>
+	
 </div>
 <script src="/../../resources/js/Jun/accountPage.js"></script>
+<script src="/../../resources/js/Joo/transactionPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 
