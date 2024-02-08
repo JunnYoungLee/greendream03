@@ -11,9 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
@@ -62,75 +65,71 @@ public class AccountController {
 		
 	}
 	
-	// 발주
-	/*	@PostMapping("supplyOrder")
-		public String supplyOrder(SupplyOrderDTO supplyOrder, Model model, HttpServletRequest request) {
-			
-			ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
-			model.addAttribute("join_supplier", join_supplier);
-			
-			String hidden = request.getParameter("hidden");
-			System.out.println(hidden);
-			
-			ss.supplyOrder(supplyOrder);
-			
-			return "redirect:/T";
-		}*/
+	// 거래명세서 페이지
+	@GetMapping("transactionPage")
+	public String transactionPage(Model model,SupplyOrderDTO supplyOrder, HttpServletRequest request) {
 		
-		// 거래명세서 페이지
-		@PostMapping("T")
-		public String transactionPage(Model model,SupplyOrderDTO supplyOrder, HttpServletRequest request) {
-			
-			ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
-			model.addAttribute("join_supplier", join_supplier);
-			
-			String total = request.getParameter("total");
-			//System.out.println(total);
-			model.addAttribute("total", total);
-			
-			String[] hidden = request.getParameterValues("hidden");
-			for (int i = 0; i < hidden.length; i++) {
-				//System.out.println(hidden[i]);
-				model.addAttribute("hidden", hidden[i]);
-			}
-			if (hidden != null) {
-				ss.supplyOrder(supplyOrder);
-			}
-			List<SupplyDTO> supplyList = ss.supplyList();
-			model.addAttribute("supplyList", supplyList);
-			
-			List<SupplyOrderDTO> supplyOrderList = ss.supplyOrderList();
-			model.addAttribute("supplyOrderList", supplyOrderList);
-			
-			return "Joo/transactionPage";
-		}
+		System.out.println("a");
 		
-		// 공급회사 관리 페이지 
-		@GetMapping("S")
-		public String supplyPage(Model model) {
-			
-			List<SupplyDTO> supplyList = ss.supplyList();
-			model.addAttribute("supplyList", supplyList);
-
-			return "Joo/supplyPage";
-		}
+		String hidden = request.getParameter("hidden");
+		model.addAttribute("hidden", hidden);
 		
-		// 구매요청 확인 페이지 
-		@GetMapping("L")
-		public String listPage(Model model) {
-			
-			model.addAttribute("purchaseList", ss.purchaseList());
-			
-			return "Joo/listPage";
-		}
+		String total = request.getParameter("total");
+		//System.out.println(total);
+		model.addAttribute("total", total);
 		
-		// 회원가입 페이지 
-		@GetMapping("M")
-		public String memberPage(Model model) {
-			
-			
-			return "Joo/memberPage";
-		}
-
+		List<SupplyDTO> supplyList = ss.supplyList();
+		model.addAttribute("supplyList", supplyList);
 		
+		List<SupplyOrderDTO> supplyOrderList = ss.supplyOrderList();
+		model.addAttribute("supplyOrderList", supplyOrderList);
+		
+		return "Joo/transactionPage";
 	}
+	
+	// 발주 db에 insert 후 거래명세서로 이동
+	@GetMapping("TssT")
+	public void SS(@RequestParam("supply_price") String supply_price, @RequestParam("surtax") String surtax,
+					@RequestParam("total_price") String total_price, @RequestParam("order_date") String order_date,
+					@RequestParam("list[]") List<Integer> list, SupplyOrderDTO data) {
+					
+		System.out.println(list);
+		System.out.println(supply_price);
+		System.out.println(surtax);
+		System.out.println(total_price);
+		System.out.println(order_date);
+		
+		for(int i=0; i<list.size(); i++) {
+			ss.supplyOrder(list.get(i));
+		}
+	}
+	
+	// 공급회사 관리 페이지 
+	@GetMapping("S")
+	public String supplyPage(Model model) {
+		
+		List<SupplyDTO> supplyList = ss.supplyList();
+		model.addAttribute("supplyList", supplyList);
+
+		return "Joo/supplyPage";
+	}
+	
+	// 구매요청 확인 페이지 
+	@GetMapping("L")
+	public String listPage(Model model) {
+		
+		model.addAttribute("purchaseList", ss.purchaseList());
+		
+		return "Joo/listPage";
+	}
+	
+	// 회원가입 페이지 
+	@GetMapping("M")
+	public String memberPage(Model model) {
+		
+		
+		return "Joo/memberPage";
+	}
+
+	
+}
