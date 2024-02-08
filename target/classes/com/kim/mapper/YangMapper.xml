@@ -28,7 +28,7 @@
 	</select>
 	
 	<update id="userReference">
-		update dht set user=#{user},utim=#{utim} where tno = #{tno}
+		update dht set user=#{user}
 	</update>
 	
 </mapper>
