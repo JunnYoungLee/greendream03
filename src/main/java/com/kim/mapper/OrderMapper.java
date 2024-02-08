@@ -18,5 +18,7 @@ public interface OrderMapper {
 	// 공급요청
 	public void request_check(OrderDTO order);
 	// 요청 리스트
-	public ArrayList<OrderDTO>request_list(YangMemberDTO login);
+	public ArrayList<OrderDTO>request_list(OrderDTO order);
+	// 선택된 요청 리스트
+	public ArrayList<OrderDTO>request_selected_list(OrderDTO order);
 }

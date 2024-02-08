@@ -11,6 +11,8 @@
 		bir = document.getElementById("date");
 		
 		bir.value = today
+		
+		
 		let table = document.getElementById('consume');
 		// tr 개수 새는 함수
 		let rowList = table.rows;

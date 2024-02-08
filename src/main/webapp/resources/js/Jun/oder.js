@@ -1,16 +1,39 @@
 $(document).ready(function(){
-	
+	// select 시 내용 변경
+	 $("#supSelect").change(function(){
+		let supplier = $("select[name=bank] option:selected").text();
+		alert("aaaaaa")
+		order={
+				'supplier' : supplier			
+		}	
+		 $.ajax({
+				url : "orderSlected",
+				type : "POST",
+				data:JSON.stringify(order),
+				dataType : 'json',
+				success: function(result){ 
+		        	console.log("success");
+		        },
+			     error : function() {
+			 		console.log("error");
+			 	}
+			})
+     });
+	// 발주 부턴 누를때
 	$(document).on("click", "button[name='order']",function(){
 		// 선택된 check box 개수
-		let checkboxLength=$("input[name='checkList']:checked").length;
+		let checkedboxLength=$("input[name='checkList']:checked").length;
+		let checkboxLength=$("input[name='checkList']").length;
 		let checkData = new Array();
 		let tdArr = new Array();
 		let trArr = new Array();
-		let checkdbox = $("input[name='checkList']:checked");
-		
-		checkdbox.each(function(i){
+		let checkedbox = $("input[name='checkList']:checked");
+		let checkbox = $("input[name='checkList']");
+
+	
+		checkedbox.each(function(i){
 			
-			let tr = checkdbox.parent().parent().eq(i);
+			let tr = checkedbox.parent().parent().eq(i);
 			let td = tr.children();
 			
 			// 체크된 row의 모든 값을 배열에 담는다.
@@ -52,42 +75,42 @@ $(document).ready(function(){
 		});
 		console.log(tdArr);
 		console.log(checkboxLength);
-		let checkboolean = true;
-		for(i=1; i<checkboxLength; i++){
-			if(tdArr[i*0]==tdArr[i*1]){
-				checkboolean = true;
-			}else{
-				checkboolean = false;
+		// 체크박스 선택 유무 체크
+		if(checkedbox.val() == null){
+			alert("목록을 선택해 주세요.")
+		}
+		else{
+			let checkboolean = true;
+			for(i=0; i<checkedboxLength; i++){
 				
-				break;
+				if(tdArr[0]==tdArr[i]){
+					checkboolean = true;
+				}else{
+					checkboolean = false;
+					
+					break;
+				}
+			}
+			
+			if(checkboolean == true){
+				let chk_arr = [];
+
+				// 1.
+				$("input[name='checkList']:checked").each(function(){
+					chk_arr.push($(this).val()); // push: 배열에 값 삽입
+				});
+
+				//출력
+				console.log(chk_arr);
+				//document.getElementById('result').innerText = chk_arr;
+				window.location = "http://localhost:8080/A?chk_arr="+chk_arr+"";
+				//alert("발주신청페이지"); 
+				
+			}else{
+				alert("같은 공급회사를 선택해 주세요")
 			}
 		}
-		
-		if(checkboolean == true){
-			let chk_arr = [];
 
-			// 1.
-			$("input[name='checkList']:checked").each(function(){
-				chk_arr.push($(this).val()); // push: 배열에 값 삽입
-			});
-			
-			console.log(chk_arr);
-
-			
-		
-			//출력
-			console.log(chk_arr);
-			//document.getElementById('result').innerText = chk_arr;
-			window.location = "http://localhost:8080/A?chk_arr="+chk_arr+"";
-			//alert("발주신청페이지"); 
-			
-		}else{
-			alert("같은 공급회사를 선택해 주세요")
-		}
-
-		
-
-	
 	});
 	
 	
