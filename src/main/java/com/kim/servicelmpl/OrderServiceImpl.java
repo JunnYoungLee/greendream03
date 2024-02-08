@@ -38,7 +38,12 @@ public class OrderServiceImpl implements OrderService {
 		om.request_check(order);
 	}
 	// 요청 리스트
-	public ArrayList<OrderDTO>request_list(YangMemberDTO login){
-		return om.request_list(login);	
+	public ArrayList<OrderDTO>request_list(OrderDTO order){
+		return om.request_list(order);	
+	}
+	
+	// 선택된 요청 리스트
+	public ArrayList<OrderDTO>request_selected_list(OrderDTO order){
+		return om.request_selected_list(order);	
 	}
 }

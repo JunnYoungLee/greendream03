@@ -45,8 +45,16 @@
 	 	unit_price*request_quantity as supply_price,
 	 	unit_price*request_quantity*0.1 as surtax,
 	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price
-	 	from request_check
-	 	where dept = #{dept} ;
+	 	from request_check;
+	 </select>
+	 
+	 <select id="request_selected_list" resultType="com.kim.model.OrderDTO">
+	 	select *, 
+	 	unit_price*request_quantity as supply_price,
+	 	unit_price*request_quantity*0.1 as surtax,
+	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price
+	 	from request_check;
+	 	where supplier = #{supplier}
 	 </select>
 	 
 </mapper>
