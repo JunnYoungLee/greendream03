@@ -45,13 +45,9 @@
 	</select>
 	
 	<insert id="supplyOrder">
-	insert 
-		into medical_order(dept, medical_supply_code, medical_supplies_name, standard, unit, supplier,
-		 					unit_price, person_in_charge, special_note, progress_status) 
-		(select dept, medical_supply_code, medical_supplies_name, standard, unit, s.supplier, 
-				unit_price, person_in_charge, special_note, progress_status  
-		 from supplier s join request_check r on s.supplier = r.supplier where r.rno=#{rno})
-		;
+		insert into medical_order(dept, medical_supply_code, medical_supplies_name, standard, unit, supplier, unit_price, order_quantity, person_in_charge, special_note, progress_status) 
+		(select dept, medical_supply_code, medical_supplies_name, standard, unit, s.supplier, unit_price, request_quantity, person_in_charge, special_note, progress_status  
+		from supplier s join request_check r on s.supplier = r.supplier where r.rno=#{rno});
 	</insert>
 	
 	<!-- 구매 요청 목록에서 발주 신청할 때 여러개의 목록 중 회사는 하나만 가져오기 -->
@@ -73,6 +69,10 @@
 		
 <!-- 		select * from supplier order by no asc -->
 	</select>
+	
+	<!-- <select id = "supplyList_2" resultMap="join_supplier">
+		select * from (select @rownum:=@rownum+1 rownum, s.* from supplier s, (select @rownum:=0) as tmp) as supplyList where supplier = (select supplier from request_check where rno=4)
+	</select> -->
 	
 	<!-- 구매 요청 페이지  -->
 	<select id = "purchaseList" resultType="com.kim.model.OrderDTO">
@@ -101,7 +101,8 @@
 		from (
 				select @rownum:=@rownum+1 rownum, mo.*
 				from medical_order mo, (select @rownum:=0) as tmp
-			) as supplyOrderList		
+			) as supplyOrderList
+		
 	</select>
 	
 	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">

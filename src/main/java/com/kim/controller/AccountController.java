@@ -39,7 +39,7 @@ public class AccountController {
 			
 			aa.addAll(ss.purchaseList(chk_arr.get(i))); // 배열의 인덱스값을 이용해서  rno값을 찾음 
 					
-			total += (aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() + aa.get(i).getUnit_price() * 0.1 ); 
+			total += (aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() + aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() * 0.1 ); 
 		}
 
 		model.addAttribute("total", total);
@@ -79,14 +79,23 @@ public class AccountController {
 		
 		// 거래명세서 페이지
 		@PostMapping("T")
-		public String transctionPage(Model model,SupplyOrderDTO supplyOrder, HttpServletRequest request) {
+		public String transactionPage(Model model,SupplyOrderDTO supplyOrder, HttpServletRequest request) {
+			
+			ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
+			model.addAttribute("join_supplier", join_supplier);
+			
+			String total = request.getParameter("total");
+			//System.out.println(total);
+			model.addAttribute("total", total);
 			
 			String[] hidden = request.getParameterValues("hidden");
 			for (int i = 0; i < hidden.length; i++) {
-				System.out.println(hidden[i]);
+				//System.out.println(hidden[i]);
+				model.addAttribute("hidden", hidden[i]);
 			}
-			ss.supplyOrder(supplyOrder);
-			
+			if (hidden != null) {
+				ss.supplyOrder(supplyOrder);
+			}
 			List<SupplyDTO> supplyList = ss.supplyList();
 			model.addAttribute("supplyList", supplyList);
 			
