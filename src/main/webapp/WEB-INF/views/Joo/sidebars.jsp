@@ -25,7 +25,12 @@
 
 <main>
 
-  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;
+   <c:choose>
+	<c:when test="${sessionScope.yldto eq null}">visibility:hidden;
+	</c:when>
+	</c:choose>
+  ">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Staff Only</span>
@@ -46,7 +51,12 @@
         </div>
       </li>
 
-      <li class="mb-1">
+      <li class="mb-1"style=
+       <c:choose>
+	<c:when test="${sessionScope.yldto.dept ne '재무과'}">"display:none;"
+	</c:when>
+	</c:choose>
+      >
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
           	발주관리
         </button>
