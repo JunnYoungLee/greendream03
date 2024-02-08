@@ -98,3 +98,14 @@ create table consumption_check(
     date date,
     person_in_charge varchar(20)
 );
+
+create table dht (
+	hdb varchar(4),
+    tdb varchar(4),
+    dtim varchar(20),
+    user varchar(100),
+    utim datetime default current_timestamp,
+    useruptim datetime default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
+    motion varchar(1),
+    mtime varchar(20)
+);
