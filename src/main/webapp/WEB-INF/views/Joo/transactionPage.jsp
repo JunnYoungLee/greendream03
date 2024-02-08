@@ -21,7 +21,7 @@
 	<div>
 	<table class="table table-bordered table-sm" id="tableContainer">
 	<c:forEach items="${select_supplier}" var="join_supplier">
-		<input type="hidden" name="hidden" value="${join_supplier.rno}">
+		<input type="hidden" name="hidden" id="hidden" value="${join_supplier.rno}">
 	</c:forEach>
 	<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
 		<tr>	

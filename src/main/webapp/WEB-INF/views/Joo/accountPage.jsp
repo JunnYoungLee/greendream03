@@ -110,7 +110,6 @@
 			</td>
 		</tr>
 		<c:forEach items="${select_supplier}" var="join_supplier">
-		<input type="hidden" name="hidden" value="${join_supplier.rno}">
 		<tr>
 			<td>
 				<p>상호</p>
@@ -198,9 +197,14 @@
 			</td>
 		</tr>
 		<c:forEach items="${purchaseList}" var="purchaseList" varStatus="abc">
+		<input type="hidden" value="${purchaseList.rno}" id="ss${abc.index}">
+		<input type="hidden" value="${purchaseList.supply_price}" id="supply_price">
+		<input type="hidden" value="${purchaseList.surtax}" id="surtax">
+		<input type="hidden" value="${purchaseList.total_price}" id="total_price">
+		
 		<tr>
 			<td>
-				${abc.count}
+				${abc.count}${purchaseList.rno}
 			</td>
 			<td>
 				${purchaseList.medical_supply_code}
@@ -253,13 +257,12 @@
 	
 	<div class="buttonContainer">
 		<div class="button">
-			<button type="button" id="supplyOrder" class="btn btn-outline-dark" >신청하기</button>
+			<button type="button" id="supplyOrder" class="btn btn-outline-dark" >발주하기</button>
 		</div>
 	</div>
 	
 </div>
-<script src="/../../resources/js/Jun/accountPage.js"></script>
-<script src="/../../resources/js/Joo/transactionPage.js"></script>
+<script src="/../../resources/js/Joo/accountPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 

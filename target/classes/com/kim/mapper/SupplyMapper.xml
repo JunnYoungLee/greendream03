@@ -44,6 +44,7 @@
 		from supplier s join request_check r on s.supplier = r.supplier;
 	</select>
 	
+	<!-- 발주 db에 insert -->
 	<insert id="supplyOrder">
 		insert into medical_order(dept, medical_supply_code, medical_supplies_name, standard, unit, supplier, unit_price, order_quantity, person_in_charge, special_note, progress_status) 
 		(select dept, medical_supply_code, medical_supplies_name, standard, unit, s.supplier, unit_price, request_quantity, person_in_charge, special_note, progress_status  
@@ -106,7 +107,7 @@
 	</select>
 	
 	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">
-	select * from  request_check;
+		select * from  request_check;
 	</select>
 
 
