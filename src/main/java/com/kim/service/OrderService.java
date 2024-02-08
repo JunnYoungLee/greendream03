@@ -19,5 +19,7 @@ public interface OrderService {
 	// 요청 리스트
 	public ArrayList<OrderDTO>request_list(OrderDTO order);	
 	// 선택된 요청 리스트
-	public ArrayList<OrderDTO>request_selected_list(OrderDTO order);
+	public ArrayList<OrderDTO>request_selected_list(String supplier);
+	// 요청 리스트 삭제
+	public void request_delete(String del_rno);
 }

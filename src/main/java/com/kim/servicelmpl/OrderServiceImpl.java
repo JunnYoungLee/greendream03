@@ -43,7 +43,11 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	// 선택된 요청 리스트
-	public ArrayList<OrderDTO>request_selected_list(OrderDTO order){
-		return om.request_selected_list(order);	
+	public ArrayList<OrderDTO>request_selected_list(String supplierr){
+		return om.request_selected_list(supplierr);	
+	}
+	// 요청 리스트 삭제
+	public void request_delete(String del_rno) {
+		om.request_delete(del_rno);	
 	}
 }

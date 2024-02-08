@@ -31,25 +31,20 @@
 			</a>
 		</label>
 	</div>
-     
+     <form action="logout">
        	<div id="K_information">
        		<div id="K_dept"> 부서 : ${yldto.dept} </div>
        		<div id="K_name"> 이름 : ${yldto.name} </div>
-       		<a id="K_logout"> 로그아웃 </a>
+       		<input type="submit" id="K_logout" value="로그아웃">
        	</div>
+       </form>
      
      </header>
   </div>
 </main>
 </body>
-<script type="text/javascript">
 
-$('#K_logout').on("click", function(){
-	localStorage.clear();
-	console.log('로그아웃 성공');
-	location.href = 'http://localhost:8080';
-});
 
-</script>
+
 </html>
  

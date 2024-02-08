@@ -32,16 +32,27 @@
 
 <div class="main">
 	<div id="inline">
-
-		<div>
-		<select id="supSelect" name="supplier">
-		   <option value="all" selected>공급사 전체</option>
-		   <option value="gr">그린제약</option>
-		   <option value="dr">드림제약</option>
-		   <option value="sj">세정코리아</option>
-		   <option value="mi">미래드림</option>
-		</select>
-		</div>
+	
+			<div>
+			<select id="supSelect" name="supplier">
+			   <option value="all" 
+			   <c:choose>
+				   <c:when test="${sessionScope.supplier eq null}">selected="selected"
+				   </c:when>
+				   <c:when test="${sessionScope.supplier eq '전체보기'}">selected="selected"
+				   </c:when>
+				   <c:otherwise>
+					
+				   </c:otherwise> 
+			  </c:choose>
+			  >전체보기</option>
+			   <option value="gr" <c:if test="${sessionScope.supplier eq '그린제약'}">selected="selected"</c:if>>그린제약</option>
+			   <option value="dr" <c:if test="${sessionScope.supplier eq '드림제약'}">selected="selected"</c:if>>드림제약</option>
+			   <option value="sj" <c:if test="${sessionScope.supplier eq '세정코리아'}">selected="selected"</c:if>>세정코리아</option>
+			   <option value="mi" <c:if test="${sessionScope.supplier eq '미래드림'}">selected="selected"</c:if>>미래드림</option>
+			</select>
+			</div>
+	
 	</div>
 	
 	<div>
@@ -100,6 +111,7 @@
 	<div id="aaa"></div>
 
 	<div class="buttonContainer">
+	<button type="button" id="allselect" class="btn btn-outline-dark">전체선택</button>
 	<button type="button" id="order" name="order" class="btn btn-outline-dark">발주</button>
 	<button type="button" id="delete" class="btn btn-outline-dark">삭제</button>
 	</div>
