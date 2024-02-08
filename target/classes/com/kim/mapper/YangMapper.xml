@@ -20,15 +20,15 @@
 	<!-- id로 Mapper에 연결한다. -->
 	
 	<select id="loginCheck" resultType="int">
-		select count(*) from membership where id = #{id} and password = #{password};
+		select count(*) from membership where id = #{id} and password = #{password}
 	</select>
 	
 	<select id="loginCheck_value" resultType="com.kim.model.YangMemberDTO">
-		select * from membership where id = #{id} and password = #{password};
+		select * from membership where id = #{id} and password = #{password}
 	</select>
 	
 	<update id="userReference">
-		update dht set #{user}='' where #{dtim}='';
+		update dht set user=#{user},utim=#{utim} where tno = #{tno}
 	</update>
 	
 </mapper>

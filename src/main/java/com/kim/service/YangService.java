@@ -3,6 +3,7 @@ package com.kim.service;
 
 import java.util.ArrayList;
 
+import com.kim.model.ReferenceDTO;
 import com.kim.model.YangMemberDTO;
 
 public interface YangService {
@@ -17,5 +18,7 @@ public interface YangService {
 	
 	//informtion은 로그인 후에 name, dept를 나타내는 변수
 	public ArrayList<YangMemberDTO> informtion();
+	
+	public void userReference(ReferenceDTO userdto);
 
 }
