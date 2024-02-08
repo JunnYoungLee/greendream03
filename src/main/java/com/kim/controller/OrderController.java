@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -74,16 +75,28 @@ public class OrderController {
 	// 의료용품 발주관리 페이지
 	@GetMapping("order")
 	public String order(Model model,OrderDTO order, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String supplier = (String) session.getAttribute("supplier");
 		
-		model.addAttribute("inList", os.request_list(order));
+		if(supplier == null) {
+			model.addAttribute("inList", os.request_list(order));
+		
+		}else if ( supplier.equals("전체보기")) {
+			model.addAttribute("inList", os.request_list(order));
+	
+		}else {
+			model.addAttribute("inList", os.request_selected_list(supplier));
+	
+		}
+	
 		return "Jun/order";
 	}
+	@ResponseBody
 	@PostMapping("orderSlected")
-	public String orders(Model model,@RequestBody OrderDTO order, HttpServletRequest request) {
-		System.out.println("aaa");
-		model.addAttribute("inList", os.request_selected_list(order));
-		System.out.println("inList");
-		return "Jun/order";
+	public void orders(Model model,@RequestParam("supplier") String supplier,OrderDTO order, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.setAttribute("supplier", supplier);
+	
 	}
 	
 	// 날짜 세션 저장
@@ -123,6 +136,16 @@ public class OrderController {
 		System.out.println(order);
 			
 		os.request_check(order);
+		
+		
+	}
+	// 구매요청 삭제
+	@ResponseBody
+	@PostMapping("requestDelete")
+	public  void requestDelete(@RequestParam("del_rno") String del_rno) {
+		System.out.println(del_rno);
+		System.out.println("aa");
+		os.request_delete(del_rno);
 		
 		
 	}

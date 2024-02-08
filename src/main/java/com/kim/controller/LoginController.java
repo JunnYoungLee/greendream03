@@ -1,5 +1,7 @@
 package com.kim.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -7,11 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kim.mapper.YangMapper;
+import com.kim.model.SupplyDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.YangService;
 
@@ -57,4 +62,12 @@ public class LoginController {
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 
+	@GetMapping("logout")
+	public String logout(HttpSession session) {
+		
+		
+		session.invalidate();
+
+		return "redirect:/";
+	}
 }
