@@ -48,6 +48,8 @@ public class AccountController {
 		model.addAttribute("total", total);
 		model.addAttribute("select_supplier", ss.select_supplier(aa.get(0).getSupplier())); // 첫번째 나온 값의 회사 정보 출력
 		model.addAttribute("purchaseList", aa);
+		model.addAttribute("orderMember", ss.orderMember());
+		
 		
 		ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
 		model.addAttribute("join_supplier", join_supplier);
@@ -69,18 +71,21 @@ public class AccountController {
 	@GetMapping("transactionPage")
 	public String transactionPage(Model model,SupplyOrderDTO supplyOrder, HttpServletRequest request) {
 		
-		System.out.println("a");
-		
+		// rno
 		String hidden = request.getParameter("hidden");
 		model.addAttribute("hidden", hidden);
+		System.out.println(hidden);
 		
+		// total
 		String total = request.getParameter("total");
-		//System.out.println(total);
 		model.addAttribute("total", total);
+		System.out.println(total);
 		
+		// 공급회사
 		List<SupplyDTO> supplyList = ss.supplyList();
 		model.addAttribute("supplyList", supplyList);
 		
+		// 발주 목록
 		List<SupplyOrderDTO> supplyOrderList = ss.supplyOrderList();
 		model.addAttribute("supplyOrderList", supplyOrderList);
 		
@@ -91,6 +96,7 @@ public class AccountController {
 	@GetMapping("TssT")
 	public void SS(@RequestParam("supply_price") String supply_price, @RequestParam("surtax") String surtax,
 					@RequestParam("total_price") String total_price, @RequestParam("order_date") String order_date,
+					@RequestParam("total") String total, @RequestParam("hidden") String hidden,
 					@RequestParam("list[]") List<Integer> list, SupplyOrderDTO data) {
 					
 		System.out.println(list);

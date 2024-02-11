@@ -9,9 +9,6 @@ $(document).ready(function(){
 		let total_price = $('#total_price').val();
 		let order_date = $('#date').val();
 		
-		let total = $('#total').val();
-		let hidden = $('#hidden').val();
-		
 	$(document).on("click", "#supplyOrder",function(){
 		
 		list.length = 0;
@@ -29,10 +26,7 @@ $(document).ready(function(){
 					'supply_price':supply_price,
 					'surtax':surtax,
 					'total_price':total_price,
-					'order_date':order_date,
-					'total':total,
-					'hidden':hidden
-					
+					'order_date':order_date
 			}, 
 	        dataType: JSON.stringify(),
 	        contentType:'application/json;charset=UTF-8',
@@ -44,10 +38,8 @@ $(document).ready(function(){
 		    	//alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		 	}
 		});	
-		
-		window.location = "http://localhost:8080/transactionPage";
 	  
 	});
 
-	
+	window.location = "http://localhost:8080/transactionPage";
 });

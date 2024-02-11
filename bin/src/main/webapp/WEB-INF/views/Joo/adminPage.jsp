@@ -43,7 +43,6 @@
   </div>
 </main>
 </div>
-
 <div class="sidebars">
 <!-- 메뉴 사이드 바 -->
 <jsp:include page = "sidebars.jsp" ></jsp:include>
@@ -51,18 +50,10 @@
 
 <div class="main">
 
-<c:if test="${empty sessionScope.yldto}">
 <div id="loginBox">
 	<jsp:include page = "../Yang/YangLogin.jsp" ></jsp:include>
 </div>
-</c:if>
-
-<c:if test="${not empty sessionScope.yldto}">
-<div id="menu">
-	<jsp:include page = "main.jsp" ></jsp:include>
-</div>
-</c:if>
-
+	
 </div>
 
 

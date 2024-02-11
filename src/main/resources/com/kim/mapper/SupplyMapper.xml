@@ -40,7 +40,7 @@
 
 	<!-- resultMap ='join_supplier' 같은 resultMap을 찾아서 실행  -->
 	<select id = "join_supplier" resultMap="join_supplier">
-		select s.supplier , supplier_person, location, contact_infomation, email, rno
+		select s.supplier , supplier_person, location, contact_infomation, email, r.rno
 		from supplier s join request_check r on s.supplier = r.supplier;
 	</select>
 	
@@ -51,9 +51,17 @@
 		from supplier s join request_check r on s.supplier = r.supplier where r.rno=#{rno});
 	</insert>
 	
+	<!-- 발주 db insert 한번에 따로 담는 방법 찾다가 update로.. 방법 찾을시 수정 -->
+	<!-- 안 될 시 sql에서 safe모드 해제 -> set sql_safe_updates=0; -->
+<!-- 	<update id="supplyOrder_2">
+		update medical_order set supply_price=#{supply_price},
+			 surtax=#{surtax}, total_price=#{total_price}, order_date=#{order_date} 
+		where (select r.rno from supplier s join request_check r on s.supplier = r.supplier where r.rno=#{rno}) =#{rno}
+	</update> -->
+	
 	<!-- 구매 요청 목록에서 발주 신청할 때 여러개의 목록 중 회사는 하나만 가져오기 -->
 	<select id="select_supplier" resultMap="join_supplier">
-		select s.supplier , supplier_person, location, contact_infomation, email, rno
+		select s.supplier , supplier_person, location, contact_infomation, email, r.rno
 		from supplier s join request_check r on s.supplier = r.supplier where s.supplier = #{supplier} limit 1;
 	</select> 
 	
@@ -63,7 +71,7 @@
 			(
 				select @rownum:=@rownum+1 rownum, s.*
 				from supplier s, (select @rownum:=0) as tmp
-			) as supplyList
+			) as supplyList where supplier = #{supplier} limit 1;
 <!-- 		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
 		]]> -->
@@ -106,11 +114,18 @@
 		
 	</select>
 	
+	<select id = "orderMember" resultType="com.kim.model.YangMemberDTO">
+		select * from membership where (name = (select person_in_charge from request_check) and dept = (select dept from request_check));
+	</select>
+	
 	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">
 		select * from  request_check;
 	</select>
-
-
+	
+	<!-- 입고 완료 리스트 -->
+<!-- 	<select id="storeList" resultType="com.kim.model.SupplyOrderDTO">
+		select * from warehousing where Progress_status='완료'
+	</select> -->
 
 	
 </mapper>

@@ -11,6 +11,7 @@ import com.kim.mapper.SupplyMapper;
 import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.SupplyOrderDTO;
+import com.kim.model.YangMemberDTO;
 import com.kim.service.SupplyService;
 
 @Service
@@ -53,5 +54,9 @@ public class SupplyServiceImpl implements SupplyService {
 	public ArrayList<HashMap<String, Object>> select_supplier(String supplier){
 		return sm.select_supplier(supplier);
 	}
-
+	
+	public ArrayList<YangMemberDTO> orderMember(){
+		return sm.orderMember();
+	}
+	
 }
