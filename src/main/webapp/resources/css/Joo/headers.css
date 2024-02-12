@@ -21,7 +21,7 @@
 	#K_information {
     	width: 250px;
     	border: 2px solid rgba(0,153,153,0.5);
-    	border-radius: 10px;
+    	border-radius: 5px;
     }
     
 	#K_information div {
@@ -36,13 +36,13 @@
 	}
 	
 	#K_logout {
-    	display: inline-block;
-    	position: absolute;
-    	top: 21%;
-    	right: 17.5%;
-    	background-color: #fff;
-    	border-radius: 10px;
-    	cursor: pointer;
+	   display: inline-block;
+	   position: absolute;
+	   top: 3.5%;
+	   right: 10%;
+	   background-color: #fff;
+	   border-radius: 5px;
+	   cursor: pointer;	
 	}
 	
 	#K_dept, #K_name, #K_logout{
