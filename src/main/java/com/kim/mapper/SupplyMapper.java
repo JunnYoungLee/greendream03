@@ -28,5 +28,7 @@ public interface SupplyMapper {
 	public ArrayList<HashMap<String, Object>> select_supplier(String join_supplier);
 	
 	public ArrayList<YangMemberDTO> orderMember();
+	
+	public List<SupplyOrderDTO> storeList();
 
 }

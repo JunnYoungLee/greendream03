@@ -14,23 +14,21 @@
 <body>
 
 <div class="buttonContainer">
-
 <div class="invenBtn">
-<button type="button" class="btn btn-outline-dark"><a href="management"> 재고 조회 </a></button>
-<button type="button" class="btn btn-outline-dark"><a href="consume"> 사용 기록 </a></button>
-<button type="button" class="btn btn-outline-dark"><a href="order"> 구매 요청 </a></button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='management'"> 재고 조회 </button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='consume'"> 사용 기록 </button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='request'"> 구매 요청 </button>
 </div>
 
 <div class="orderBtn">
-<button type="button" class="btn btn-outline-dark"><a href="A"> 요청 목록 </a></button>
-<button type="button" class="btn btn-outline-dark"><a href="#"> # </a></button>
-<button type="button" class="btn btn-outline-dark"><a href="#"> 발주 완료 </a></button>
+<button type="button" class="btn btn-outline-dark buttonClass balju" onclick="location.href='order'"> 발주 요청 목록 </button>
+<button type="button" class="btn btn-outline-dark buttonClass balju"> 발주 완료 목록 </button>
 </div>
 
 <div class="storeBtn">
-<button type="button" class="btn btn-outline-dark"><a href="#"> 입고 일정 </a></button>
-<button type="button" class="btn btn-outline-dark"><a href="#"> 입고 현황 </a></button>
-<button type="button" class="btn btn-outline-dark"><a href="#"> 입고 확인 </a></button>
+<button type="button" class="btn btn-outline-dark buttonClass"> 입고 일정 </button>
+<button type="button" class="btn btn-outline-dark buttonClass"> 입고 현황 </button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='storeList'"> 입고 확인 </button>
 </div>
 
 </div>

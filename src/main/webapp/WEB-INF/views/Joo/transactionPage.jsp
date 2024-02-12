@@ -18,8 +18,9 @@
 <body>
 
 <div class="main">
+<div id="print">
 	<div>
-	<table class="table table-bordered table-sm" id="tableContainer">
+	<table class="table table-bordered table-sm tableClass" id="tableContainer">
 	<c:forEach items="${join_supplier}" var="join_supplier">
 		<input type="hidden" name="hidden" id="hidden" value="${join_supplier.rno}">
 		<input type="hidden" name="supplier" id="supplier" value="${join_supplier.supplier}">
@@ -37,12 +38,14 @@
 			<td rowspan="5"><p></p></td>
 			<td colspan="5">공급자</td>
 		</tr>
+		<c:forEach items="${supplyOrderList}" var="supplyOrderList">
 		<tr>
-			<td rowspan="2">부서명</td>
-			<td rowspan="2"><input></td>
+			<td rowspan="2" style="vertical-align: middle;">부서명</td>
+			<td rowspan="2"style="vertical-align: middle;">${supplyOrderList.dept}</td>
 			<td>사업자번호</td>
 			<td colspan="4"><input></td>
 		</tr>
+		</c:forEach>
 		<tr>
 			<td>업체명</td>
 			<td><input></td>
@@ -51,7 +54,7 @@
 		</tr>
 		<tr>
 			<td>발주담당자</td>
-			<td><input></td>
+			<td>${sessionScope.yldto.name}</td>
 			<td>주소</td>
 			<td colspan="3"><input></td>
 		</tr>
@@ -71,7 +74,7 @@
 	</div>
 	
 	<div>
-	<table class="table table-bordered table-sm" id="tableContainer">
+	<table class="table table-bordered table-sm tableClass" id="tableContainer">
 		<colgroup>
 			<col width=5%>
 			<col width=25%>
@@ -118,6 +121,7 @@
 		</tr>
 	</table>
 	</div>
+</div>
 	
 	<div class="buttonContainer">
 		<button type="button" id="app" class="btn btn-outline-dark">인쇄</button>

@@ -107,10 +107,11 @@
 	<!-- 거래명세서  -->
 	<select id = "supplyOrderList" resultType="com.kim.model.SupplyOrderDTO">
 		select * 
-		from (
-				select @rownum:=@rownum+1 rownum, mo.*
-				from medical_order mo, (select @rownum:=0) as tmp
-			) as supplyOrderList
+      	from (
+            select @rownum:=@rownum+1 rownum, mo.*
+            from medical_order mo, (select @rownum:=0) as tmp
+                order by rno desc
+         ) as supplyOrderList where rownum=1 ;
 		
 	</select>
 	
@@ -123,9 +124,9 @@
 	</select>
 	
 	<!-- 입고 완료 리스트 -->
-<!-- 	<select id="storeList" resultType="com.kim.model.SupplyOrderDTO">
+	<select id="storeList" resultType="com.kim.model.SupplyOrderDTO">
 		select * from warehousing where Progress_status='완료'
-	</select> -->
+	</select>
 
 	
 </mapper>

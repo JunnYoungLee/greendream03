@@ -39,6 +39,7 @@ public class SupplyServiceImpl implements SupplyService {
 
 		return sm.supplyOrderList();
 	}
+	
 	public int purchaseSum(OrderDTO order){
 		return sm.purchaseSum(order);
 	}
@@ -57,6 +58,11 @@ public class SupplyServiceImpl implements SupplyService {
 	
 	public ArrayList<YangMemberDTO> orderMember(){
 		return sm.orderMember();
+	}
+	
+	public List<SupplyOrderDTO> storeList(){
+
+		return sm.supplyOrderList();
 	}
 	
 }

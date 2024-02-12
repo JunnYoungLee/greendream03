@@ -45,6 +45,8 @@ public class AccountController {
 			total += (aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() + aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() * 0.1 ); 
 		}
 
+		System.out.println(total);
+		
 		model.addAttribute("total", total);
 		model.addAttribute("select_supplier", ss.select_supplier(aa.get(0).getSupplier())); // 첫번째 나온 값의 회사 정보 출력
 		model.addAttribute("purchaseList", aa);
@@ -84,6 +86,7 @@ public class AccountController {
 		// 공급회사
 		List<SupplyDTO> supplyList = ss.supplyList();
 		model.addAttribute("supplyList", supplyList);
+		System.out.println(supplyList);
 		
 		// 발주 목록
 		List<SupplyOrderDTO> supplyOrderList = ss.supplyOrderList();
@@ -136,6 +139,15 @@ public class AccountController {
 		
 		return "Joo/memberPage";
 	}
-
+	
+	// 입고 완료
+	@GetMapping("storeList")
+	public String storeList(Model model) {
+	
+		List<SupplyOrderDTO> storeList = ss.storeList();
+		model.addAttribute("storeList", storeList);
+		
+		return "Joo/storeList";
+	}
 	
 }

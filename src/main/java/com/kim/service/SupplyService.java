@@ -28,5 +28,6 @@ public interface SupplyService {
 	public ArrayList<HashMap<String, Object>> select_supplier(String supplier);
 	
 	public ArrayList<YangMemberDTO> orderMember();
-
+	
+	public List<SupplyOrderDTO> storeList();
 }

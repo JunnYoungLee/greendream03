@@ -11,6 +11,7 @@ $(document).ready(function(){
 		
 		let total = $('#total').val();
 		let hidden = $('#hidden').val();
+		let Estimated_delivery_date = $('#sevenDayAfter').val();
 		
 	$(document).on("click", "#supplyOrder",function(){
 		
@@ -20,7 +21,8 @@ $(document).ready(function(){
 			list.push($("#ss"+ i ).val());
 		};
     	
-		alert(list);
+		alert(order_date);
+		alert(Estimated_delivery_date);
 		
 		$.ajax({
 	        type:'get', 
