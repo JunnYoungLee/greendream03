@@ -28,7 +28,17 @@
 <jsp:include page = "../Joo/sidebars.jsp" ></jsp:include>
 </div>
 
-<h3> 재고 조회 </h3>
+<h3> 재고 조회
+<c:choose>
+		 <c:when test="${sessionScope.yldto.dept eq '재무과'}">(전체)
+				   </c:when>
+				   <c:when test="${sessionScope.yldto.dept ne '재무과'}">(${sessionScope.yldto.dept})
+				   </c:when>
+				   <c:otherwise>
+					
+				   </c:otherwise> 
+			  </c:choose>
+ </h3>
 <div class="main">
 	<div>
 		<!-- <div class="rightContainer"> 관리 일자 <input type="date" id="date" name="date"></div>
