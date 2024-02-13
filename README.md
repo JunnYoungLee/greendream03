@@ -98,3 +98,24 @@ create table consumption_check(
     date date,
     person_in_charge varchar(20)
 );
+
+create table dht (
+	hdb varchar(4),
+    tdb varchar(4),
+    dtim varchar(20),
+    user varchar(100),
+    utim datetime default current_timestamp,
+    useruptim datetime default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
+    motion varchar(1),
+    mtime varchar(20)
+);
+
+create table membership (
+	id varchar(15), 	  -- 아이디
+	password varchar (12),-- 비밀번호
+    name varchar (30),	  -- 이름
+    dept varchar (15),    -- 부서
+    brh varchar (6),	  -- 생년월일
+    email varchar(30),    -- 이메일
+    pn varchar(15)        -- 휴대전화
+);
