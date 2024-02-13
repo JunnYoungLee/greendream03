@@ -18,14 +18,12 @@
 <body>
 
 <div class="main">
-<div id="print">
 	<div>
-	<table class="table table-bordered table-sm tableClass" id="tableContainer">
-	<c:forEach items="${join_supplier}" var="join_supplier">
+	<table class="table table-bordered table-sm" id="tableContainer">
+	<c:forEach items="${select_supplier}" var="join_supplier">
 		<input type="hidden" name="hidden" id="hidden" value="${join_supplier.rno}">
-		<input type="hidden" name="supplier" id="supplier" value="${join_supplier.supplier}">
 	</c:forEach>
-<%-- 	<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1"> 얘가 문제임--%>
+	<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
 		<tr>	
 			<td colspan="8"><h1>거래명세서</h1></td>
 		</tr>
@@ -38,43 +36,41 @@
 			<td rowspan="5"><p></p></td>
 			<td colspan="5">공급자</td>
 		</tr>
-		<c:forEach items="${supplyOrderList}" var="supplyOrderList">
 		<tr>
-			<td rowspan="2" style="vertical-align: middle;">부서명</td>
-			<td rowspan="2"style="vertical-align: middle;">${supplyOrderList.dept}</td>
+			<td rowspan="2">부서명</td>
+			<td rowspan="2"></td>
 			<td>사업자번호</td>
-			<td colspan="4"><input></td>
+			<td colspan="4">${supplyList.business_number}</td>
 		</tr>
-		</c:forEach>
 		<tr>
 			<td>업체명</td>
-			<td><input></td>
+			<td>${supplyList.supplier}</td>
 			<td>담당자명</td>
-			<td><input></td>
+			<td>${supplyList.supplier_person}</td>
 		</tr>
 		<tr>
 			<td>발주담당자</td>
-			<td>${sessionScope.yldto.name}</td>
+			<td></td>
 			<td>주소</td>
-			<td colspan="3"><input></td>
+			<td colspan="3">${supplyList.location}</td>
 		</tr>
 		<tr>
 			<td>총 합계</td>
 			<td >${total}</td>
 			<td>전화</td>
-			<td><input></td>
+			<td>${supplyList.contact_infomation}</td>
 			<td>메일</td>
-			<td><input></td>
+			<td>${supplyList.email}</td>
 		</tr>
 		<tr>
 			<td colspan="8"><p></p></td>
 		</tr>
-	
+	</c:forEach>
 	</table>
 	</div>
 	
 	<div>
-	<table class="table table-bordered table-sm tableClass" id="tableContainer">
+	<table class="table table-bordered table-sm" id="tableContainer">
 		<colgroup>
 			<col width=5%>
 			<col width=25%>
@@ -91,10 +87,9 @@
 			<td>수량</td>
 			<td>단가</td>
 			<td>공급가액</td>
-			<td>부가세</td>
+			<td>세액(공급가액*10%)</td>
 		</tr>
 		<c:forEach items="${supplyOrderList}" var="supplyOrderList" varStatus="abc">
-		<input type="hidden" value="${supplyOrderList.supplier}">
 		<tr>
 			<td>${abc.count}</td>
 			<td>${supplyOrderList.medical_supplies_name}</td>
@@ -102,7 +97,7 @@
 			<td>${supplyOrderList.order_quantity}</td>
 			<td>${supplyOrderList.unit_price}</td>
 			<td>${supplyOrderList.supply_price}</td>
-			<td>${supplyOrderList.surtax}</td>
+			<td></td>
 		</tr>
 		</c:forEach>
 		<tr>
@@ -121,7 +116,6 @@
 		</tr>
 	</table>
 	</div>
-</div>
 	
 	<div class="buttonContainer">
 		<button type="button" id="app" class="btn btn-outline-dark">인쇄</button>
