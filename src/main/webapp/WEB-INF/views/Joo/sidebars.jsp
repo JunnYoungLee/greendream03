@@ -63,7 +63,7 @@
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="order" class="link-dark rounded">&emsp;&emsp;구매 요청 목록</a></li>
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;발주 요청 목록</a></li>
+            <li><a href="complete" class="link-dark rounded">&emsp;&emsp;발주 완료 목록</a></li>
           </ul>
         </div>
       </li>
@@ -74,9 +74,20 @@
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 일정</a></li>
             <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 현황</a></li>
             <li><a href="storeList" class="link-dark rounded">&emsp;&emsp;입고 확인</a></li>
+          </ul>
+        </div>
+      </li>
+      
+            <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          	물품관리
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
+
           </ul>
         </div>
       </li>

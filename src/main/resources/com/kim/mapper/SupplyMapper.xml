@@ -130,8 +130,12 @@
 	
 	<!-- 입고 완료 리스트 -->
 	<select id="storeList" resultType="com.kim.model.SupplyOrderDTO">
-		select * from warehousing where Progress_status='완료'
+		select * from warehousing where progress_status='완료'
 	</select>
 
+	<!-- 발주 완료 -->
+<!-- 	<selete id = "complete"  resultType="com.kim.model.SupplyOrderDTO">
+		select * from medical_order where progress_status='발주완료'
+	</selete> -->
 	
 </mapper>

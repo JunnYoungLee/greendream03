@@ -37,38 +37,32 @@
 			<td rowspan="5"><p></p></td>
 			<td colspan="5">공급자</td>
 		</tr>
-		<c:forEach items="${supplyOrderList}" var="supplyOrderList" begin="1" end="1">
 		<tr>
 			<td rowspan="2" style="vertical-align: middle;">부서명</td>
-			<td rowspan="2"style="vertical-align: middle;">${supplyOrderList.dept}</td>
-			<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
+			<td rowspan="2"style="vertical-align: middle;">${supplyOrderList[0].dept}</td>
 			<td>사업자번호</td>
-			<td colspan="4">${supplyList.business_number}</td>
-			</c:forEach>
+			<td colspan="4">${supplyList[0].business_number}</td>
 		</tr>
-		</c:forEach>
-		<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
 		<tr>
 			<td>업체명</td>
-			<td>${supplyList.supplier}</td>
+			<td>${supplyList[0].supplier}</td>
 			<td>담당자명</td>
-			<td>${supplyList.supplier_person}</td>
+			<td>${supplyList[0].supplier_person}</td>
 		</tr>
 		<tr>
 			<td>발주담당자</td>
 			<td>${sessionScope.yldto.name}</td>
 			<td>주소</td>
-			<td colspan="3">${supplyList.location}</td>
+			<td colspan="3">${supplyList[0].location}</td>
 		</tr>
 		<tr>
 			<td>총 합계</td>
-			<td ></td>
+			<td>${sessionScope.total}</td>
 			<td>전화</td>
-			<td>${supplyList.contact_infomation}</td>
+			<td>${supplyList[0].contact_infomation}</td>
 			<td>메일</td>
-			<td>${supplyList.email}</td>
+			<td>${supplyList[0].email}</td>
 		</tr>
-		</c:forEach>
 		<tr>
 			<td colspan="8"><p></p></td>
 		</tr>
