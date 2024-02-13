@@ -2,6 +2,7 @@ package com.kim.mapper;
 
 import java.util.ArrayList;
 
+import com.kim.model.GpsDTO;
 import com.kim.model.OrderDTO;
 import com.kim.model.YangMemberDTO;
 
@@ -23,5 +24,8 @@ public interface OrderMapper {
 	public ArrayList<OrderDTO>request_selected_list(String supplierr);
 	// 요청 리스트 삭제
 	public void request_delete(String del_rno);
-	
+	// gps 업데이트
+	public void gps_update(GpsDTO gps);
+	// gps 정보 가져오기
+	public GpsDTO gps_info(GpsDTO gps);
 }

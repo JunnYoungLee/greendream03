@@ -25,7 +25,6 @@
 		<input type="hidden" name="hidden" id="hidden" value="${join_supplier.rno}">
 		<input type="hidden" name="supplier" id="supplier" value="${join_supplier.supplier}">
 	</c:forEach>
-<%-- 	<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1"> 얘가 문제임--%>
 		<tr>	
 			<td colspan="8"><h1>거래명세서</h1></td>
 		</tr>
@@ -38,34 +37,38 @@
 			<td rowspan="5"><p></p></td>
 			<td colspan="5">공급자</td>
 		</tr>
-		<c:forEach items="${supplyOrderList}" var="supplyOrderList">
+		<c:forEach items="${supplyOrderList}" var="supplyOrderList" begin="1" end="1">
 		<tr>
 			<td rowspan="2" style="vertical-align: middle;">부서명</td>
 			<td rowspan="2"style="vertical-align: middle;">${supplyOrderList.dept}</td>
+			<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
 			<td>사업자번호</td>
-			<td colspan="4"><input></td>
+			<td colspan="4">${supplyList.business_number}</td>
+			</c:forEach>
 		</tr>
 		</c:forEach>
+		<c:forEach items="${supplyList}" var="supplyList" begin="1" end="1">
 		<tr>
 			<td>업체명</td>
-			<td><input></td>
+			<td>${supplyList.supplier}</td>
 			<td>담당자명</td>
-			<td><input></td>
+			<td>${supplyList.supplier_person}</td>
 		</tr>
 		<tr>
 			<td>발주담당자</td>
 			<td>${sessionScope.yldto.name}</td>
 			<td>주소</td>
-			<td colspan="3"><input></td>
+			<td colspan="3">${supplyList.location}</td>
 		</tr>
 		<tr>
 			<td>총 합계</td>
-			<td >${total}</td>
+			<td ></td>
 			<td>전화</td>
-			<td><input></td>
+			<td>${supplyList.contact_infomation}</td>
 			<td>메일</td>
-			<td><input></td>
+			<td>${supplyList.email}</td>
 		</tr>
+		</c:forEach>
 		<tr>
 			<td colspan="8"><p></p></td>
 		</tr>
@@ -94,7 +97,7 @@
 			<td>부가세</td>
 		</tr>
 		<c:forEach items="${supplyOrderList}" var="supplyOrderList" varStatus="abc">
-		<input type="hidden" value="${supplyOrderList.supplier}">
+		<input type="hidden" value="${supplyOrderList.supplier}" name="supplier">
 		<tr>
 			<td>${abc.count}</td>
 			<td>${supplyOrderList.medical_supplies_name}</td>
@@ -117,7 +120,7 @@
 			<td colspan="8">기타사항</td>
 		</tr>
 		<tr>
-			<td colspan="8">.</td>
+			<td colspan="8" height=100px><input type="text" id="bigo" style="width: 1000px; height:100px; border:none;" ></td>
 		</tr>
 	</table>
 	</div>

@@ -83,7 +83,7 @@
 					</tr>
 				</thead>
 				<tbody class="checkbox-part">
-				<c:forEach items="${inList}" var="list" varStatus="abc">
+				<c:forEach items="${inList}" var="list" varStatus="abc"><input type="hidden" value="${list.rno}" id="hidden" name="hidden">
 					<tr>
 						<td><input type="checkbox" name="checkList" class="chbox" value="${list.rno}"></td>
 						<td>${abc.count}</td>

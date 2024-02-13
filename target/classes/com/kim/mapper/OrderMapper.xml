@@ -61,4 +61,16 @@
 	 	delete from request_check 
 	 	where rno = #{del_rno};
 	 </delete>
+	 
+	 <update id="gps_update">
+	 	update gps
+	 	set latitude = #{latitude},
+	 	longitude = #{longitude}
+	 	where gno = 1;
+	 </update>
+	 
+	 <select id="gps_info" resultType="com.kim.model.GpsDTO">
+	 	select * from gps;
+	 </select>
+	 
 </mapper>

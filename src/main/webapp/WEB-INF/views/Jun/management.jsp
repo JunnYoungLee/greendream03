@@ -62,6 +62,25 @@
 		</table>
 	</div>
 
+<%-- <div>
+<form action="board">
+<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
+<input type="hidden" name="amount" value="${paging.cri.pageNum}">
+</form>
+
+<c:if test="${paging.prev}">
+	<a href="board?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+</c:if>
+
+<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+	<a href="board?pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+</c:forEach>
+
+<c:if test="${paging.next}">
+	<a href="board?pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
+</c:if>
+</div> --%>
+
 	<div class="buttonContainer">
 <c:if test="${sessionScope.yldto.dept ne '재무과'}">
 
