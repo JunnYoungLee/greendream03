@@ -20,9 +20,9 @@ public class SupplyServiceImpl implements SupplyService {
 	@Autowired 
 	SupplyMapper sm;
 
-	public List<SupplyDTO> supplyList(){
+	public List<SupplyDTO> supplyList(int rno){
 
-		return sm.supplyList();
+		return sm.supplyList(rno);
 	}
 
 	public ArrayList<OrderDTO> purchaseList(String chk_arr){
@@ -35,17 +35,17 @@ public class SupplyServiceImpl implements SupplyService {
 		return sm.purchaseList_1();
 	}
 
-	public List<SupplyOrderDTO> supplyOrderList(){
+	public List<SupplyOrderDTO> supplyOrderList(int rno){
 
-		return sm.supplyOrderList();
+		return sm.supplyOrderList(rno);
 	}
 	
 	public int purchaseSum(OrderDTO order){
 		return sm.purchaseSum(order);
 	}
 	
-	public void supplyOrder(int data){
-		sm.supplyOrder(data);
+	public int supplyOrder(int data){
+		return sm.supplyOrder(data);
 	}
 	
 	public ArrayList<HashMap<String, Object>> join_supplier(){
@@ -62,7 +62,7 @@ public class SupplyServiceImpl implements SupplyService {
 	
 	public List<SupplyOrderDTO> storeList(){
 
-		return sm.supplyOrderList();
+		return sm.storeList();
 	}
 	
 }

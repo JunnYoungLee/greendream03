@@ -77,25 +77,24 @@
 			<col width=10%>
 			<col width=15%>
 		</colgroup>
-		<c:forEach items="${orderMember}" var="orderMember">
 		<tr>
 			<td>
 				<p>부서</p>
 			</td>
 			<td id="dept">
-				${orderMember.dept}
+				${sessionScope.yldto.dept}
 			</td>
 			<td>
 				<p>담당자</p>
 			</td>
 			<td id="person_in_charge">
-				${orderMember.name}
+				${sessionScope.yldto.name}
 			</td>
 			<td>
 				<p>연락처</p>
 			</td>
 			<td>
-				${orderMember.pn}
+				${sessionScope.yldto.pn}
 			</td>	
 			<td>	
 				<p>발주일자</p>
@@ -106,7 +105,6 @@
 				<input type="hidden" id="date" value="${ymd}" />
 			</td>
 		</tr>
-		</c:forEach>
 		<tr>
 			<td colspan="10">
 				<input type="hidden">

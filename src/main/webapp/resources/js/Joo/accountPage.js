@@ -11,7 +11,6 @@ $(document).ready(function(){
 		
 		let total = $('#total').val();
 		let hidden = $('#hidden').val();
-		let Estimated_delivery_date = $('#sevenDayAfter').val();
 		
 	$(document).on("click", "#supplyOrder",function(){
 		
@@ -21,33 +20,28 @@ $(document).ready(function(){
 			list.push($("#ss"+ i ).val());
 		};
     	
-		alert(order_date);
-		alert(Estimated_delivery_date);
+		alert(list);
+		alert(total);
 		
 		$.ajax({
 	        type:'get', 
 	        url:'TssT',
 			data : {'list':list,
-					'supply_price':supply_price,
-					'surtax':surtax,
-					'total_price':total_price,
-					'order_date':order_date,
-					'total':total,
-					'hidden':hidden
-					
+					'total':total
 			}, 
 	        dataType: JSON.stringify(),
 	        contentType:'application/json;charset=UTF-8',
 	        success: function(){ 
 	        	console.log("success");
-	        	window.location = "http://localhost:8080/transactionPage";
+	        	window.location = "http://localhost:8080/transactionPage?list="+list+"";
+	        	history.replaceState({}, null, location.pathname)
 	        },
 		     error : function(request, status, error) {
-		    	//alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		    	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		 	}
 		});	
 		
-		window.location = "http://localhost:8080/transactionPage";
+		//window.location = "http://localhost:8080/transactionPage";
 	  
 	});
 
