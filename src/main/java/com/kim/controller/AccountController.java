@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -70,11 +71,14 @@ public class AccountController {
 	
 	// 거래명세서 페이지
 	@GetMapping("transactionPage")
-	public String transactionPage(Model model, HttpServletRequest request, 
-								@RequestParam(value= "list", required=false) List<Integer> list) {
+	public String transactionPage(Model model, HttpServletRequest request,  HttpSession session,
+								@RequestParam(value= "list", required=false) List<Integer> list ) {
 		
 		System.out.println(list);
-		//System.out.println(total);
+		
+		// 세션은 object타입이라서 
+		String total = (String) session.getAttribute("total");
+		System.out.println(total);
 		
 		ArrayList<SupplyOrderDTO> supplyod = new ArrayList<SupplyOrderDTO>();
 		ArrayList<SupplyDTO> supply = new ArrayList<SupplyDTO>();
@@ -96,10 +100,11 @@ public class AccountController {
 	@GetMapping("TssT")
 	public ResponseEntity<?> SS(/*@RequestParam("supply_price") String supply_price, @RequestParam("surtax") String surtax,
 					@RequestParam("total_price") String total_price, @RequestParam("order_date") String order_date, 
-					@RequestParam("hidden") String hidden,*/ @RequestParam("total") String total,
+					@RequestParam("hidden") String hidden,*/ @RequestParam("total") String total, HttpSession session,
 					@RequestParam("list[]") List<Integer> list) {
 
 		System.out.println(total);
+		session.setAttribute("total", total);
 				
 		int a = 0 ;
 		for(int i = 0; i < list.size(); i++) {// 배열의 길이만큼 반복
