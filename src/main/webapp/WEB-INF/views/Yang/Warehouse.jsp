@@ -10,13 +10,17 @@
 </head>
 <body>
 <jsp:include page = "../Joo/headers.jsp" ></jsp:include>
+<jsp:include page = "../Joo/sidebars.jsp" ></jsp:include>
 	<div id="User_container">
 		<div id="User_box01">
-		<input type="text" id="User_referencetem">
-		<input type="hidden" id="User_udatetime" value="시간">
+			<input type="text" id="User_referencetem">
+			<input type="hidden" id="User_udatetime" value="시간">
 		</div>
 		<div id="User_box02">
 			<input type="button" id="User_reference" value="입력">
+		</div>
+		<div id="User_box03">
+			<div id="Motion-01">${dht.motion}</div>
 		</div>
 	</div>
 </body>
