@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h3> 입고 현황 </h3>
 </body>
 </html>
