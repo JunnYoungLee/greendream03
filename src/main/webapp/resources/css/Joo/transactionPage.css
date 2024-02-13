@@ -4,7 +4,7 @@
 		position: relative;
 		text-align: center;
 		right:7%;
-		
+		margin-top: 30px;
 	}
 	
 	#tableContainer{
@@ -15,8 +15,16 @@
 	.buttonContainer{
 		display: inline-flex;
 	    position: relative;
-	    float: right;
-	    right: 11%;
+	    text-align: center;
+		margin-top: 30px;
 	    
+	}
+	
+	#app{
+		width: 250px;
+	}
+	
+	tableClass{
+		width:100vh;
 	}
 	

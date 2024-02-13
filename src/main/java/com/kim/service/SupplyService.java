@@ -7,6 +7,7 @@ import java.util.List;
 import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.SupplyOrderDTO;
+import com.kim.model.YangMemberDTO;
 
 public interface SupplyService {
 
@@ -25,4 +26,8 @@ public interface SupplyService {
 	public ArrayList<HashMap<String, Object>> join_supplier();
 	
 	public ArrayList<HashMap<String, Object>> select_supplier(String supplier);
+	
+	public ArrayList<YangMemberDTO> orderMember();
+	
+	public List<SupplyOrderDTO> storeList();
 }

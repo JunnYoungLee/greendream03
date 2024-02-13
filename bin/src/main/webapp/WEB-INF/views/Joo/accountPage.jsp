@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.Date" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
@@ -77,36 +76,34 @@
 			<col width=10%>
 			<col width=15%>
 		</colgroup>
-		<c:forEach items="${orderMember}" var="orderMember">
 		<tr>
 			<td>
 				<p>부서</p>
 			</td>
 			<td id="dept">
-				${orderMember.dept}
+				${sessionScope.yldto.dept}
 			</td>
 			<td>
 				<p>담당자</p>
 			</td>
 			<td id="person_in_charge">
-				${orderMember.name}
+				${sessionScope.yldto.name}
 			</td>
 			<td>
 				<p>연락처</p>
 			</td>
 			<td>
-				${orderMember.pn}
+				${sessionScope.yldto.pn}
 			</td>	
 			<td>	
 				<p>발주일자</p>
 			</td>
 			<td>
-				<c:set var="ymd" value="<%=new Date()%>" />
+				<c:set var="ymd" value="<%=new java.util.Date()%>" />
 				<fmt:formatDate value="${ymd}" pattern="yyyy-MM-dd" />
 				<input type="hidden" id="date" value="${ymd}" />
 			</td>
 		</tr>
-		</c:forEach>
 		<tr>
 			<td colspan="10">
 				<input type="hidden">
@@ -138,10 +135,7 @@
 				<p>납기일자</p>
 			</td>
 			<td colspan="4">
-				<!-- 일주일 후 -->
-				<c:set var="sevenDayAfter" value="<%=new Date(new Date().getTime() + 60*60*24*1000*7)%>"/>
-				<fmt:formatDate value="${sevenDayAfter}" pattern="yyyy-MM-dd"/>
-				<input type="hidden" id="sevenDayAfter" value="${sevenDayAfter}" />
+				
 			</td>
 		</tr>
 		<tr>
@@ -204,14 +198,13 @@
 		</tr>
 		<c:forEach items="${purchaseList}" var="purchaseList" varStatus="abc">
 		<input type="hidden" value="${purchaseList.rno}" id="ss${abc.index}">
-		<input type="hidden" value="${purchaseList.rno}" id="hidden">
 		<input type="hidden" value="${purchaseList.supply_price}" id="supply_price">
 		<input type="hidden" value="${purchaseList.surtax}" id="surtax">
 		<input type="hidden" value="${purchaseList.total_price}" id="total_price">
 		
 		<tr>
 			<td>
-				${abc.count}
+				${abc.count}${purchaseList.rno}
 			</td>
 			<td>
 				${purchaseList.medical_supply_code}
