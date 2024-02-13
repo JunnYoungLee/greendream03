@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kim.model.GpsDTO;
 import com.kim.model.OrderDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.OrderService;
@@ -152,10 +153,23 @@ public class OrderController {
 	
 	// 카카오맵 테스트
 	@GetMapping("kakaoT")
-	public String kakaoT() {
+	public String kakaoT(GpsDTO gps, Model model) {
 		
 		
+		model.addAttribute("gps", os.gps_info(gps));
 		return "Jun/kakomap";
 	}
-
+	
+	// gps 위도 경도 업데이트
+	@ResponseBody
+	@PutMapping("gps")
+	public  void gps(@RequestBody GpsDTO gps) {
+		System.out.println(gps);
+		os.gps_update(gps);
+		
+	}
+	
+	
+	
+	
 }

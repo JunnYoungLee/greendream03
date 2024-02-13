@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.OrderMapper;
+import com.kim.model.GpsDTO;
 import com.kim.model.OrderDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.OrderService;
@@ -49,5 +50,13 @@ public class OrderServiceImpl implements OrderService {
 	// 요청 리스트 삭제
 	public void request_delete(String del_rno) {
 		om.request_delete(del_rno);	
+	}
+	// 요청 리스트 삭제
+	public void gps_update(GpsDTO gps) {
+		om.gps_update(gps);	
+	}
+	// gps 정보 가져오기
+	public GpsDTO gps_info(GpsDTO gps) {
+		return om.gps_info(gps);	
 	}
 }
