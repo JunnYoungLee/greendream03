@@ -31,4 +31,8 @@
 		update dht set user=#{user}
 	</update>
 	
+	<select id="motion">
+		select motion from dht
+	</select>
+	
 </mapper>

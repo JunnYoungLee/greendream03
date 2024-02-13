@@ -18,5 +18,6 @@ public interface YangMapper {
 
 	public void userReference(ReferenceDTO userdto);
 	
+	public void motion (ReferenceDTO motion);
 }
 

@@ -22,12 +22,12 @@
 
 <div class="orderBtn">
 <button type="button" class="btn btn-outline-dark buttonClass balju" onclick="location.href='order'"> 발주 요청 목록 </button>
-<button type="button" class="btn btn-outline-dark buttonClass balju"> 발주 완료 목록 </button>
+<button type="button" class="btn btn-outline-dark buttonClass balju" onclick="location.href='complete'"> 발주 완료 목록 </button>
 </div>
 
 <div class="storeBtn">
-<button type="button" class="btn btn-outline-dark buttonClass"> 입고 일정 </button>
-<button type="button" class="btn btn-outline-dark buttonClass"> 입고 현황 </button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='Warehouse'"> 의료 용품 관리 </button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='#'"> 입고 현황 </button>
 <button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='storeList'"> 입고 확인 </button>
 </div>
 
