@@ -33,12 +33,15 @@
 	</div>
      <form action="logout">
        	<div id="K_information">
-       		<div id="K_dept"> 부서 : ${yldto.dept} </div>
-       		<div id="K_name"> 이름 : ${yldto.name} </div>
-       		<input type="submit" id="K_logout" value="로그아웃">
+       		<div id="K_information_box01">
+       			<div id="K_dept"> 부서 : ${yldto.dept} </div>
+       			<div id="K_name"> 이름 : ${yldto.name} </div>
+       		</div>
+       		<div id="K_information_box02">
+       			<input type="submit" id="K_logout" value="로그아웃">
+       		</div>
        	</div>
        </form>
-     
      </header>
   </div>
 </main>

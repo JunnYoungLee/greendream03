@@ -125,7 +125,7 @@
 	</select>
 	
 	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">
-		select * from  request_check;
+		select * from dht where(motion, mtime) in (select motion, max(mtime) as mtime from dht group by motion)order by mtime desc) t group by t.motion;
 	</select>
 	
 	<!-- 입고 완료 리스트 -->

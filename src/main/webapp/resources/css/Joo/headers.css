@@ -1,5 +1,4 @@
 @charset "UTF-8";
-    
 	.headerTitle {
 		font-weight: bold;
 		font-family: 'Sunflower', sans-serif;
@@ -36,16 +35,18 @@
 	}
 	
 	#K_logout {
-	   display: inline-block;
-	   position: absolute;
-	   top: 3.5%;
-	   right: 10%;
-	   background-color: #fff;
-	   border-radius: 5px;
-	   cursor: pointer;	
+	    display: inline-block;
+	    position: relative;
+	    top: -75%;
+	    left: 105%;
+	    color: #009999; /* 어떤 색이 더 나은지 물어보기.  */
+	    background-color: #fff;
+	    border-radius: 3px;
+	    cursor: pointer;
+	    border: 2px solid rgba(0,153,153,0.5);
 	}
 	
-	#K_dept, #K_name, #K_logout{
+	#K_dept, #K_name {
 		color: #009999;
 		border-color: #009999;
 		--bs-btn-color: #009999;
