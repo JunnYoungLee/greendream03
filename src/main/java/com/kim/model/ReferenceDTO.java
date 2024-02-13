@@ -6,12 +6,12 @@ public class ReferenceDTO {
 	private String dtim;
 	private String user;
 	private String utim;
-	private int tno;
-	
+	private String useruptim;
+	private String motion;
+	private String mtime;
 	public String getHdb() {
 		return hdb;
 	}
-	
 	public void setHdb(String hdb) {
 		this.hdb = hdb;
 	}
@@ -39,19 +39,28 @@ public class ReferenceDTO {
 	public void setUtim(String utim) {
 		this.utim = utim;
 	}
-	public int getTno() {
-		return tno;
+	public String getUseruptim() {
+		return useruptim;
 	}
-	public void setTno(int tno) {
-		this.tno = tno;
+	public void setUseruptim(String useruptim) {
+		this.useruptim = useruptim;
 	}
-
+	public String getMotion() {
+		return motion;
+	}
+	public void setMotion(String motion) {
+		this.motion = motion;
+	}
+	public String getMtime() {
+		return mtime;
+	}
+	public void setMtime(String mtime) {
+		this.mtime = mtime;
+	}
 	@Override
 	public String toString() {
 		return "ReferenceDTO [hdb=" + hdb + ", tdb=" + tdb + ", dtim=" + dtim + ", user=" + user + ", utim=" + utim
-				+ ", tno=" + tno + "]";
+				+ ", useruptim=" + useruptim + ", motion=" + motion + ", mtime=" + mtime + "]";
 	}
-	
-
 	
 }

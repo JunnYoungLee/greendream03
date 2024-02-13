@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-*{
+* {
 	font-Family: 'Noto Sans KR';
 	
 }
 
-.buttonClass{
+.buttonClass {
 	text-decoration-line: none;
 	margin-top: 30px;
     margin-left: 20px;
@@ -24,6 +24,6 @@
 	
 }
 
-.balju{
+.balju {
 	width: 460px;
 }
