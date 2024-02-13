@@ -11,17 +11,17 @@ import com.kim.model.YangMemberDTO;
 
 public interface SupplyMapper {
 
-	public List<SupplyDTO> supplyList();
+	public List<SupplyDTO> supplyList(int rno);
 	
 	public ArrayList<OrderDTO> purchaseList(String chk_arr);
 	
 	public List<OrderDTO> purchaseList_1();
 	
-	public List<SupplyOrderDTO> supplyOrderList();
+	public List<SupplyOrderDTO> supplyOrderList(int rno);
 	
 	public int purchaseSum(OrderDTO order);
 	
-	public void supplyOrder(int data);
+	public int supplyOrder(int data);
 	
 	public ArrayList<HashMap<String, Object>> join_supplier();
 	

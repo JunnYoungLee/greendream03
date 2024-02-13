@@ -46,9 +46,14 @@
 	
 	<!-- 발주 db에 insert -->
 	<insert id="supplyOrder">
-		insert into medical_order(dept, medical_supply_code, medical_supplies_name, standard, unit, supplier, unit_price, order_quantity, person_in_charge, special_note, progress_status) 
-		(select dept, medical_supply_code, medical_supplies_name, standard, unit, s.supplier, unit_price, request_quantity, person_in_charge, special_note, progress_status  
-		from supplier s join request_check r on s.supplier = r.supplier where r.rno=#{rno});
+		insert into medical_order(dept, medical_supply_code, medical_supplies_name, standard, unit, supplier, unit_price, person_in_charge, special_note, order_quantity, rno, supply_price,surtax,total_price, progress_status)
+		(select dept, medical_supply_code, medical_supplies_name, standard, unit, supplier, unit_price, person_in_charge, special_note, request_quantity, rno, unit_price*request_quantity as supply_price,
+		unit_price*request_quantity*0.1 as surtax,
+		unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price,
+		'발주완료' as progress_status from (
+				select @rownum:=@rownum+1 rownum, rk.*
+				from request_check rk, (select @rownum:=0) as tmp
+			) as purchaseList where rno=#{data});
 	</insert>
 	
 	<!-- 발주 db insert 한번에 따로 담는 방법 찾다가 update로.. 방법 찾을시 수정 -->
@@ -71,7 +76,7 @@
 			(
 				select @rownum:=@rownum+1 rownum, s.*
 				from supplier s, (select @rownum:=0) as tmp
-			) as supplyList where supplier = #{supplier} limit 1;
+			) as supplyList where supplier = (select supplier from medical_order where rno=#{rno} limit 1) limit 1;
 <!-- 		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
 		]]> -->
@@ -111,12 +116,12 @@
             select @rownum:=@rownum+1 rownum, mo.*
             from medical_order mo, (select @rownum:=0) as tmp
                 order by rno desc
-         ) as supplyOrderList where rownum=1 ;
+         ) as supplyOrderList where rno =#{rno} ;
 		
 	</select>
 	
 	<select id = "orderMember" resultType="com.kim.model.YangMemberDTO">
-		select * from membership where (name = (select person_in_charge from request_check) and dept = (select dept from request_check));
+		select * from membership where (name = (select person_in_charge from request_check where rno=#{hidden} limit 1) and dept = (select dept from request_check where rno=#{hidden} limit 1));
 	</select>
 	
 	<select id = "purchaseList_1" resultType="com.kim.model.OrderDTO">

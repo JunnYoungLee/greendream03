@@ -76,7 +76,7 @@
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 일정</a></li>
             <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 현황</a></li>
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;입고 확인</a></li>
+            <li><a href="storeList" class="link-dark rounded">&emsp;&emsp;입고 확인</a></li>
           </ul>
         </div>
       </li>

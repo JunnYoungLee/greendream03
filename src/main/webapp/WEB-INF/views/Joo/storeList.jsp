@@ -43,10 +43,8 @@
 			<td>부가세</td>
 			<td>총액</td>
 			<td>담당자</td>
-			<td>발주 날짜</td>
 			<td>특이 사항</td>
-			<td>진행 상태</td>
-			<td>납부일</td>
+<!-- 			<td>진행 상태</td> -->
 		</tr>
 	<c:forEach items="${storeList}" var="storeList">
 		<tr>
@@ -61,10 +59,8 @@
 			<td>${storeList.surtax}</td>
 			<td>${storeList.total_price}</td>
 			<td>${storeList.person_in_charge}</td>
-			<td>${storeList.order_date}</td>
 			<td>${storeList.special_note}</td>
-			<%-- <td>${storeList.Progress_status}</td> --%>
-			<%-- <td>${storeList.Progress_status}</td> --%>
+<%-- 			<td>${storeList.Progress_status}</td> --%>
 		</tr>
 	</c:forEach>
 	</table>
