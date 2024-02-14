@@ -30,9 +30,13 @@ public interface SupplyMapper {
 	
 	public ArrayList<YangMemberDTO> orderMember();
 	
-	public List<SupplyOrderDTO> storeList();
+	public List<SupplyOrderDTO> storeList(CriteriaVO cri);
 	
 	public List<SupplyOrderDTO> complete(CriteriaVO cri);
 
+	// 발주 완료 게시글 전체 개수
 	public int total(CriteriaVO cri);
+	
+	// 입고 완료 게시글 전체 개수
+	public int total02(CriteriaVO cri);
 }

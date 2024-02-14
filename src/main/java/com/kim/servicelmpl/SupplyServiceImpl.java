@@ -61,19 +61,26 @@ public class SupplyServiceImpl implements SupplyService {
 		return sm.orderMember();
 	}
 	
-	public List<SupplyOrderDTO> storeList(){
+	// 입고 완료 페이징 처리 리스트
+	public List<SupplyOrderDTO> storeList(CriteriaVO cri){
 
-		return sm.storeList();
+		return sm.storeList(cri);
 	}
 	
+	// 발주 완료 페이징 처리 리스트
 	public List<SupplyOrderDTO> complete(CriteriaVO cri){
 		
 		return sm.complete(cri);
 	}
 	
-	// 전체 게시글 개수
+	// 전체 발주완료 게시글 개수
 	public int total(CriteriaVO cri) {
 		return sm.total(cri);
+	}
+	
+	// 전체 입고완료 게시글 개수
+	public int total02(CriteriaVO cri) {
+		return sm.total02(cri);
 	}
 	
 }
