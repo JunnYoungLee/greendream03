@@ -14,7 +14,20 @@
 	<!-- transaction.css -->
 	<link href="/../../resources/css/Joo/transactionPage.css" rel="stylesheet">
 
+<style type="text/css" media="print">  
+
+    @page{  size:auto; margin : 15mm;  }
+
+</style>
+
+
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="/../../resources/js/Joo/transactionPage.js"></script>
+<script src="/../../resources/js/Joo/html2canvas.js"></script>
+<script src="/../../resources/js/Joo/jspdf.min.js"></script>
+
 <body>
 
 <div class="main">
@@ -74,7 +87,7 @@
 	<table class="table table-bordered table-sm tableClass" id="tableContainer02">
 		<colgroup>
 			<col width=5%>
-			<col width=25%>
+			<col width=20%>
 			<col width=10%>
 			<col width=10%>
 			<col width=10%>
@@ -91,7 +104,9 @@
 			<td>부가세</td>
 		</tr>
 		<c:forEach items="${supplyOrderList}" var="supplyOrderList" varStatus="abc">
-		<input type="hidden" value="${supplyOrderList.supplier}" name="supplier">
+		<input type="hidden" value="${supplyOrderList.supplier}" name="supplier" id="supplier">
+		<input type="hidden" value="${supplyList[0].email}" name="email" id="email">
+		<input type="hidden" value="${supplyList[0].supplier_person}" name="supplier_person" id="supplier_person">
 		<tr>
 			<td>${abc.count}</td>
 			<td>${supplyOrderList.medical_supplies_name}</td>
@@ -105,10 +120,10 @@
 		<tr>
 			<td colspan="2">합계</td>
 			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td>${sum}</td>
+			<td>${unit}</td>
+			<td>${price}</td>
+			<td>${allsur}</td>
 		</tr>
 		<tr>
 			<td colspan="8">기타사항</td>
@@ -126,10 +141,6 @@
 	</div>
 	
 </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="/../../resources/js/Joo/transactionPage.js"></script>
 
 </body>
 </html>

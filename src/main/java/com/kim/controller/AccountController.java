@@ -4,29 +4,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.activation.FileDataSource;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kim.model.CriteriaVO;
 import com.kim.model.OrderDTO;
 import com.kim.model.PageVO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.SupplyOrderDTO;
-import com.kim.model.YangMemberDTO;
 import com.kim.service.SupplyService;
 
 @Controller
@@ -34,6 +34,38 @@ public class AccountController {
 	
 	@Autowired
 	SupplyService ss;
+	
+	@Autowired
+	private JavaMailSender mailsender;
+	
+	// 거래명세서 메일 전송.
+/*	@GetMapping("mailsend")
+	public ResponseEntity<?> mailSend(@RequestParam("supplier") String supplier, @RequestParam("email") String email, @RequestParam("supplier_person") String supplier_person) {
+		System.out.println("aaa");
+		String image_name = supplier;  //첨부할 이미지 이름.
+		String title = supplier + " 거래명세서 "; // 제목
+		
+		String to = ""+email+""; //받는 사람 이메일
+		String image = "<img src='cid:mail'/><br>"; //첨부 이미지
+		
+		try {
+			MimeMessage mimeMessage = mailsender.createMimeMessage();
+		    MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+		    messageHelper.setTo(to); //받는사람 이메일
+		    messageHelper.setSubject(title); //메일 제목
+		    messageHelper.setText(image, true); // 메일 내용
+		    
+		    //첨부파일
+		    messageHelper.addInline("mail", new FileDataSource("C:\\Users\\GR\\Desktop\\"+image_name+".jpg")); 
+		    
+		    
+		    mailsender.send(mimeMessage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return new ResponseEntity<>(1,HttpStatus.OK);
+	}*/
 	
 	// 재무과에서 발주 신청하는 페이지
 	@RequestMapping(value="A", method={RequestMethod.GET})
@@ -84,6 +116,9 @@ public class AccountController {
 		ArrayList<SupplyDTO> supply = new ArrayList<SupplyDTO>();
 		
 		int sum = 0;
+		int unit = 0;
+		int price = 0;
+		int allsur = 0;
 		
 		for(int i = 0; i < list.size(); i++) {// 배열의 길이만큼 반복
 			
@@ -91,11 +126,16 @@ public class AccountController {
 			supply.addAll(ss.supplyList(list.get(i)));
 			
 			sum += supplyod.get(i).getOrder_quantity();
+			unit += supplyod.get(i).getUnit_price();
+			price += supplyod.get(i).getSupply_price();
+			allsur += supplyod.get(i).getSurtax();
 		}
 		
-		System.out.println(sum);
-		
 		model.addAttribute("sum", sum);
+		model.addAttribute("unit", unit);
+		model.addAttribute("price", price);
+		model.addAttribute("allsur", allsur);
+
 		model.addAttribute("supplyOrderList", supplyod);
 		model.addAttribute("supplyList", supply);
 		

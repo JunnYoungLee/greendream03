@@ -21,8 +21,8 @@
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
      <property name="host" value="smtp.gmail.com"/> <!-- 메이서버 호스트 -->
      <property name="port" value="587"/> <!-- 메이서버 포트번호 -->
-     <property name="username" value="wnsrudals2346@gmail.com"/> <!-- 자신의 이메일 아이디 -->
-     <property name="password" value="rxci rnvm jqrf weqh"/> <!-- 자신의 비밀번호 -->
+     <property name="username" value="wndudnw30@gmail.com"/> <!-- 자신의 이메일 아이디 -->
+     <property name="password" value="tvbc sndz nkvi dosf"/> <!-- 자신의 비밀번호 -->
        <!-- 보안연결 SSL과 관련된 설정 -->
      <property name="javaMailProperties">
       <props>
