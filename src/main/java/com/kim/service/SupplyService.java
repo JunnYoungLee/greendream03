@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.kim.model.CriteriaVO;
 import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.SupplyOrderDTO;
@@ -30,4 +31,9 @@ public interface SupplyService {
 	public ArrayList<YangMemberDTO> orderMember();
 	
 	public List<SupplyOrderDTO> storeList();
+	
+	public List<SupplyOrderDTO> complete(CriteriaVO cri);
+	
+	// 게시글 전체 개수
+	public int total(CriteriaVO cri);
 }
