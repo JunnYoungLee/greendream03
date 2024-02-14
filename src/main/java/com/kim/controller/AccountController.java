@@ -39,14 +39,16 @@ public class AccountController {
 	private JavaMailSender mailsender;
 	
 	// 거래명세서 메일 전송.
-/*	@GetMapping("mailsend")
+	@GetMapping("mailsend")
 	public ResponseEntity<?> mailSend(@RequestParam("supplier") String supplier, @RequestParam("email") String email, @RequestParam("supplier_person") String supplier_person) {
 		System.out.println("aaa");
 		String image_name = supplier;  //첨부할 이미지 이름.
 		String title = supplier + " 거래명세서 "; // 제목
 		
-		String to = ""+email+""; //받는 사람 이메일
-		String image = "<img src='cid:mail'/><br>"; //첨부 이미지
+		String to = "hs_1123@naver.com"; //받는 사람 이메일(supply에 저장된 메일로 보내는게 맞지만 임의로 개인 아이디 하나만 지정해서 보냄)
+		//String to = ""+email+""; //받는 사람 이메일
+		String image = "<img src='supplier'/><br>"; //첨부 이미지
+		System.out.println(image);
 		
 		try {
 			MimeMessage mimeMessage = mailsender.createMimeMessage();
@@ -56,7 +58,7 @@ public class AccountController {
 		    messageHelper.setText(image, true); // 메일 내용
 		    
 		    //첨부파일
-		    messageHelper.addInline("mail", new FileDataSource("C:\\Users\\GR\\Desktop\\"+image_name+".jpg")); 
+		    messageHelper.addInline("mail", new FileDataSource("C:\\Users\\GR\\Downloads\\"+image_name+".jpg")); 
 		    
 		    
 		    mailsender.send(mimeMessage);
@@ -65,7 +67,7 @@ public class AccountController {
 		}
 		
 		return new ResponseEntity<>(1,HttpStatus.OK);
-	}*/
+	}
 	
 	// 재무과에서 발주 신청하는 페이지
 	@RequestMapping(value="A", method={RequestMethod.GET})
@@ -196,10 +198,14 @@ public class AccountController {
 	
 	// 입고 완료
 	@GetMapping("storeList")
-	public String storeList(Model model) {
+	public String storeList(Model model, CriteriaVO cri) {
 	
-		List<SupplyOrderDTO> storeList = ss.storeList();
+		List<SupplyOrderDTO> storeList = ss.storeList(cri);
 		model.addAttribute("storeList", storeList);
+		
+		// storeList.jsp 실행 시 PageVO에 저장되어 있는 데이터 가져옴
+		int total02 = ss.total02(cri);
+		model.addAttribute("paging", new PageVO(cri,total02));
 		
 		return "Joo/storeList";
 	}
@@ -210,7 +216,7 @@ public class AccountController {
 	
 		// select된 결과 값 가져오기
 		model.addAttribute("complete", ss.complete(cri));
-		// boardList.jsp 실행 시 PageVO에 저장되어 있는 데이터 가져옴
+		// complete.jsp 실행 시 PageVO에 저장되어 있는 데이터 가져옴
 		int total = ss.total(cri);
 		model.addAttribute("paging", new PageVO(cri,total));
 		
