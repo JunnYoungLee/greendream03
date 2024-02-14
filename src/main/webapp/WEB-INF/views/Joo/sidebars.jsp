@@ -51,12 +51,12 @@
         </div>
       </li>
 
-      <li class="mb-1"style=
+      <li class="mb-1" style=
        <c:choose>
-	<c:when test="${sessionScope.yldto.dept ne '재무과'}">"display:none;"
-	</c:when>
-	</c:choose>
-      >
+		<c:when test="${sessionScope.yldto.dept ne '재무과'}">"display:none;"
+		</c:when>
+		</c:choose>>
+	
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
           	발주관리
         </button>
@@ -80,14 +80,15 @@
         </div>
       </li>
       
-            <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#Products-collapse" aria-expanded="false">
           	물품관리
         </button>
-        <div class="collapse" id="orders-collapse">
+        <div class="collapse" id="Products-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
-
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
+            <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
           </ul>
         </div>
       </li>
