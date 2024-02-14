@@ -67,6 +67,26 @@
 	</c:forEach>
 	</table>
 
+<br><br>
+<div>
+	<form action="complete">
+	<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
+	<input type="hidden" name="amount" value="${paging.cri.pageNum}">
+	</form>
+	
+	<c:if test="${paging.prev}">
+		<a href="complete?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+	</c:if>
+	
+	<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+		<a href="complete?pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+	</c:forEach>
+	
+	<c:if test="${paging.next}">
+		<a href="complete?pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
+	</c:if>
+</div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

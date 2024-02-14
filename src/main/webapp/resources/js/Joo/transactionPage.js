@@ -17,13 +17,15 @@ $(document).ready(function(){
     
     window.onbeforeprint = beforePrint;
     window.onafterprint = afterPrint;
-    
-    var supplier = document.getElementById('supplier').value;
-    //var email = document.getElementById('email').value;
-    //var supplier_person = document.getElementById('supplier_person').value;
-    
-    $('#email').on('click', function(supplier) { // 이미지 저장 button id
+   
+})
+ 
+    function clickMail() {// 이미지 저장 button id
 
+		var supplier = document.getElementById('supplier').value;
+		var email = document.getElementById('email').value;
+		var supplier_person = document.getElementById('supplier_person').value;
+	
     	const pdf = document.getElementById('print');
     	console.log(supplier); 
     	
@@ -34,8 +36,8 @@ $(document).ready(function(){
     	});
     	
     	console.log(supplier);
-        //console.log(email);
-        //console.log(supplier_person);
+        console.log(email);
+        console.log(supplier_person);
     	
     		const saveImg = (uri, filename) => {
 		    let link = document.createElement('a');
@@ -47,7 +49,7 @@ $(document).ready(function(){
 		    link.click();
 		    document.body.removeChild(link);
 			//pdf파일 만들고 난 후 3초 경과 후 widnow.closes를 호출
-		    //mail() 
+		    mail() 
 		}	
    
 	   function mail(){
@@ -64,11 +66,12 @@ $(document).ready(function(){
 	    			console.log(data)
 	    			// 업데이트가 성공해서 1의 값이 반환되면 
 	    			if(data == 1){
-	    				closes();
+	    				alert("메일이 발송되었습니다.");
 	    			}
+	    		},
+	    		error : function() {
+	    			alert("fail");
 	    		}
 	    	})
 	    }
-    });
-   
-})
+    }

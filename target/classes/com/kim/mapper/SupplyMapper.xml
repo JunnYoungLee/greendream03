@@ -130,7 +130,15 @@
 	
 	<!-- 입고 완료 리스트 -->
 	<select id="storeList" resultType="com.kim.model.SupplyOrderDTO">
-		select * from warehousing where progress_status='완료'
+		select * 
+		from (
+			select @rownum:=@rownum+1 rownum, w.*
+			from warehousing w, (select @rownum:=0) as tmp
+			where progress_status='완료' ORDER BY rownum DESC ) as warehousing ;
+<!-- 		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
+		]]> -->
+		<!-- select * from warehousing where progress_status='완료' order by order_date desc; -->
 	</select>
 
 	<!-- 발주 완료 리스트 페이징 처리 -->
@@ -149,6 +157,11 @@
 	<!-- 발주 완료 리스트에서 개수 select -->
 	<select id="total" resultType="int">
 		select count(*) from medical_order where progress_status='발주완료'
+	</select>
+	
+	<!-- 입고 완료 리스트에서 개수 select -->
+	<select id="total02" resultType="int">
+		select count(*) from warehousing where progress_status='완료'
 	</select>
 	
 </mapper>
