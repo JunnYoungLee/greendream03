@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.OrderMapper;
+import com.kim.model.CriteriaVO;
 import com.kim.model.GpsDTO;
 import com.kim.model.OrderDTO;
+import com.kim.model.SupplyOrderDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.OrderService;
 
@@ -18,8 +20,12 @@ public class OrderServiceImpl implements OrderService {
 	OrderMapper om;
 	
 	// 전체 창고 리스트
-	public ArrayList<OrderDTO> list(){
-		return om.list();
+	public ArrayList<OrderDTO> list(CriteriaVO cri){
+		return om.list(cri);
+	}
+	// 전체 창고 개수
+	public int list_total(CriteriaVO cri) {
+		return om.list_total(cri);
 	}
 	// 내과 창고 리스트
 	public ArrayList<OrderDTO> medical_department_list(YangMemberDTO login){
@@ -51,12 +57,24 @@ public class OrderServiceImpl implements OrderService {
 	public void request_delete(String del_rno) {
 		om.request_delete(del_rno);	
 	}
-	// 요청 리스트 삭제
-	public void gps_update(GpsDTO gps) {
-		om.gps_update(gps);	
+	// gpsA 위도 경도 업데이트
+	public void gpsA_update(GpsDTO gps) {
+		om.gpsA_update(gps);	
 	}
-	// gps 정보 가져오기
-	public GpsDTO gps_info(GpsDTO gps) {
-		return om.gps_info(gps);	
+	// gpsB 위도 경도 업데이트
+	public void gpsB_update(GpsDTO gps) {
+		om.gpsB_update(gps);	
+	}
+	// gpsA 정보 가져오기
+	public GpsDTO gpsA_info(GpsDTO gps) {
+		return om.gpsA_info(gps);	
+	}
+	// gpsB 정보 가져오기
+	public GpsDTO gpsB_info(GpsDTO gps) {
+		return om.gpsB_info(gps);	
+	}
+	// 입고 현황 리스트
+	public ArrayList<SupplyOrderDTO> warehousing(){
+		return om.warehousing();
 	}
 }

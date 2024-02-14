@@ -7,8 +7,8 @@
 	<title>Kakao 지도 시작하기</title>
 </head>
 <body>
-	<input type="hidden" id="latitude" value="${gps.latitude}">
-	<input type="hidden" id="longitude" value="${gps.longitude}">
+	<input type="hidden" id="latitude" value="${gpsA.latitude}">
+	<input type="hidden" id="longitude" value="${gpsA.longitude}">
 	<div id="map" style="width:500px;height:400px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=52d3ec4ed67af68f08fbd6870b95ad2a"></script>
 	<script>
