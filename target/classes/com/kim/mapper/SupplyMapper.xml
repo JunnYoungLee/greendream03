@@ -134,8 +134,13 @@
 	</select>
 
 	<!-- 발주 완료 -->
-<!-- 	<selete id = "complete"  resultType="com.kim.model.SupplyOrderDTO">
+	<select id = "complete"  resultType="com.kim.model.SupplyOrderDTO">
 		select * from medical_order where progress_status='발주완료'
-	</selete> -->
+	</select>
+	
+	<!-- 게시글 목록 -->
+	<select id="total" resultType="int">
+		select count(*) from medical_order where progress_status='발주완료'
+	</select>
 	
 </mapper>

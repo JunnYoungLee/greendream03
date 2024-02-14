@@ -19,9 +19,6 @@ $(document).ready(function(){
 		for(i=0; i<rowList.length-3; i++){
 			list.push($("#ss"+ i ).val());
 		};
-    	
-		alert(list);
-		alert(total);
 		
 		$.ajax({
 	        type:'get', 

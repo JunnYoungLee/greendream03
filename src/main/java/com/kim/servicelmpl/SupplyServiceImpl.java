@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kim.mapper.SupplyMapper;
+import com.kim.model.CriteriaVO;
 import com.kim.model.OrderDTO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.SupplyOrderDTO;
@@ -63,6 +64,16 @@ public class SupplyServiceImpl implements SupplyService {
 	public List<SupplyOrderDTO> storeList(){
 
 		return sm.storeList();
+	}
+	
+	public List<SupplyOrderDTO> complete(CriteriaVO cri){
+		
+		return sm.complete(cri);
+	}
+	
+	// 전체 게시글 개수
+	public int total(CriteriaVO cri) {
+		return sm.total(cri);
 	}
 	
 }
