@@ -20,5 +20,7 @@ public interface YangService {
 	public ArrayList<YangMemberDTO> informtion();
 	
 	public void userReference(ReferenceDTO userdto);
-
+	
+	public ArrayList<ReferenceDTO> motion();
+	
 }

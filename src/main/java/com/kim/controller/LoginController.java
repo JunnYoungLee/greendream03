@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kim.mapper.YangMapper;
+import com.kim.model.ReferenceDTO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.YangMemberDTO;
 import com.kim.service.YangService;
@@ -34,8 +35,7 @@ public class LoginController {
 	public ResponseEntity<?> loginCheck (@RequestParam("userId") String id,
 							  @RequestParam("userPw") String password, 
 							  YangMemberDTO yldto,
-							  HttpServletResponse response, 
-							  HttpSession session) {
+							  HttpSession session){
 		
 		yldto.setId(id);
 		yldto.setPassword(password);
@@ -47,11 +47,9 @@ public class LoginController {
 		}*/
 		
 		YangMemberDTO yd = new YangMemberDTO();
-		
 			yd = ys.loginCheck_value(yldto);
-			
-			session.setAttribute("yldto",ys.loginCheck_value(yldto)); 
-			
+			session.setAttribute("yldto",ys.loginCheck_value(yldto));
+			 
 			if (yd.getId() != null) {
 				
 				session.setAttribute("yldto",ys.loginCheck_value(yldto)); 
