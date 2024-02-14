@@ -2,23 +2,23 @@
 
 #K-Login {
 	margin: 0 auto;
-	padding: 0;
-	text-align: center;
-	padding: 4%;
+    text-align: center;
+    padding: 6%;
     background-color: #47B3B3;
-    opacity : 0.9;
+    opacity: 0.9;
     position: relative;
     left: 7%;
     width: 700px;
     margin-top: 2%;
     border-radius: 5px;
-    color: beige;
+    color: #fffafa;
 }
 
-table{
+table {
 	width: 500px;
 	margin-top: 5%;
     margin-left: 5%;
+    padding-bottom: 10%;
 }
 
 input[type="text"], input[type="password"]{
@@ -29,7 +29,7 @@ input[type="text"], input[type="password"]{
     border: none;
     margin-bottom: 10px;
 	width: 300px;
-	background-color: beige;
+	background-color: #fffafa;
 }
 
 .log{
@@ -37,21 +37,27 @@ input[type="text"], input[type="password"]{
     float: left;
 }
 
-#loginFont{
+#loginFont {
     font-size: 40px;
+    font-color:#fffafa;
+}
+
+#Login {
+	color: #009999;
 }
 
 input[type="button"]{
-    width: 90px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
     border: none;
-    background-color: beige;
+    margin-bottom: 10%;
+    background-color: #fffafa;
 }
 
 a{
 	text-decoration: none;
-	color: beige;
+	color: #fffafa;
 }
 
 

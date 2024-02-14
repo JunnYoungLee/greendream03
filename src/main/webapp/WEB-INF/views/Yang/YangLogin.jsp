@@ -12,10 +12,10 @@
 <title>로그인</title>
 </head>
 
-<body>
+<body style="background-color: #fffafa;">
 	<div id="K-Login">
 	<span id="loginFont">로그인</span>
-	<table>
+	<table style="margin-bottom: 7%;">
 		<tr>
 			<td><span class="log">아이디 : </span></td>
 			<td><input type="text" id="Id" name="id"></td>
@@ -26,11 +26,9 @@
 			<td><input type="password" id="Pw" name="password"></td>
 		</tr>
 		<tr>
-			<td colspan=3><a href="#">아이디 / 비밀번호찾기</a>&nbsp&nbsp&nbsp<a href="member">회원가입</a></td>
+			<td colspan=3 style="padding-top: 4%;"><a href="#">아이디 / 비밀번호찾기</a>&nbsp&nbsp&nbsp<a href="member">회원가입</a></td>
 		</tr>
 	</table>
 	</div>
 </body>
-
-
 </html>

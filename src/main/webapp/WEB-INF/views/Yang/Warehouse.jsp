@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>창고 관리</title>
+<title>의료 용품 관리</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="/../../resources/css/Yang/YangWarehouse.css">
 </head>
@@ -20,7 +20,9 @@
 			<input type="button" id="User_reference" value="입력">
 		</div>
 		<div id="User_box03">
-			<div id="Motion-01">${dht.motion}</div>
+			<div id="box03_01">
+				<input id="Motion_01" value="${motion.motion}">
+			</div>
 		</div>
 	</div>
 </body>

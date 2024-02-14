@@ -26,5 +26,22 @@ $('#User_reference').on('click', function(){
 			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	})
-});	
+});
+
+$('#Motion_01').on('click',function(){
+	
+	var motion = $('#Motion_01').val();
+	$.ajax({
+		url : "motion",
+		type : "get",
+		data : {
+			'motion' : motion
+		},
+		dateType : 'JSON',
+		success : function(data){
+			console.log(dtat)
+		}
+	})
+});
+
 });	
