@@ -63,8 +63,13 @@ public class YangController {
 	}
 	
 	@GetMapping("motion")
-	public void motion(ReferenceDTO motion, HttpSession session) {
+	public void motion( ReferenceDTO motion,
+						HttpSession session
+						){
 		
+		ym.motion(motion);
 		System.out.println(motion);
+		
 	}
+	
 }

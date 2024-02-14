@@ -11,7 +11,7 @@
 	<link href="/../../resources/css/Joo/main.css" rel="stylesheet">
 	
 </head>
-<body>
+<body style="z-index:-1; background-color: #fffafa;">
 
 <div class="buttonContainer">
 <div class="invenBtn">
