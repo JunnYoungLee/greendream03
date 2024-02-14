@@ -3,11 +3,10 @@
 	.main{
 		position: relative;
 		text-align: center;
-		right:7%;
 		margin-top: 30px;
 	}
 	
-	#tableContainer{
+	#tableContainer01, #tableContainer02{
 		margin: auto;
 		width: 65%;
 	}

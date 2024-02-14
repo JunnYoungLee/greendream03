@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kim.model.CriteriaVO;
 import com.kim.model.OrderDTO;
+import com.kim.model.PageVO;
 import com.kim.model.SupplyDTO;
 import com.kim.model.SupplyOrderDTO;
 import com.kim.model.YangMemberDTO;
@@ -48,6 +50,8 @@ public class AccountController {
 			total += (aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() + aa.get(i).getUnit_price() * aa.get(i).getRequest_quantity() * 0.1 ); 
 		}
 		
+		System.out.println(aa);
+		
 		model.addAttribute("total", total);
 		model.addAttribute("select_supplier", ss.select_supplier(aa.get(0).getSupplier())); // 첫번째 나온 값의 회사 정보 출력
 		model.addAttribute("purchaseList", aa);
@@ -55,9 +59,7 @@ public class AccountController {
 		
 		ArrayList<HashMap<String, Object>> join_supplier = ss.join_supplier();
 		model.addAttribute("join_supplier", join_supplier);
-		/*int aa2 = ss.purchaseSum(order);
-		System.out.println(aa2);
-		model.addAttribute("sum", ss.purchaseSum(order));*/
+
 		return "Joo/accountPage";
 		
 	}
@@ -74,24 +76,28 @@ public class AccountController {
 	public String transactionPage(Model model, HttpServletRequest request,  HttpSession session,
 								@RequestParam(value= "list", required=false) List<Integer> list ) {
 		
-		System.out.println(list);
-		
-		// 세션은 object타입이라서 
+		// 세션은 object타입이라서 String 타입 변수에 타입변환하여 담아줌
 		String total = (String) session.getAttribute("total");
 		System.out.println(total);
 		
 		ArrayList<SupplyOrderDTO> supplyod = new ArrayList<SupplyOrderDTO>();
 		ArrayList<SupplyDTO> supply = new ArrayList<SupplyDTO>();
 		
+		int sum = 0;
+		
 		for(int i = 0; i < list.size(); i++) {// 배열의 길이만큼 반복
 			
 			supplyod.addAll(ss.supplyOrderList(list.get(i))); // 배열의 인덱스값을 이용해서  rno값을 찾음 
 			supply.addAll(ss.supplyList(list.get(i)));
+			
+			sum += supplyod.get(i).getOrder_quantity();
 		}
 		
+		System.out.println(sum);
+		
+		model.addAttribute("sum", sum);
 		model.addAttribute("supplyOrderList", supplyod);
 		model.addAttribute("supplyList", supply);
-		System.out.println(supply);
 		
 		return "Joo/transactionPage";
 	}
@@ -156,6 +162,19 @@ public class AccountController {
 		model.addAttribute("storeList", storeList);
 		
 		return "Joo/storeList";
+	}
+	
+	// 발주 완료
+	@GetMapping("complete")
+	public String complete(Model model, CriteriaVO cri) {
+	
+		// select된 결과 값 가져오기
+		model.addAttribute("complete", ss.complete(cri));
+		// boardList.jsp 실행 시 PageVO에 저장되어 있는 데이터 가져옴
+		int total = ss.total(cri);
+		model.addAttribute("paging", new PageVO(cri,total));
+		
+		return "Joo/complete";
 	}
 	
 }

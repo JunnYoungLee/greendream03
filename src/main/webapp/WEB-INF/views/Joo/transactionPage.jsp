@@ -20,7 +20,7 @@
 <div class="main">
 <div id="print">
 	<div>
-	<table class="table table-bordered table-sm tableClass" id="tableContainer">
+	<table class="table table-bordered table-sm tableClass" id="tableContainer01">
 	<c:forEach items="${join_supplier}" var="join_supplier">
 		<input type="hidden" name="hidden" id="hidden" value="${join_supplier.rno}">
 		<input type="hidden" name="supplier" id="supplier" value="${join_supplier.supplier}">
@@ -71,7 +71,7 @@
 	</div>
 	
 	<div>
-	<table class="table table-bordered table-sm tableClass" id="tableContainer">
+	<table class="table table-bordered table-sm tableClass" id="tableContainer02">
 		<colgroup>
 			<col width=5%>
 			<col width=25%>
@@ -121,7 +121,8 @@
 </div>
 	
 	<div class="buttonContainer">
-		<button type="button" id="app" class="btn btn-outline-dark">인쇄</button>
+		<button type="button" id="email" class="btn btn-outline-dark"> 메일 발송 </button>
+		<button type="button" id="app" class="btn btn-outline-dark"> 인쇄 하기 </button>
 	</div>
 	
 </div>
