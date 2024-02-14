@@ -5,21 +5,39 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.kim.mapper.OrderMapper">
+
 	 <!-- 창고 전체 리스트 -->
 	 <select id="list" resultType="com.kim.model.OrderDTO">
-	 	select * from stock;
+	 	select * from
+	 	(
+			select @rownum:=@rownum+1 rownum, mo.*
+			from stock mo, (select @rownum:=0) as tmp
+               ORDER BY dept ASC
+		) as orderList 
+		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
+		]]>
 	 </select>
+	 
+	 <!-- 창고 전체 리스트에서 개수 select -->
+	<select id="list_total" resultType="int">
+		select count(*) from stock;
+	</select>
+	 
 	<!--  부서별 창고 리스트 -->
+	
 	 <select id="medical_department_list" resultType="com.kim.model.OrderDTO">
 	 	select * from stock
 	 	where dept = #{dept};
 	 </select>
+	 
 	 <!-- 소모량으로 현재고 업데이트 -->
 	 <update id="current_quantity_update">
 	 	update stock
 	 	set current_quantity = #{current_quantity}
 	 	where dept = #{dept} and medical_supply_code = #{medical_supply_code}
 	 </update>
+	 
 	<!--  소모량 체크 -->
 	 <insert id="consumption_check">
 	 	insert into consumption_check 
@@ -27,6 +45,7 @@
 	 	#{standard}, #{unit}, #{used_quantity}, #{current_quantity}, 
 	 	#{date}, #{person_in_charge});
 	 </insert>
+	 
 	 <!-- 구입 요청하기 -->
 	 <insert id="request_check" >
 	 	insert into request_check(dept,medical_supply_code,
@@ -39,6 +58,7 @@
 	 	#{safety_inventory_quantuty}, #{request_quantity}, #{person_in_charge}, 
 	 	#{date}, #{special_note}, #{progress_status});
 	 </insert>
+	 
 	<!--  요청 목록 -->
 	 <select id="request_list" resultType="com.kim.model.OrderDTO">
 	 	select *, 
@@ -47,6 +67,7 @@
 	 	unit_price*request_quantity + unit_price*request_quantity*0.1 as total_price
 	 	from request_check;
 	 </select>
+	 
 	 <!-- 공급회사별 요청목록 -->
 	 <select id="request_selected_list" resultType="com.kim.model.OrderDTO">
 	 	select *, 
@@ -56,21 +77,47 @@
 	 	from request_check
 	 	where supplier = #{supplier};
 	 </select>
+	 
 	 <!-- 요청 목록 삭제 -->
 	 <delete id="request_delete">
 	 	delete from request_check 
 	 	where rno = #{del_rno};
 	 </delete>
 	 
-	 <update id="gps_update">
+	 <!-- gpsA 위치 업데이트 -->
+	 <update id="gpsA_update">
 	 	update gps
 	 	set latitude = #{latitude},
 	 	longitude = #{longitude}
-	 	where gno = 1;
+	 	where car_name = 'A';
 	 </update>
 	 
-	 <select id="gps_info" resultType="com.kim.model.GpsDTO">
-	 	select * from gps;
+	 <!-- gpsB 위치 업데이트 -->
+	 <update id="gpsB_update">
+	 	update gps
+	 	set latitude = #{latitude},
+	 	longitude = #{longitude}
+	 	where car_name = 'B';
+	 </update>
+	 
+	 <!-- gpsA 위치 정보 가져오기 -->
+	 <select id="gpsA_info" resultType="com.kim.model.GpsDTO">
+	 	select * from gps
+	 	where car_name = 'A';
 	 </select>
+	 
+	 <!-- gpsㅠ위치 정보 가져오기 -->
+	 <select id="gpsB_info" resultType="com.kim.model.GpsDTO">
+	 	select * from gps
+	 	where car_name = 'B';
+	 </select>
+	 
+	 <!-- 입고 현황 리스트 -->
+	<select id="warehousing" resultType="com.kim.model.SupplyOrderDTO">
+		select * from warehousing where progress_status !='완료'
+	</select>
+	
+
+
 	 
 </mapper>
