@@ -2,13 +2,17 @@ package com.kim.service;
 
 import java.util.ArrayList;
 
+import com.kim.model.CriteriaVO;
 import com.kim.model.GpsDTO;
 import com.kim.model.OrderDTO;
+import com.kim.model.SupplyOrderDTO;
 import com.kim.model.YangMemberDTO;
 
 public interface OrderService {
 	// 전체 창고 리스트
-	public ArrayList<OrderDTO> list();
+	public ArrayList<OrderDTO> list(CriteriaVO cri);
+	// 창고 전체 리스트에서 개수 select
+	public int list_total(CriteriaVO cri);
 	// 내과 창고 리스트
 	public ArrayList<OrderDTO> medical_department_list(YangMemberDTO login);
 	// 현재고 업데이트
@@ -23,8 +27,14 @@ public interface OrderService {
 	public ArrayList<OrderDTO>request_selected_list(String supplier);
 	// 요청 리스트 삭제
 	public void request_delete(String del_rno);
-	// gps 업데이트
-	public void gps_update(GpsDTO gps);
-	// gps 정보 가져오기
-	public GpsDTO gps_info(GpsDTO gps);
+	// gpsA 업데이트
+	public void gpsA_update(GpsDTO gps);
+	// gpsB 업데이트
+	public void gpsB_update(GpsDTO gps);
+	// gpsA 정보 가져오기
+	public GpsDTO gpsA_info(GpsDTO gps);
+	// gpsB 정보 가져오기
+	public GpsDTO gpsB_info(GpsDTO gps);
+	// 입고 현황 리스트
+	public ArrayList<SupplyOrderDTO> warehousing();
 }
