@@ -26,7 +26,7 @@
 			<td><input type="password" id="Pw" name="password"></td>
 		</tr>
 		<tr>
-			<td colspan=3 style="padding-top: 4%;"><a href="#">아이디 / 비밀번호찾기</a>&nbsp&nbsp&nbsp<a href="member">회원가입</a></td>
+			<td colspan=3 style="padding-top: 4%; padding-RIGHT: 15PX; font-size: 20px"><a href="member">회원가입</a></td>
 		</tr>
 	</table>
 	</div>
