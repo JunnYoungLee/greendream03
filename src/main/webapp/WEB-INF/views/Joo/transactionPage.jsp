@@ -138,6 +138,7 @@
 	<div class="buttonContainer">
 		<button type="button" id="email" class="btn btn-outline-dark" onclick="clickMail()"> 메일 발송 </button>
 		<button type="button" id="app" class="btn btn-outline-dark"> 인쇄 하기 </button>
+		<button type="button" id="close" class="btn btn-outline-dark" onclick="location.href='/'"> 돌아가기 </button>
 	</div>
 	
 </div>
