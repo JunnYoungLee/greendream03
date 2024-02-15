@@ -1,10 +1,14 @@
 package com.kim.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,19 +61,13 @@ public class YangController {
 		userdto.setUser(user);
 		userdto.setUtim(utim);
 		
-		
 		ym.userReference(userdto);
 		
 	}
 	
-	@GetMapping("motion")
-	public void motion( ReferenceDTO motion,
-						HttpSession session
-						){
-		
-		ym.motion(motion);
-		System.out.println(motion);
+	@RequestMapping(value="mt", method=RequestMethod.GET)
+	public ResponseEntity<?> motion(){
+		return new ResponseEntity<>(ys.motion(),HttpStatus.OK);
 		
 	}
-	
 }

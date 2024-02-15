@@ -1,6 +1,5 @@
 $(document).ready(function(){
-
-$('#User_reference').on('click', function(){
+$('#Contanier_03').on('click', function(){
 	
 	var user = $('#User_referencetem').val()
 	var utim = $('#User_udatetime').val()
@@ -12,7 +11,7 @@ $('#User_reference').on('click', function(){
 			'user' : user,
 			'utim' : utim
 		},
-		dateType : 'JSON',
+		dataType : 'JSON',
 		success : function(data){
 			console.log(data)
 			if(user != null){
@@ -28,20 +27,19 @@ $('#User_reference').on('click', function(){
 	})
 });
 
-$('#Motion_01').on('click',function(){
+function conn(){
 	
-	var motion = $('#Motion_01').val();
-	$.ajax({
-		url : "motion",
-		type : "get",
-		data : {
-			'motion' : motion
-		},
-		dateType : 'JSON',
-		success : function(data){
-			console.log(dtat)
-		}
-	})
-});
-
+		$.ajax({
+			url : "mt",
+			type : "GET",
+			dataType : 'JSON',
+			success : function(data){
+				console.log(data)
+				$("#movement").html(data[0].hdb)
+			}
+			
+		})
+	}
+setInterval(conn, 5000);
+		
 });	

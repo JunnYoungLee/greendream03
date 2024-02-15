@@ -35,4 +35,8 @@ import com.kim.service.YangService;
 	public void userReference(ReferenceDTO userdto) {
 		ym.userReference(userdto);
 	}
+	
+	public ArrayList<ReferenceDTO> motion() {
+		return ym.motion();
+	}
 }

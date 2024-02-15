@@ -31,8 +31,8 @@
 		update dht set user=#{user}
 	</update>
 	
-	<select id="motion">
-		select motion from dht
+	<select id="motion" resultType="com.kim.model.ReferenceDTO">
+	select hdb, tdb from dht where hdb and tdb order by dtim desc;
 	</select>
 	
 </mapper>
