@@ -32,7 +32,10 @@
 	</update>
 	
 	<select id="motion" resultType="com.kim.model.ReferenceDTO">
-	select hdb, tdb from dht where hdb and tdb order by dtim desc;
+		select hdb, tdb from dht where hdb and tdb order by dtim desc;
 	</select>
 	
+	<select id="movement" resultType="com.kim.model.ReferenceDTO">
+		select motion, mtime from dht where motion order by mtime desc;
+	</select>
 </mapper>

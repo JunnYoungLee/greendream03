@@ -18,7 +18,9 @@ public interface YangMapper {
 
 	public void userReference(ReferenceDTO userdto);
 	
-	public ArrayList<ReferenceDTO> motion ();
+	public ArrayList<ReferenceDTO> motion();
+	
+	public ArrayList<ReferenceDTO> movement();
 	
 }
 

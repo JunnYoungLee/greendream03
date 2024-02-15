@@ -1,7 +1,7 @@
 $(document).ready(function(){
-$('#Contanier_03').on('click', function(){
+$('#User_referencetem02').on('click', function(){
 	
-	var user = $('#User_referencetem').val()
+	var user = $('#User_referencetem01').val()
 	var utim = $('#User_udatetime').val()
 	
 	$.ajax({
@@ -28,18 +28,32 @@ $('#Contanier_03').on('click', function(){
 });
 
 function conn(){
-	
 		$.ajax({
 			url : "mt",
 			type : "GET",
 			dataType : 'JSON',
 			success : function(data){
 				console.log(data)
-				$("#movement").html(data[0].hdb)
-			}
+				$("#tem").html(data[0].tdb)
+				$("#hum").html(data[0].hdb)
+				}
+			})
 			
+	}
+
+function move(){
+		$.ajax({
+			url : "move",
+			type : "GET",
+			dataType : 'JSON',
+			success : function(data){
+				if(data[0].motion == 1){
+					$("#movement").html("움직임이 감지되었습니다.");
+			}
+			}
 		})
 	}
+
+setInterval(move, 5000);
 setInterval(conn, 5000);
-		
 });	
