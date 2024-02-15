@@ -31,6 +31,10 @@
 			</a>
 		</label>
 	</div>
+	<div style="
+	<c:if test="${sessionScope.yldto eq null}">visibility:hidden;
+	</c:if>
+	">
      <form action="logout">
        	<div id="K_information">
        		<div id="K_information_box01">
@@ -42,6 +46,8 @@
        		</div>
        	</div>
        </form>
+      
+       </div>
      </header>
   </div>
 </main>
