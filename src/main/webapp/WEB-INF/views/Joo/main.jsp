@@ -27,7 +27,7 @@
 
 <div class="storeBtn">
 <button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='Warehouse'"> 의료 용품 관리 </button>
-<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='#'"> 입고 현황 </button>
+<button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='WarehousingStatus'"> 입고 현황 </button>
 <button type="button" class="btn btn-outline-dark buttonClass" onclick="location.href='storeList'"> 입고 확인 </button>
 </div>
 
