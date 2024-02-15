@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>greenHospotial</title>
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -21,8 +22,14 @@
 </div>
 
 <div class="orderBtn">
-<button type="button" class="btn btn-outline-dark buttonClass balju" onclick="location.href='order'"> 발주 요청 목록 </button>
-<button type="button" class="btn btn-outline-dark buttonClass balju" onclick="location.href='complete'"> 발주 완료 목록 </button>
+<button type="button" class="btn btn-outline-dark buttonClass balju" 
+<c:if test="${sessionScope.yldto.dept eq '재무과'}">
+	onclick="location.href='order'"
+</c:if>> 발주 요청 목록 </button>
+<button type="button" class="btn btn-outline-dark buttonClass balju" 
+<c:if test="${sessionScope.yldto.dept eq '재무과'}">
+onclick="location.href='complete'"
+</c:if>> 발주 완료 목록 </button>
 </div>
 
 <div class="storeBtn">
