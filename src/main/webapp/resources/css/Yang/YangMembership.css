@@ -7,6 +7,8 @@
 	width: 1200px;
 	height: 500px;
 	color: #009999;
+	position: relative;
+    right: 90px;
 }
 
 #K-02 {
@@ -72,4 +74,5 @@
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
     position: relative;
     right: -45%;
+    left: 185px;
 }
