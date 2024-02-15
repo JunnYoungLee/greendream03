@@ -8,7 +8,7 @@
 	
 	#tableContainer01, #tableContainer02{
 		margin: auto;
-		width: 65%;
+		width: 1010px;
 	}
 	
 	.buttonContainer{
@@ -19,7 +19,7 @@
 	    
 	}
 	
-	#app, #email{
+	#app, #email, #close{
 		width: 250px;
 	}
 	
