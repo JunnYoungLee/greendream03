@@ -31,7 +31,8 @@
 			
 			<div id="Contanier_03">
 				<div id="User_box02">
-					<input type="text" id="User_referencetem">
+					<input type="text" id="User_referencetem01">
+					<input type="button" id="User_referencetem02" value="입력">
 					<input type="hidden" id="User_udatetime" value="시간">
 				</div>
 			</div>
@@ -41,7 +42,6 @@
 		<div id="Contanier_04" class="box_01">
 			<div id="User_box03" class="box_02">
 				<span>움직임 감시 카메라</span>
-					#
 				<div id="movement" class="box_03"></div>
 			</div>
 		</div>

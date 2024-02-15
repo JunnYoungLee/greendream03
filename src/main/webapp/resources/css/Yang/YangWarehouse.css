@@ -8,7 +8,7 @@
     padding: 0;
     text-align: center;
     width: 1100px;
-    height: 600px;
+    height: 690px;
     background-color: #009999;
     z-index: 1;
 }
@@ -62,11 +62,26 @@
     left: 33%;
 }
 
-#User_referencetem {
-	width: 40px;
-    height: 35px;
+#User_referencetem01 {
+    width: 30px;
+    height: 100px;
     border: 2px solid rgba(0,153,153,0.5);
-    border-radius: 10px;
+    border-radius: 30px;
+    background-color: #fff;
+    position: relative;
+    top: 5px;
+    left: 6.3%;
+}
+
+#User_referencetem02 {
+	width: 45px;
+    height: 40px;
+    border: 2px solid rgba(0,153,153,0.5);
+    border-radius: 30px;
+    background-color: #fff;
+    position: relative;
+    left: 2.5%;
+    top: 53px;
 }
 
 
