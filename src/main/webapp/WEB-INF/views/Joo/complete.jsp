@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,12 +55,12 @@
 			<td>${complete.standard}</td>
 			<td>${complete.unit}</td>
 			<td>${complete.supplier}</td>
-			<td>${complete.unit_price}</td>
-			<td>${complete.order_quantity}</td>
-			<td>${complete.surtax}</td>
-			<td>${complete.total_price}</td>
+			<td><fmt:formatNumber value="${complete.unit_price}" pattern="#,###" /></td>
+			<td><fmt:formatNumber value="${complete.order_quantity}" pattern="#,###" /></td>
+			<td><fmt:formatNumber value="${complete.surtax}" pattern="#,###" /></td>
+			<td><fmt:formatNumber value="${complete.total_price}" pattern="#,###" /></td>
 			<td>${complete.person_in_charge}</td>
-			<td>${complete.special_note}</td>
+			<td></td>
 			<td>${complete.progress_status}</td>
 		</tr>
 	</c:forEach>

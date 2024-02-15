@@ -112,9 +112,9 @@
 			<td>${supplyOrderList.medical_supplies_name}</td>
 			<td>${supplyOrderList.standard}</td>
 			<td>${supplyOrderList.order_quantity}</td>
-			<td>${supplyOrderList.unit_price}</td>
-			<td>${supplyOrderList.supply_price}</td>
-			<td>${supplyOrderList.surtax}</td>
+			<td><fmt:formatNumber value="${supplyOrderList.unit_price}" pattern="#,###" /></td>
+			<td><fmt:formatNumber value="${supplyOrderList.supply_price}" pattern="#,###" /></td>
+			<td><fmt:formatNumber value="${supplyOrderList.surtax}" pattern="#,###" /></td>
 		</tr>
 		</c:forEach>
 		<tr>

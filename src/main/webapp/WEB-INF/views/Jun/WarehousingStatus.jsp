@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,10 +53,10 @@
 			<td>${warehousing.standard}</td>
 			<td>${warehousing.unit}</td>
 			<td>${warehousing.supplier}</td>
-			<td>${warehousing.unit_price}</td>
+			<td><fmt:formatNumber value="${warehousing.unit_price}" pattern="#,###" /></td>
 			<td>${warehousing.order_quantity}</td>
-			<td>${warehousing.surtax}</td>
-			<td>${warehousing.total_price}</td>
+			<td><fmt:formatNumber value="${warehousing.surtax}" pattern="#,###" /></td>
+			<td><fmt:formatNumber value="${warehousing.total_price}" pattern="#,###" /></td>
 			<td>${warehousing.person_in_charge}</td>
 			<td>${warehousing.special_note}</td>
 			<td>${warehousing.progress_status}</td>
