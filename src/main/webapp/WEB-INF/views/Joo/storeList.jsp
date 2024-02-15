@@ -60,7 +60,7 @@
 			<td>${storeList.surtax}</td>
 			<td>${storeList.total_price}</td>
 			<td>${storeList.order_date}</td>
-			<td>${storeList.special_note}</td>
+			<td></td>
 			<td>${storeList.progress_status}</td>
 			<td>${storeList.car_Num}</td>
 		</tr>

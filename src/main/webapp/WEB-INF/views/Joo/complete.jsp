@@ -59,7 +59,7 @@
 			<td>${complete.surtax}</td>
 			<td>${complete.total_price}</td>
 			<td>${complete.person_in_charge}</td>
-			<td>${complete.special_note}</td>
+			<td></td>
 			<td>${complete.progress_status}</td>
 		</tr>
 	</c:forEach>
