@@ -1,5 +1,6 @@
 package com.kim.controller;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -73,6 +74,8 @@ public class AccountController {
 	@RequestMapping(value="A", method={RequestMethod.GET})
 	public String accountPage(Model model, @RequestParam(value= "chk_arr", required=false) List<String> chk_arr) {
 
+		DecimalFormat formatter = new DecimalFormat("###,###");
+		
 		int total = 0;
 		
 		ArrayList<OrderDTO> aa = new ArrayList<OrderDTO>(); // aa라는 배열 선언
@@ -86,7 +89,7 @@ public class AccountController {
 		
 		System.out.println(aa);
 		
-		model.addAttribute("total", total);
+		model.addAttribute("total", formatter.format(total));
 		model.addAttribute("select_supplier", ss.select_supplier(aa.get(0).getSupplier())); // 첫번째 나온 값의 회사 정보 출력
 		model.addAttribute("purchaseList", aa);
 		model.addAttribute("orderMember", ss.orderMember());
@@ -110,6 +113,8 @@ public class AccountController {
 	public String transactionPage(Model model, HttpServletRequest request,  HttpSession session,
 								@RequestParam(value= "list", required=false) List<Integer> list ) {
 		
+		DecimalFormat formatter = new DecimalFormat("###,###");
+		
 		// 세션은 object타입이라서 String 타입 변수에 타입변환하여 담아줌
 		String total = (String) session.getAttribute("total");
 		System.out.println(total);
@@ -132,11 +137,11 @@ public class AccountController {
 			price += supplyod.get(i).getSupply_price();
 			allsur += supplyod.get(i).getSurtax();
 		}
-		
-		model.addAttribute("sum", sum);
-		model.addAttribute("unit", unit);
-		model.addAttribute("price", price);
-		model.addAttribute("allsur", allsur);
+
+		model.addAttribute("sum", formatter.format(sum));
+		model.addAttribute("unit", formatter.format(unit));
+		model.addAttribute("price", formatter.format(price));
+		model.addAttribute("allsur", formatter.format(allsur));
 
 		model.addAttribute("supplyOrderList", supplyod);
 		model.addAttribute("supplyList", supply);

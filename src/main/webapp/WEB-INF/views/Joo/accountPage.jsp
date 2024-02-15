@@ -239,7 +239,7 @@
 				${purchaseList.total_price}
 			</td>
 			<td>
-				<input type="text" id="bigo" style="width: 50px;border:none;" value="${purchaseList.special_note}" >
+				<input type="text" id="bigo" style="width: 50px;border:none;">
 			</td>
 			
 
