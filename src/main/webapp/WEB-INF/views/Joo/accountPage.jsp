@@ -224,19 +224,19 @@
 				${purchaseList.unit}
 			</td>
 			<td>
-				${purchaseList.unit_price}
+				<fmt:formatNumber value="${purchaseList.unit_price}" pattern="#,###" />
 			</td>
 			<td>
 				${purchaseList.request_quantity}	
 			</td>
 			<td>
-				${purchaseList.supply_price}
+				<fmt:formatNumber value="${purchaseList.supply_price}" pattern="#,###" />
 			</td>
 			<td>
-				${purchaseList.surtax}
+				<fmt:formatNumber value="${purchaseList.surtax}" pattern="#,###" />
 			</td>
 			<td>
-				${purchaseList.total_price}
+				<fmt:formatNumber value="${purchaseList.total_price}" pattern="#,###" />
 			</td>
 			<td>
 				<input type="text" id="bigo" style="width: 50px;border:none;">

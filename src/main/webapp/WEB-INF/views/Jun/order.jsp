@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,11 +93,11 @@
 						<td>${list.standard}</td>
 						<td>${list.unit}</td>
 						<td>${list.supplier}</td>
-						<td>${list.unit_price}</td>
+						<td><fmt:formatNumber value="${list.unit_price}" pattern="#,###" /></td>
 						<td>${list.request_quantity}</td>
-						<td>${list.supply_price}</td>
-						<td>${list.surtax}</td>
-						<td>${list.total_price}</td>
+						<td><fmt:formatNumber value="${list.supply_price}" pattern="#,###" /></td>
+						<td><fmt:formatNumber value="${list.surtax}" pattern="#,###" /></td>
+						<td><fmt:formatNumber value="${list.total_price}" pattern="#,###" /></td>
 						<td>${list.person_in_charge}</td>
 						<td>${list.date}</td>
 						<td>${list.special_note}</td>
