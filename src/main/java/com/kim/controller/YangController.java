@@ -65,6 +65,11 @@ public class YangController {
 		
 	}
 	
+	@RequestMapping(value="move", method=RequestMethod.GET)
+	public ResponseEntity<?> movement(){
+		return new ResponseEntity<>(ym.movement(),HttpStatus.OK);
+	}
+	
 	@RequestMapping(value="mt", method=RequestMethod.GET)
 	public ResponseEntity<?> motion(){
 		return new ResponseEntity<>(ys.motion(),HttpStatus.OK);

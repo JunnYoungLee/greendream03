@@ -86,9 +86,8 @@
         </button>
         <div class="collapse" id="Products-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
-            <li><a href="#" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
+            <li><a href="Warehouse" class="link-dark rounded">&emsp;&emsp;의료 용품 창고</a></li>
+            <li><a href="#" class="link-dark rounded" style="opacity: 0;">&emsp;&emsp;의료 용품 창고</a></li>
           </ul>
         </div>
       </li>
