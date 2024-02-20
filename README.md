@@ -1,8 +1,17 @@
 ----------------------------------------------------1차 프로젝트 greendream -------------------------------------------------------------------
 
-create database greendream; create table greendream( id varchar(10) primary key, pw varchar(20), name varchar(10) );
+create database greendream;
 
-insert into greendream values('abcd1234','1234','홍길동');
+create table member(
+	id varchar(20) primary key,
+	pw varchar(20),
+	name varchar(20), 
+	phone varchar(20), 
+	pphone varchar(11), 
+	birth date,
+	gender varchar(10), 
+	email varchar(50)
+);
 
 ----------------------------------------------------2차 프로젝트 greendream2 -------------------------------------------------------------------
 
